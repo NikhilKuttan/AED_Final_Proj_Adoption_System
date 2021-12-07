@@ -4,11 +4,27 @@
  * and open the template in the editor.
  */
 package Business.BankAccount;
+import Business.People.Parents;
+import java.util.ArrayList;
 
 /**
  *
- * @author nikhi
+ * @author simran
  */
 public class LoanAccountDirectory {
+        private ArrayList<Loan> loanList;
+
+    public LoanAccountDirectory() {
+        loanList = new ArrayList();
+    }
+
+    public ArrayList<Loan> getLoanAccountList() {
+        return loanList;
+    }
     
+    
+    public Loan addLoan(Loan loan){
+        loanList.add(loan);
+        return loan;
+    }
 }
