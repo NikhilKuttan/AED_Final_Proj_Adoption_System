@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author nikhi
+ * @author patil
  */
 public class CounselorRole extends Role{
 
