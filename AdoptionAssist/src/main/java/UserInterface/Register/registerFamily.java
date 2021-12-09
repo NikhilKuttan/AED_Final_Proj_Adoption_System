@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.Register;
+package userinterface.Register;
+
 import Business.EcoSystem;
 import Business.EmailGeneration.EmailFormat;
 import Business.Enterprise.Enterprise;
@@ -22,9 +23,10 @@ import javax.swing.InputVerifier;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import userinterface.Dialog.SuccessDialog;
+
 /**
  *
- * @author patil
+ * @author ishanibose
  */
 public class registerFamily extends javax.swing.JPanel {
 
@@ -32,7 +34,7 @@ public class registerFamily extends javax.swing.JPanel {
      * Creates new form registerFamily
      */
     
-       EcoSystem system;
+    EcoSystem system;
     JPanel userProcessContainer;
     private String username;
     private static int count = 0;
@@ -69,44 +71,92 @@ public class registerFamily extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
+        btnBack = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtConfPassword = new javax.swing.JTextField();
+        btnConfirm = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        isPrepared = new javax.swing.JRadioButton();
+        notPrepared = new javax.swing.JRadioButton();
+        jLabel6 = new javax.swing.JLabel();
+        isFinance = new javax.swing.JRadioButton();
+        notSelectFinance = new javax.swing.JRadioButton();
+        isBigChange = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
         notBigChange = new javax.swing.JRadioButton();
         jLabel8 = new javax.swing.JLabel();
         notComfortable = new javax.swing.JRadioButton();
         isComfortable = new javax.swing.JRadioButton();
-        btnBack = new javax.swing.JButton();
         isChildrenOnBoard = new javax.swing.JRadioButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        txtUsername = new javax.swing.JTextField();
         notOnBoardChildren = new javax.swing.JRadioButton();
-        jLabel4 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txtEmail = new javax.swing.JTextField();
         isEducated = new javax.swing.JRadioButton();
-        jLabel2 = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JTextField();
         notEducated = new javax.swing.JRadioButton();
         jLabel11 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         isPromise = new javax.swing.JRadioButton();
-        txtConfPassword = new javax.swing.JTextField();
         notPromise = new javax.swing.JRadioButton();
-        btnConfirm = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         notGuilty = new javax.swing.JRadioButton();
-        isPrepared = new javax.swing.JRadioButton();
         isGuilty = new javax.swing.JRadioButton();
-        notPrepared = new javax.swing.JRadioButton();
         hospitalJComboBox = new javax.swing.JComboBox();
-        jLabel6 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        isFinance = new javax.swing.JRadioButton();
-        notSelectFinance = new javax.swing.JRadioButton();
-        isBigChange = new javax.swing.JRadioButton();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(64, 151, 182));
+
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Username*:");
+
+        txtUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsernameActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Email*:");
+
+        jLabel2.setText("Password*:");
+
+        jLabel3.setText("Confirm Password*:");
+
+        btnConfirm.setBackground(new java.awt.Color(255, 153, 51));
+        btnConfirm.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnConfirm.setText("CONFIRM");
+        btnConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("You are prepared for the “worst case scenario.”");
+
+        isPrepared.setText("Yes");
+
+        notPrepared.setText("No");
+
+        jLabel6.setText("You are financially prepared for the child.");
+
+        isFinance.setText("Yes");
+
+        notSelectFinance.setText("No");
+
+        isBigChange.setText("Yes");
 
         jLabel7.setText("You are able or willing to make BIG changes.");
 
@@ -118,77 +168,33 @@ public class registerFamily extends javax.swing.JPanel {
 
         isComfortable.setText("Yes");
 
-        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-
         isChildrenOnBoard.setText("Yes");
-
-        jLabel1.setText("Username*:");
 
         jLabel9.setText("Your current children are on board with the situation.");
 
-        txtUsername.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsernameActionPerformed(evt);
-            }
-        });
-
         notOnBoardChildren.setText("No");
-
-        jLabel4.setText("Email*:");
 
         jLabel10.setText("You are educated about the realities of the type of adoption you are pursuing.");
 
         isEducated.setText("Yes");
 
-        jLabel2.setText("Password*:");
-
         notEducated.setText("No");
 
         jLabel11.setText("You plan to make promises or commitments you actually can or will keep");
-
-        jLabel3.setText("Confirm Password*:");
 
         isPromise.setText("Yes");
 
         notPromise.setText("No");
 
-        btnConfirm.setBackground(new java.awt.Color(204, 204, 0));
-        btnConfirm.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        btnConfirm.setText("CONFIRM");
-        btnConfirm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConfirmActionPerformed(evt);
-            }
-        });
-
         jLabel12.setText("You want to say “yes” not out of guilt.");
-
-        jLabel5.setText("You are prepared for the “worst case scenario.”");
 
         notGuilty.setText("No");
 
-        isPrepared.setText("Yes");
-
         isGuilty.setText("Yes");
-
-        notPrepared.setText("No");
 
         hospitalJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel6.setText("You are financially prepared for the child.");
-
         jLabel13.setText("Select Hospital:");
-
-        isFinance.setText("Yes");
-
-        notSelectFinance.setText("No");
-
-        isBigChange.setText("Yes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -355,7 +361,17 @@ public class registerFamily extends javax.swing.JPanel {
                 .addGap(0, 154, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+        private void addInputVerifiers() {
+        InputVerifier stringValidation = new ValidateStrings();
+        
+        InputVerifier passwordValidation = new ValidatePasswords();
+        InputVerifier emailValidation = new ValidateEmailTextField();
+             txtUsername.setInputVerifier(stringValidation);
+   
+        txtPassword.setInputVerifier(passwordValidation);
+        txtConfPassword.setInputVerifier(passwordValidation);
+        txtEmail.setInputVerifier(emailValidation);
+    }
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
@@ -363,11 +379,120 @@ public class registerFamily extends javax.swing.JPanel {
         cardlayout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
+        // TODO add your handling code here:
+        this.username = txtUsername.getText();
+        this.email = txtEmail.getText();
+        this.password = txtPassword.getText();
+        if(isPrepared.isSelected()){
+            this.worstCaseScenerio = true;
+        }
+        else
+           this.worstCaseScenerio = false; 
+        
+        if(isFinance.isSelected()){
+            this.finChild = true;
+        }
+        else
+           this.finChild = false;
+        
+        if(isBigChange.isSelected()){
+            this.bigChanges = true;
+        }
+        else
+           this.bigChanges = false;
+        
+        if(isComfortable.isSelected()){
+            this.comSituation = true;
+        }
+        else
+           this.comSituation = false;
+        
+        if(isChildrenOnBoard.isSelected()){
+            this.currChildrenOnBoard = true;
+        }
+        else
+           this.currChildrenOnBoard = false;
+        
+        if(isEducated.isSelected()){
+            this.eduRealities = true;
+        }
+        else
+           this.eduRealities = false;
+        
+        if(isPromise.isSelected()){
+            this.promises = true;
+        }
+        else
+           this.promises = false;
+        
+        if(isGuilty.isSelected()){
+            this.guilt = true;
+        }
+        else
+           this.guilt = false;
+        
+        HospitalEnterprise hospital = (HospitalEnterprise) hospitalJComboBox.getSelectedItem();
+        
+        if (hospital == null){
+            JOptionPane.showMessageDialog(null, "Please select the Hospital");
+            throw new RuntimeException("Please enter the Hospital");
+        }
+        if ( txtUsername == null){
+            JOptionPane.showMessageDialog(null, "Please enter Username");
+            throw new RuntimeException("Please enter username");
+        }
+        
+        for (Network n : system.getNetworkList()){
+            for (Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
+                if (e.getEnterpriseType().equals(Enterprise.EnterpriseType.Hospital)){
+                    for(UserAccount ua : e.getUserAccountDirectory().getUserAccountList()){
+                        if(ua.getUsername().equals(username)){
+                             JOptionPane.showMessageDialog(null, "User Name already exists!, Please Enter valid user name","warning", JOptionPane.WARNING_MESSAGE);
+                             return;  
+                        }
+                            for(Organization o : e.getOrganizationDirectory().getOrganizationList()){  
+                                for(UserAccount ua1 : o.getUserAccountDirectory().getUserAccountList()){ 
+                                    if(ua1.getUsername().equals(username)){
+                                        JOptionPane.showMessageDialog(null, "User Name already exists!, Please Enter valid user name","warning", JOptionPane.WARNING_MESSAGE);
+                                        return;  
+                                    }   
+                                } 
+                            }
+                        
+                    }
+                }
+            }
+        }
+ 
+  /*      if(!(organization.getUserAccountDirectory().checkIfUsernameIsUnique(username))){
+            JOptionPane.showMessageDialog(null, "User Name already exists!, Please Enter valid user name","warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+       */ 
+        Parents parent = new Parents(username, email, password,worstCaseScenerio,
+                         finChild, bigChanges, comSituation, currChildrenOnBoard, eduRealities, promises, guilt );
+        hospital.getParentDirectory().addParents(parent);
+        parentToCounselor = new ParentToCounselor("Please review the parent profile", parent);
+        hospital.getWorkQueue().getParentToCounselor().add(parentToCounselor);
+       
+        String message =  " <h1>Welcome To Adoption Assist</h1> <body>  <br>Your Registration is successful! </br> <br>Your Profile ID is " + parent.getParentId()
+                + "and your Userid: "+parent.getUsername()+"</br> <br> Kindly wait for your Counselor to review your details!</br> </body> <h2> Thank you! </h2>";
+               
+        EmailFormat em = new EmailFormat(this.email,message, "Registration Successful at AdoptAssist" );
+        em.sendEmail();
+        
+        SuccessDialog d = new SuccessDialog("Your Registration was successful! Please Logout!");
+        d.setVisible(true);
+        
+        
+        
+    }//GEN-LAST:event_btnConfirmActionPerformed
+
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsernameActionPerformed
-
-    private void populateComboBox() {
+private void populateComboBox() {
         //hospitalJComboBox.removeAllItems();
         hospitalJComboBox.removeAllItems();
         for(Network n: system.getNetworkList()){
@@ -379,119 +504,13 @@ public class registerFamily extends javax.swing.JPanel {
         }
     }    
 
-    
-    private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
-        // TODO add your handling code here:
-        this.username = txtUsername.getText();
-        this.email = txtEmail.getText();
-        this.password = txtPassword.getText();
-        if(isPrepared.isSelected()){
-            this.worstCaseScenerio = true;
-        }
-        else
-        this.worstCaseScenerio = false;
-
-        if(isFinance.isSelected()){
-            this.finChild = true;
-        }
-        else
-        this.finChild = false;
-
-        if(isBigChange.isSelected()){
-            this.bigChanges = true;
-        }
-        else
-        this.bigChanges = false;
-
-        if(isComfortable.isSelected()){
-            this.comSituation = true;
-        }
-        else
-        this.comSituation = false;
-
-        if(isChildrenOnBoard.isSelected()){
-            this.currChildrenOnBoard = true;
-        }
-        else
-        this.currChildrenOnBoard = false;
-
-        if(isEducated.isSelected()){
-            this.eduRealities = true;
-        }
-        else
-        this.eduRealities = false;
-
-        if(isPromise.isSelected()){
-            this.promises = true;
-        }
-        else
-        this.promises = false;
-
-        if(isGuilty.isSelected()){
-            this.guilt = true;
-        }
-        else
-        this.guilt = false;
-
-        HospitalEnterprise hospital = (HospitalEnterprise) hospitalJComboBox.getSelectedItem();
-
-        if (hospital == null){
-            JOptionPane.showMessageDialog(null, "Please select the Hospital");
-            throw new RuntimeException("Please enter the Hospital");
-        }
-        if ( txtUsername == null){
-            JOptionPane.showMessageDialog(null, "Please enter Username");
-            throw new RuntimeException("Please enter username");
-        }
-
-        for (Network n : system.getNetworkList()){
-            for (Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
-                if (e.getEnterpriseType().equals(Enterprise.EnterpriseType.Hospital)){
-                    for(UserAccount ua : e.getUserAccountDirectory().getUserAccountList()){
-                        if(ua.getUsername().equals(username)){
-                            JOptionPane.showMessageDialog(null, "User Name already exists!, Please Enter valid user name","warning", JOptionPane.WARNING_MESSAGE);
-                            return;
-                        }
-                        for(Organization o : e.getOrganizationDirectory().getOrganizationList()){
-                            for(UserAccount ua1 : o.getUserAccountDirectory().getUserAccountList()){
-                                if(ua1.getUsername().equals(username)){
-                                    JOptionPane.showMessageDialog(null, "User Name already exists!, Please Enter valid user name","warning", JOptionPane.WARNING_MESSAGE);
-                                    return;
-                                }
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
-
-        /*      if(!(organization.getUserAccountDirectory().checkIfUsernameIsUnique(username))){
-            JOptionPane.showMessageDialog(null, "User Name already exists!, Please Enter valid user name","warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        */
-        Parents parent = new Parents(username, email, password,worstCaseScenerio,
-            finChild, bigChanges, comSituation, currChildrenOnBoard, eduRealities, promises, guilt );
-        hospital.getParentDirectory().addParents(parent);
-        parentToCounselor = new ParentToCounselor("Please review the parent profile", parent);
-        hospital.getWorkQueue().getParentToCounselor().add(parentToCounselor);
-
-        String message =  " <h1>Welcome To Adoption Assist</h1> <body>  <br>Your Registration is successful! </br> <br>Your Profile ID is " + parent.getParentId()
-        + "and your Userid: "+parent.getUsername()+"</br> <br> Kindly wait for your Counselor to review your details!</br> </body> <h2> Thank you! </h2>";
-
-        EmailFormat em = new EmailFormat(this.email,message, "Registration Successful at AdoptAssist" );
-        em.sendEmail();
-
-        SuccessDialog d = new SuccessDialog("Your Registration was successful! Please Logout!");
-        d.setVisible(true);
-
-    }//GEN-LAST:event_btnConfirmActionPerformed
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnConfirm;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JComboBox hospitalJComboBox;
     private javax.swing.JRadioButton isBigChange;
     private javax.swing.JRadioButton isChildrenOnBoard;
