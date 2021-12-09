@@ -1,9 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.SystemAdminWorkArea;
+package userinterface.SystemAdminWorkArea;
+
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
@@ -17,12 +17,17 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author patil
+ * @author Sebsebin
  */
 public class ManageEnterpriseJPanel extends javax.swing.JPanel {
-  private JPanel userProcessContainer;
+
+    private JPanel userProcessContainer;
     private EcoSystem system;
- public ManageEnterpriseJPanel(JPanel userProcessContainer, EcoSystem system) {
+
+    /**
+     * Creates new form ManageEnterpriseJPanel
+     */
+    public ManageEnterpriseJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.system = system;
@@ -30,6 +35,43 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         populateTable();
         populateComboBox();
+    }
+
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) enterpriseJTable.getModel();
+
+        model.setRowCount(0);
+        for (Network network : system.getNetworkList()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                Object[] row = new Object[3];
+                row[0] = enterprise.getName();
+                row[1] = network.getName();
+                row[2] = enterprise.getEnterpriseType().getValue();
+
+                model.addRow(row);
+            }
+        }
+    }
+
+    private void populateComboBox() {
+        networkJComboBox.removeAllItems();
+        enterpriseTypeJComboBox.removeAllItems();
+
+        for (Network network : system.getNetworkList()) {
+            networkJComboBox.addItem(network);
+        }
+
+        for (Enterprise.EnterpriseType type : Enterprise.EnterpriseType.values()) {
+            enterpriseTypeJComboBox.addItem(type);
+        }
+
+    }
+    private void addInputVerifiers() {
+        InputVerifier stringValidation = new ValidateStrings();
+        nameJTextField.setInputVerifier(stringValidation);
+        
+        
+       
     }
 
     /**
@@ -41,38 +83,18 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        nameJTextField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        enterpriseTypeJComboBox = new javax.swing.JComboBox();
-        submitJButton = new javax.swing.JButton();
-        btnBack4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         enterpriseJTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         networkJComboBox = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
+        nameJTextField = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        enterpriseTypeJComboBox = new javax.swing.JComboBox();
+        submitJButton = new javax.swing.JButton();
+        btnBack4 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 204, 255));
-
-        jLabel3.setText("Enterprise Type");
-
-        enterpriseTypeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        submitJButton.setBackground(new java.awt.Color(204, 204, 0));
-        submitJButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        submitJButton.setText("SUBMIT");
-        submitJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitJButtonActionPerformed(evt);
-            }
-        });
-
-        btnBack4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
-        btnBack4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBack4ActionPerformed(evt);
-            }
-        });
+        setBackground(new java.awt.Color(64, 151, 182));
 
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -105,6 +127,26 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         });
 
         jLabel2.setText("Name");
+
+        jLabel3.setText("Enterprise Type");
+
+        enterpriseTypeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        submitJButton.setBackground(new java.awt.Color(255, 153, 51));
+        submitJButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        submitJButton.setText("SUBMIT");
+        submitJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitJButtonActionPerformed(evt);
+            }
+        });
+
+        btnBack4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
+        btnBack4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBack4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -166,49 +208,39 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         }
 
         String name = nameJTextField.getText();
-        try{
-            if (name.equals("")){
-
-                throw new RuntimeException("Please enter the Name");
-            }
-        }catch(Exception e){
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Please enter valid data", "warning", JOptionPane.WARNING_MESSAGE);
-            return;
-
+       try{ 
+           if (name.equals("")){
+           
+            throw new RuntimeException("Please enter the Name");
         }
+       }catch(Exception e){
+            e.printStackTrace();
+          JOptionPane.showMessageDialog(this, "Please enter valid data", "warning", JOptionPane.WARNING_MESSAGE);
+          return;     
+            
+        } 
         if(!network.getEnterpriseDirectory().containsName(name)){
-            network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
-            populateTable();
+        network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
+        populateTable();
         }
         else{
             JOptionPane.showMessageDialog(this, "Enterprise name already present under this enterprise");
         }
 
         nameJTextField.setText("");
+        
+        
 
     }//GEN-LAST:event_submitJButtonActionPerformed
 
-      private void populateTable() {
-        DefaultTableModel model = (DefaultTableModel) enterpriseJTable.getModel();
+    private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_networkJComboBoxActionPerformed
 
-        model.setRowCount(0);
-        for (Network network : system.getNetworkList()) {
-            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-                Object[] row = new Object[3];
-                row[0] = enterprise.getName();
-                row[1] = network.getName();
-                row[2] = enterprise.getEnterpriseType().getValue();
-
-                model.addRow(row);
-            }
-        }
-    }
-      
     private void btnBack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack4ActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
+         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
         sysAdminwjp.populateTree();
@@ -216,30 +248,6 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBack4ActionPerformed
-
-    private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_networkJComboBoxActionPerformed
-  private void populateComboBox() {
-        networkJComboBox.removeAllItems();
-        enterpriseTypeJComboBox.removeAllItems();
-
-        for (Network network : system.getNetworkList()) {
-            networkJComboBox.addItem(network);
-        }
-
-        for (Enterprise.EnterpriseType type : Enterprise.EnterpriseType.values()) {
-            enterpriseTypeJComboBox.addItem(type);
-        }
-
-    }
-    private void addInputVerifiers() {
-        InputVerifier stringValidation = new ValidateStrings();
-        nameJTextField.setInputVerifier(stringValidation);
-        
-        
-       
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack4;
