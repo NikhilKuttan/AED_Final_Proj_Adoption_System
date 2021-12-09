@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.Register;
+package userinterface.Register;
+
 
 import Business.EcoSystem;
 
@@ -15,19 +16,25 @@ import java.awt.CardLayout;
 
 /**
  *
- * @author patil
+ * @author ishanibose
  */
 public class registerOptions extends javax.swing.JPanel {
-  JPanel userProcessContainer;
+
+    /**
+     * Creates new form registerOptions
+     */
+    JPanel userProcessContainer;
 
     EcoSystem system;
 
     public BirthMotherDirectory birthMotherDirectory;
 
-    /**
-     * Creates new form registerOptions
-     */
-  public registerOptions(JPanel userProcessContainer, EcoSystem system) {
+    
+    public registerOptions() {
+        
+    }
+
+    public registerOptions(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.system = system;
@@ -46,9 +53,8 @@ public class registerOptions extends javax.swing.JPanel {
         btnRegMother = new javax.swing.JButton();
         btnRegFamily = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(64, 151, 182));
 
-        btnRegMother.setBackground(new java.awt.Color(204, 204, 0));
         btnRegMother.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
         btnRegMother.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/maternity.png"))); // NOI18N
         btnRegMother.setText("MOTHER");
@@ -58,7 +64,6 @@ public class registerOptions extends javax.swing.JPanel {
             }
         });
 
-        btnRegFamily.setBackground(new java.awt.Color(204, 204, 0));
         btnRegFamily.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
         btnRegFamily.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/family.png"))); // NOI18N
         btnRegFamily.setText("FAMILY");
