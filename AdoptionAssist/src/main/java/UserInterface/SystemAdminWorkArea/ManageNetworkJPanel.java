@@ -1,9 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.SystemAdminWorkArea;
+package userinterface.SystemAdminWorkArea;
+
 import Business.EcoSystem;
 import Business.Network.Network;
 import Business.Validations.ValidateEmailTextField;
@@ -15,24 +15,41 @@ import javax.swing.InputVerifier;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
- * @author patil
+ * @author Sebsebin
  */
 public class ManageNetworkJPanel extends javax.swing.JPanel {
-  private JPanel userProcessContainer;
+
+    private JPanel userProcessContainer;
     private EcoSystem system;
 
     /**
+     *
      * Creates new form ManageNetworkJPanel
      */
-     public ManageNetworkJPanel(JPanel userProcessContainer, EcoSystem system) {
+    public ManageNetworkJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
 
         this.userProcessContainer = userProcessContainer;
         this.system = system;
         addInputVerifiers();
         populateNetworkTable();
+    }
+
+    private void populateNetworkTable() {
+        DefaultTableModel model = (DefaultTableModel) networkJTable.getModel();
+
+        model.setRowCount(0);
+        for (Network network : system.getNetworkList()) {
+            Object[] row = new Object[4];
+            row[0] = network.getName();
+            row[1] = network.getCity();
+            row[2] = network.getState();
+            row[3] = network.getCountry();
+            model.addRow(row);
+        }
     }
 
       private void addInputVerifiers() {
@@ -42,7 +59,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         stateJTextField.setInputVerifier(stringValidation);
         countryJTextField.setInputVerifier(stringValidation);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -52,26 +68,20 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        networkJTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        submitJButton = new javax.swing.JButton();
+        nameJTextField = new javax.swing.JTextField();
         cityJTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         stateJTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         countryJTextField = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        networkJTable = new javax.swing.JTable();
         btnBack4 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        submitJButton = new javax.swing.JButton();
-        nameJTextField = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(204, 204, 255));
-
-        jLabel2.setText("City");
-
-        jLabel3.setText("State");
-
-        jLabel4.setText("Country");
+        setBackground(new java.awt.Color(64, 151, 182));
 
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -97,17 +107,16 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(networkJTable);
-
-        btnBack4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
-        btnBack4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBack4ActionPerformed(evt);
-            }
-        });
+        if (networkJTable.getColumnModel().getColumnCount() > 0) {
+            networkJTable.getColumnModel().getColumn(0).setResizable(false);
+            networkJTable.getColumnModel().getColumn(1).setResizable(false);
+            networkJTable.getColumnModel().getColumn(2).setResizable(false);
+            networkJTable.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         jLabel1.setText("Name");
 
-        submitJButton.setBackground(new java.awt.Color(204, 204, 0));
+        submitJButton.setBackground(new java.awt.Color(255, 153, 51));
         submitJButton.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         submitJButton.setText("CREATE");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -119,6 +128,19 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         nameJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameJTextFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("City");
+
+        jLabel3.setText("State");
+
+        jLabel4.setText("Country");
+
+        btnBack4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
+        btnBack4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBack4ActionPerformed(evt);
             }
         });
 
@@ -184,62 +206,37 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack4ActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
-        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
-        sysAdminwjp.populateTree();
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBack4ActionPerformed
-
-     private void populateNetworkTable() {
-        DefaultTableModel model = (DefaultTableModel) networkJTable.getModel();
-
-        model.setRowCount(0);
-        for (Network network : system.getNetworkList()) {
-            Object[] row = new Object[4];
-            row[0] = network.getName();
-            row[1] = network.getCity();
-            row[2] = network.getState();
-            row[3] = network.getCountry();
-            model.addRow(row);
-        }
-    }
-
-     
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
 
         String name = nameJTextField.getText();
-        try {
-
-            if (name.equals("")){
-                JOptionPane.showMessageDialog(null, "Please enter the Name of Network");
-                throw new RuntimeException("Please enter the Name of network");
-            }
-
-            if (String.valueOf(cityJTextField.getText()).equals("")){
-                JOptionPane.showMessageDialog(null, "Please enter the City Name");
-                throw new RuntimeException("Please enter the City Name");
-            }
-
-            if (String.valueOf(countryJTextField.getText()).equals("")){
-                JOptionPane.showMessageDialog(null, "Please enter the Country Name");
-                throw new RuntimeException("Please enter the Country Name");
-            }
-            if (String.valueOf(stateJTextField.getText()).equals("")){
-                JOptionPane.showMessageDialog(null, "Please enter the State Name");
-                throw new RuntimeException("Please enter the State Name");
-            }
-
-        }catch(Exception e){
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Please enter valid data", "warning", JOptionPane.WARNING_MESSAGE);
-            return;
-
+ try {
+            
+          
+        if (name.equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter the Name of Network");
+            throw new RuntimeException("Please enter the Name of network");
         }
+          
+        if (String.valueOf(cityJTextField.getText()).equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter the City Name");
+            throw new RuntimeException("Please enter the City Name");
+        }
+        
+        if (String.valueOf(countryJTextField.getText()).equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter the Country Name");
+            throw new RuntimeException("Please enter the Country Name");
+        }
+        if (String.valueOf(stateJTextField.getText()).equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter the State Name");
+            throw new RuntimeException("Please enter the State Name");
+        }
+        
+ }catch(Exception e){
+            e.printStackTrace();
+          JOptionPane.showMessageDialog(this, "Please enter valid data", "warning", JOptionPane.WARNING_MESSAGE);
+          return;     
+            
+        } 
         Network network = system.createAndAddNetwork();
         network.setName(name);
         network.setCity(String.valueOf(cityJTextField.getText()));
@@ -251,13 +248,23 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         cityJTextField.setText("");
         stateJTextField.setText("");
         countryJTextField.setText("");
-
+        
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void nameJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameJTextFieldActionPerformed
 
+    private void btnBack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack4ActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+        sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBack4ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack4;
