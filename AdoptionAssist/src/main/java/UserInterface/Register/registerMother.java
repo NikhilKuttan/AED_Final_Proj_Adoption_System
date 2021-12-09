@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.Register;
+package userinterface.Register;
+
 import Business.EcoSystem;
 import Business.EmailGeneration.EmailFormat;
 import Business.Enterprise.Enterprise;
@@ -27,22 +28,26 @@ import javax.swing.InputVerifier;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import userinterface.Dialog.SuccessDialog;
+
+
 /**
  *
- * @author patil
+ * @author ishanibose
  */
 public class registerMother extends javax.swing.JPanel {
+    public BirthMotherDirectory birthMotherDirectory;
+    public BirthMother birthMother;
+    public BirthMotherToCounselor bmWorkQueue;
+    private EcoSystem system;
+    
 
     /**
      * Creates new form registerMother
      */
-      public BirthMotherDirectory birthMotherDirectory;
-    public BirthMother birthMother;
-    public BirthMotherToCounselor bmWorkQueue;
-    private EcoSystem system;
-      JPanel userProcessContainer;
+    JPanel userProcessContainer;
     
-     public registerMother(JPanel userProcessContainer, EcoSystem system) {
+
+    public registerMother(JPanel userProcessContainer, EcoSystem system) {
         
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -53,6 +58,19 @@ public class registerMother extends javax.swing.JPanel {
         
     }
 
+    
+    private void addInputVerifiers() {
+        InputVerifier stringValidation = new ValidateStrings();
+        nameTxt.setInputVerifier(stringValidation);
+        userNameTxt.setInputVerifier(stringValidation);
+        InputVerifier passwordValidation = new ValidatePasswords();
+        InputVerifier emailValidation = new ValidateEmailTextField();
+        
+        passwordTxt.setInputVerifier(passwordValidation);
+        confirmPassTxt.setInputVerifier(passwordValidation);
+        emailTxt.setInputVerifier(emailValidation);
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -78,7 +96,7 @@ public class registerMother extends javax.swing.JPanel {
         nameTxt = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(64, 151, 182));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +115,7 @@ public class registerMother extends javax.swing.JPanel {
 
         jLabel5.setText("Select Hospital:");
 
-        btnConfirm.setBackground(new java.awt.Color(204, 204, 0));
+        btnConfirm.setBackground(new java.awt.Color(255, 153, 51));
         btnConfirm.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnConfirm.setText("CONFIRM");
         btnConfirm.addActionListener(new java.awt.event.ActionListener() {
@@ -208,104 +226,108 @@ public class registerMother extends javax.swing.JPanel {
 
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
 
-        // TODO add your handling code here:
+          // TODO add your handling code here:
         try {
             String name = nameTxt.getText();
-
-            if (name.equals("")){
-                JOptionPane.showMessageDialog(null, "Please enter the Firstname");
-                throw new RuntimeException("Please enter the Username");
-            }
-            String username = userNameTxt.getText();
-            if (username.equals("")){
-                JOptionPane.showMessageDialog(null, "Please enter the Username");
-                throw new RuntimeException("Please enter the Username");
-            }
-            String emailId = emailTxt.getText();
-            if (emailId.equals("")){
-                JOptionPane.showMessageDialog(null, "Please enter the Email Id");
-                throw new RuntimeException("Please enter the Email Id");
-            }
-            String password = passwordTxt.getText();
-            String confpassword = confirmPassTxt.getText();
-            if (password.equals("")){
-                JOptionPane.showMessageDialog(null, "Please enter the password");
-                throw new RuntimeException("Please enter the password");
-            }
-            if (!password.equals(confpassword)){
-                JOptionPane.showMessageDialog(null, "Confirm Password and Password should match");
-                throw new RuntimeException("Confirm Password and Password should match");
-            }
-            HospitalEnterprise hospital = (HospitalEnterprise) hospitalJComboBox.getSelectedItem();
-            if (hospital == null){
-                JOptionPane.showMessageDialog(null, "Please select the Hospital");
-                throw new RuntimeException("Please enter the Hospital");
-            }
-
-            // BirthMother in people created
-            birthMother.setEmailId(emailId);
-            birthMother.setHospital(hospital.getName());
-            birthMother.setPassword(password);
-            birthMother.setUsername(username);
-            birthMother.setFirstName(name);
-
-            //Initiating work request for BMC
-            BirthMotherToCounselor bmc = new BirthMotherToCounselor(birthMother);
-
-            try {
-
-                Random rand = new Random();
-                Counsellor c = new Counsellor();
-                for (Organization o : hospital.getOrganizationDirectory().getOrganizationList()){
-                    if (o.getName().equals(Organization.Type.Counselor.getValue())){
-
-                        int size = o.getEmployeeDirectory().getCounselorlist().size();
-                        c = o.getEmployeeDirectory().getCounselorlist().get(rand.nextInt(size));
-                        birthMother.setCounselor(c.getName());
-                        o.getBirthMotherDirectory().addBirthMother(birthMother);
-                    }
+        
+      
+        if (name.equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter the Firstname");
+            throw new RuntimeException("Please enter the Username");
+        }
+           String username = userNameTxt.getText();
+        if (username.equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter the Username");
+            throw new RuntimeException("Please enter the Username");
+        }
+        String emailId = emailTxt.getText();
+        if (emailId.equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter the Email Id");
+            throw new RuntimeException("Please enter the Email Id");
+        }
+        String password = passwordTxt.getText();
+        String confpassword = confirmPassTxt.getText();
+        if (password.equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter the password");
+            throw new RuntimeException("Please enter the password");
+        }
+        if (!password.equals(confpassword)){
+            JOptionPane.showMessageDialog(null, "Confirm Password and Password should match");
+            throw new RuntimeException("Confirm Password and Password should match");
+        }
+        HospitalEnterprise hospital = (HospitalEnterprise) hospitalJComboBox.getSelectedItem();
+        if (hospital == null){
+            JOptionPane.showMessageDialog(null, "Please select the Hospital");
+            throw new RuntimeException("Please enter the Hospital");
+        }
+      
+      // BirthMother in people created
+        birthMother.setEmailId(emailId);
+        birthMother.setHospital(hospital.getName());
+        birthMother.setPassword(password);
+        birthMother.setUsername(username);
+        birthMother.setFirstName(name);
+      
+        //Initiating work request for BMC
+        BirthMotherToCounselor bmc = new BirthMotherToCounselor(birthMother);
+     
+       
+       
+        try {
+        
+            Random rand = new Random(); 
+            Counsellor c = new Counsellor();
+            for (Organization o : hospital.getOrganizationDirectory().getOrganizationList()){
+                if (o.getName().equals(Organization.Type.Counselor.getValue())){
+                   
+                    
+                   int size = o.getEmployeeDirectory().getCounselorlist().size();
+                   c = o.getEmployeeDirectory().getCounselorlist().get(rand.nextInt(size)); 
+                   birthMother.setCounselor(c.getName());
+                   o.getBirthMotherDirectory().addBirthMother(birthMother);
                 }
-                bmc.setCounsellor(c);
-                bmc.setStatus("Pending");
-                WorkQueue wq = hospital.getWorkQueue();
-
-                wq.addBirthMotherToCounselor(bmc);
-
-                //        JOptionPane.showMessageDialog(null, "Your Registration is successful \nYou have been alloted Counselor : " + c.getName()
-                    //                + "\nYour Patient ID is " + birthMother.getId() +"\nKindly Logout and Wait for our Counselor to contact you for appointment details! "
-                    //                        + "\nThank you!");
-                String message =  " <h1>Welcome To Adoption Assist</h1> <body>  Your Registration is successful <br>You have been alloted Counselor :"
+        }
+        bmc.setCounsellor(c);
+        bmc.setStatus("Pending");
+        WorkQueue wq = hospital.getWorkQueue();
+        
+        wq.addBirthMotherToCounselor(bmc);
+        
+//        JOptionPane.showMessageDialog(null, "Your Registration is successful \nYou have been alloted Counselor : " + c.getName() 
+//                + "\nYour Patient ID is " + birthMother.getId() +"\nKindly Logout and Wait for our Counselor to contact you for appointment details! "
+//                        + "\nThank you!");
+        String message =  " <h1>Welcome To Adoption Assist</h1> <body>  Your Registration is successful <br>You have been alloted Counselor :"
                 + c.getName() + " at "+ c.getAvailableTime() + "</br>"+"<br>Your Patient ID is " + birthMother.getId()
                 + "</br> <br> Kindly contact wait for your Counselor to contact you for your appointment details!</br> </body> <h2> Thank you! </h2>";
-                // JOptionPane.showMessageDialog(null, "Your Registration is successful \nYou have been alloted Counselor : " + c.getName()
-                    //  + "\nYour Patient ID is " + birthMother.getId() +"\nKindly L ogout and Wait for our Counselor to contact you for appointment details! "
-                    //        + "\nThank you!");
-                EmailFormat em = new EmailFormat(emailId, message, " Registration Successful at AdoptAssist" );
-                em.sendEmail();
-                SuccessDialog d = new SuccessDialog("Your Registration was successful! Please Logout!");
-                d.setVisible(true);
-
-                nameTxt.setText("");
-                userNameTxt.setText("");
-                emailTxt.setText("");
-                passwordTxt.setText("");
-                confirmPassTxt.setText("");
-
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this, "No Counselors available at this hospital, Please select another hospital!");
-                Logger.getLogger(registerMother.class.getName()).log(Level.SEVERE, null, ex);
-            }
+       // JOptionPane.showMessageDialog(null, "Your Registration is successful \nYou have been alloted Counselor : " + c.getName() 
+              //  + "\nYour Patient ID is " + birthMother.getId() +"\nKindly L ogout and Wait for our Counselor to contact you for appointment details! "
+                //        + "\nThank you!");
+        EmailFormat em = new EmailFormat(emailId, message, " Registration Successful at AdoptAssist" );
+        em.sendEmail();
+        SuccessDialog d = new SuccessDialog("Your Registration was successful! Please Logout!");
+        d.setVisible(true);
+        
+        nameTxt.setText("");
+        userNameTxt.setText("");
+        emailTxt.setText("");
+        passwordTxt.setText("");
+        confirmPassTxt.setText("");
+                
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "No Counselors available at this hospital, Please select another hospital!");
+            Logger.getLogger(registerMother.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         }
         catch(Exception e){
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Please enter valid data", "warning", JOptionPane.WARNING_MESSAGE);
-            return;
-
+          JOptionPane.showMessageDialog(this, "Please enter valid data", "warning", JOptionPane.WARNING_MESSAGE);
+          return;     
+            
         }
-
+        
         //Adding work request to current work queue
-
+        
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void hospitalJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitalJComboBoxActionPerformed
@@ -315,19 +337,6 @@ public class registerMother extends javax.swing.JPanel {
     private void nameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameTxtActionPerformed
-   private void addInputVerifiers() {
-        InputVerifier stringValidation = new ValidateStrings();
-        nameTxt.setInputVerifier(stringValidation);
-        userNameTxt.setInputVerifier(stringValidation);
-        InputVerifier passwordValidation = new ValidatePasswords();
-        InputVerifier emailValidation = new ValidateEmailTextField();
-        
-        passwordTxt.setInputVerifier(passwordValidation);
-        confirmPassTxt.setInputVerifier(passwordValidation);
-        emailTxt.setInputVerifier(emailValidation);
-        
-    }
-
     private void populateComboBox() {
         //hospitalJComboBox.removeAllItems();
         hospitalJComboBox.removeAllItems();
@@ -339,7 +348,7 @@ public class registerMother extends javax.swing.JPanel {
             }
         }
     }    
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnConfirm;
