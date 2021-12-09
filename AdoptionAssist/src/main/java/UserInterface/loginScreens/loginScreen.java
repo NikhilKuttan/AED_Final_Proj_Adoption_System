@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.loginScreens;
+package userinterface.loginScreens;
+
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
@@ -15,19 +16,19 @@ import Business.EcoSystem;
 import Business.Organization.Organization.Type;
 /**
  *
- * @author patil
+ * @author ishanibose
  */
 public class loginScreen extends javax.swing.JPanel {
 
     /**
-     * Creates new form loginScreen
+     * Creates new form loginMother
      */
-     JPanel userProcessContainer;
+    JPanel userProcessContainer;
     EcoSystem system;
     Type type;
+  
     
-    
-     public loginScreen(JPanel userProcessContainer, EcoSystem system, Type type ) {
+    public loginScreen(JPanel userProcessContainer, EcoSystem system, Type type ) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.system = system;
@@ -51,7 +52,7 @@ public class loginScreen extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         txtPassword = new javax.swing.JPasswordField();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(64, 151, 182));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel1.setText("Username:");
@@ -59,7 +60,7 @@ public class loginScreen extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel2.setText("Password:");
 
-        btnLogin.setBackground(new java.awt.Color(204, 204, 0));
+        btnLogin.setBackground(new java.awt.Color(255, 153, 0));
         btnLogin.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnLogin.setText("LOGIN");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -120,19 +121,19 @@ public class loginScreen extends javax.swing.JPanel {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-        // Get user name
-
+                // Get user name
+                
         String userName = txtUserName.getText();
         // Get Password
         char[] passwordCharArray = txtPassword.getPassword();
         String password = String.valueOf(passwordCharArray);
-
+        
         //Step1: Check in the system admin user account directory if you have the user
         UserAccount userAccount=system.getUserAccountDirectory().authenticateUser(userName, password);
-
+        
         Enterprise inEnterprise=null;
         Organization inOrganization=null;
-
+        
         if (type.getValue().equals(type.HospitalAdmin.getValue())){
             if(userAccount==null){
                 //Step 2: Go inside each network and check each enterprise
@@ -141,17 +142,17 @@ public class loginScreen extends javax.swing.JPanel {
                     for(Enterprise enterprise:network.getEnterpriseDirectory().getEnterpriseList()){
                         userAccount=enterprise.getUserAccountDirectory().authenticateUser(userName, password);
                         if(userAccount!=null){
-                            inEnterprise=enterprise;
-                            break;
-                        }
+                                   inEnterprise=enterprise;
+                                   break;
+                        }  
                     }
                     if(inEnterprise!=null){
-                        break;}
+                    break;}
                 }
             }
         }else if(type.getValue().equals(type.Counselor.getValue())){
-            if(userAccount==null){
-                //Step 2: Go inside each network and check each enterprise
+          if(userAccount==null){
+            //Step 2: Go inside each network and check each enterprise
                 for(Network network:system.getNetworkList()){
                     //Step 2.a: check against each enterprise
                     for(Enterprise enterprise:network.getEnterpriseDirectory().getEnterpriseList()){
@@ -167,18 +168,18 @@ public class loginScreen extends javax.swing.JPanel {
                                 }
                             }
                         }
-                        if(userAccount!=null){
-                            break;
+                    if(userAccount!=null){
+                        break;
                         }
                     }
                     if(userAccount!=null){
-                        break;
-                    }
+                            break;
+                            }
                 }
             }
         }else if(type.getValue().equals(type.BirthMotherOrg.getValue())){
-            if(userAccount==null){
-                //Step 2: Go inside each network and check each enterprise
+          if(userAccount==null){
+            //Step 2: Go inside each network and check each enterprise
                 for(Network network:system.getNetworkList()){
                     //Step 2.a: check against each enterprise
                     for(Enterprise enterprise:network.getEnterpriseDirectory().getEnterpriseList()){
@@ -196,16 +197,16 @@ public class loginScreen extends javax.swing.JPanel {
                         }
                         if(userAccount!=null){
                             break;
-                        }
+                            }
                     }
-                    if(userAccount!=null){
-                        break;
-                    }
+                if(userAccount!=null){
+                            break;
+                            }
                 }
             }
         }else if(type.getValue().equals(type.ParentsOrg.getValue())){
-            if(userAccount==null){
-                //Step 2: Go inside each network and check each enterprise
+          if(userAccount==null){
+            //Step 2: Go inside each network and check each enterprise
                 for(Network network:system.getNetworkList()){
                     //Step 2.a: check against each enterprise
                     for(Enterprise enterprise:network.getEnterpriseDirectory().getEnterpriseList()){
@@ -220,20 +221,20 @@ public class loginScreen extends javax.swing.JPanel {
                                     }
                                 }
                             }
-
+                            
                         }
                         if(userAccount!=null){
                             break;
-                        }
+                            }
                     }
                     if(userAccount!=null){
-                        break;
-                    }
+                            break;
+                            }
                 }
             }
         }else if(type.getValue().equals(type.BankManager.getValue())){
-            if(userAccount==null){
-                //Step 2: Go inside each network and check each enterprise
+          if(userAccount==null){
+            //Step 2: Go inside each network and check each enterprise
                 for(Network network:system.getNetworkList()){
                     //Step 2.a: check against each enterprise
                     for(Enterprise enterprise:network.getEnterpriseDirectory().getEnterpriseList()){
@@ -248,20 +249,20 @@ public class loginScreen extends javax.swing.JPanel {
                                     }
                                 }
                             }
-
+                            
                         }
                         if(userAccount!=null){
                             break;
-                        }
+                            }
                     }
                     if(userAccount!=null){
-                        break;
-                    }
+                            break;
+                            }
                 }
             }
         }else if(type.getValue().equals(type.InsuranceManager.getValue())){
-            if(userAccount==null){
-                //Step 2: Go inside each network and check each enterprise
+          if(userAccount==null){
+            //Step 2: Go inside each network and check each enterprise
                 for(Network network:system.getNetworkList()){
                     //Step 2.a: check against each enterprise
                     for(Enterprise enterprise:network.getEnterpriseDirectory().getEnterpriseList()){
@@ -279,15 +280,15 @@ public class loginScreen extends javax.swing.JPanel {
                         }
                         if(userAccount!=null){
                             break;
-                        }
+                            }
                     }
                     if(userAccount!=null){
-                        break;
-                    }
+                            break;
+                            }
                 }
             }
         }
-
+        
         if(userAccount==null){
             JOptionPane.showMessageDialog(null, "Invalid credentials");
             return;
@@ -297,7 +298,7 @@ public class loginScreen extends javax.swing.JPanel {
             userProcessContainer.add("workArea",userAccount.getRole().createWorkArea(userProcessContainer, userAccount, inOrganization, inEnterprise, system));
             layout.next(userProcessContainer);
         }
-
+        
         btnLogin.setEnabled(false);
         //logoutJButton.setEnabled(true);
         txtUserName.setEnabled(false);

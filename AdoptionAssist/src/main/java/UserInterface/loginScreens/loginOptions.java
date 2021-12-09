@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.loginScreens;
+package userinterface.loginScreens;
+
 import Business.EcoSystem;
 import Business.Organization.Organization;
 import Business.Organization.Organization.Type;
@@ -12,23 +13,23 @@ import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+
 /**
  *
- * @author patil
+ * @author ishanibose
  */
 public class loginOptions extends javax.swing.JPanel {
 
-    JPanel userProcessContainer;
-    EcoSystem system;
-    Type type;
     /**
      * Creates new form loginOptions
      */
+    JPanel userProcessContainer;
+    EcoSystem system;
+    Type type;
             
     
     public loginOptions(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
-        
         this.userProcessContainer = userProcessContainer;
         this.system = system;
         
@@ -43,14 +44,23 @@ public class loginOptions extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnAdmin = new javax.swing.JButton();
         btnMother = new javax.swing.JButton();
         btnFamily = new javax.swing.JButton();
         btnCounselor = new javax.swing.JButton();
         btnFinance = new javax.swing.JButton();
         btnFinance1 = new javax.swing.JButton();
-        btnAdmin = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(64, 151, 182));
+
+        btnAdmin.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
+        btnAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin-with-cogwheels-5.png"))); // NOI18N
+        btnAdmin.setText("ADMIN");
+        btnAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminActionPerformed(evt);
+            }
+        });
 
         btnMother.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
         btnMother.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/maternity.png"))); // NOI18N
@@ -97,15 +107,6 @@ public class loginOptions extends javax.swing.JPanel {
             }
         });
 
-        btnAdmin.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
-        btnAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin-with-cogwheels-5.png"))); // NOI18N
-        btnAdmin.setText("ADMIN");
-        btnAdmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdminActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,6 +142,14 @@ public class loginOptions extends javax.swing.JPanel {
                 .addContainerGap(227, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
+        // TODO add your handling code here:
+        loginScreen ls = new loginScreen(userProcessContainer, system, type.HospitalAdmin);
+        userProcessContainer.add("loginScreen", ls);
+        CardLayout layout = (CardLayout)this.userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnAdminActionPerformed
 
     private void btnMotherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMotherActionPerformed
 
@@ -181,14 +190,6 @@ public class loginOptions extends javax.swing.JPanel {
         CardLayout layout = (CardLayout)this.userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnFinance1ActionPerformed
-
-    private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
-        // TODO add your handling code here:
-        loginScreen ls = new loginScreen(userProcessContainer, system, type.HospitalAdmin);
-        userProcessContainer.add("loginScreen", ls);
-        CardLayout layout = (CardLayout)this.userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnAdminActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
