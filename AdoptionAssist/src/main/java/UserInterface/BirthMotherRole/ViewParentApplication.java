@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.BirthMotherRole;
+package userinterface.BirthMotherRole;
+
 import Business.Enterprise.Enterprise;
 import Business.People.BirthMother;
 import Business.People.Parents;
@@ -14,7 +15,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import userinterface.Dialog.SuccessDialog;
 
-
 /**
  *
  * @author nikhi
@@ -24,8 +24,21 @@ public class ViewParentApplication extends javax.swing.JPanel {
     /**
      * Creates new form ViewParentApplication
      */
-    public ViewParentApplication() {
+    private JPanel userProcessContainer;
+    private BirthMotherToParent request;
+    private Parents parent;
+    private Enterprise enterprise;
+    private BirthMother birthMother;
+    
+    public ViewParentApplication(JPanel userProcessContainer, Parents p, BirthMother birthMother,Enterprise enterprise) {
+        this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+        this.birthMother = birthMother;
+        this.parent = p;
+        
         initComponents();
+        fillComponents();
+        
     }
 
     /**
@@ -37,7 +50,6 @@ public class ViewParentApplication extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         btnAccept = new javax.swing.JButton();
         notGuilty = new javax.swing.JRadioButton();
         isGuilty = new javax.swing.JRadioButton();
@@ -72,9 +84,7 @@ public class ViewParentApplication extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         profilePhotoComponent = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
-
-        btnAccept.setBackground(new java.awt.Color(204, 204, 0));
+        btnAccept.setBackground(new java.awt.Color(255, 153, 51));
         btnAccept.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         btnAccept.setText("ACCEPT");
         btnAccept.addActionListener(new java.awt.event.ActionListener() {
@@ -184,156 +194,156 @@ public class ViewParentApplication extends javax.swing.JPanel {
         profilePhotoComponent.setText("UPLOADED IMAGE DISPLAY");
         profilePhotoComponent.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(btnBack)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(isFinance)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(notSelectFinance))
                                     .addComponent(jLabel6)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(isPrepared)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(notPrepared))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(isGuilty)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(notGuilty))
                                     .addComponent(jLabel12))
                                 .addGap(44, 44, 44)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(isComfortable)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(notComfortable))
                                     .addComponent(jLabel8)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(isBigChange)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(notBigChange))
                                     .addComponent(jLabel7)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(txtMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createSequentialGroup()
                                             .addComponent(jLabel4)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(layout.createSequentialGroup()
                                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(isEducated)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(notEducated))
                                     .addComponent(jLabel11)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(isPromise)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(notPromise))
                                     .addComponent(jLabel10)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(isChildrenOnBoard)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(notOnBoardChildren))
                                     .addComponent(jLabel9))
                                 .addGap(30, 30, 30)
                                 .addComponent(profilePhotoComponent, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(260, 260, 260)
                         .addComponent(btnAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(48, 48, 48))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnBack)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
                                 .addGap(38, 38, 38)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel1)
                                     .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel4)
                                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(isChildrenOnBoard)
                             .addComponent(notOnBoardChildren))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(isEducated)
                             .addComponent(notEducated))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(isPromise)
                             .addComponent(notPromise))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(profilePhotoComponent, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(isPrepared)
                             .addComponent(notPrepared))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(isFinance)
                             .addComponent(notSelectFinance)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(isBigChange)
                             .addComponent(notBigChange))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(isComfortable)
                             .addComponent(notComfortable))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(isGuilty)
                             .addComponent(notGuilty)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel2)
                             .addGap(30, 30, 30))
                         .addComponent(txtMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -341,79 +351,111 @@ public class ViewParentApplication extends javax.swing.JPanel {
                 .addComponent(btnAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(126, 126, 126))
         );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 942, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 765, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
     }// </editor-fold>//GEN-END:initComponents
-
+    private void fillComponents(){
+        profilePhotoComponent.setIcon(new ImageIcon(parent.getImgPath())); 
+        if (parent.getUsername() != null){
+        txtUsername.setText(parent.getUsername());
+        }
+        else
+            txtUsername.setText("unavailable");
+        if (parent.getUsername() != null){
+        txtEmail.setText(parent.getEmail());
+        }
+        else
+            txtUsername.setText("unavailable");
+        boolean worstCaseScenerio = parent.isWorstCaseScenerio();
+        if(worstCaseScenerio == true){
+            isPrepared.setSelected(true);
+        }
+        else notPrepared.setSelected(true);
+        boolean finChild = parent.isFinChild();
+        if(finChild == true){
+            isFinance.setSelected(true);
+        }
+        else notSelectFinance.setSelected(true);
+        
+        boolean bigChanges = parent.isBigChanges();
+        if(bigChanges == true){
+            isBigChange.setSelected(true);
+        }
+        else notBigChange.setSelected(true);
+        boolean comSituation = parent.isComSituation();
+        if(comSituation == true){
+            isComfortable.setSelected(true);
+        }
+        else notComfortable.setSelected(true);
+        boolean currChildrenOnBoard = parent.isCurrChildrenOnBoard();
+        if(currChildrenOnBoard == true){
+            isChildrenOnBoard.setSelected(true);
+        }
+        else notOnBoardChildren.setSelected(true);
+        boolean eduRealities = parent.isEduRealities();
+        if(eduRealities == true){
+            isEducated.setSelected(true);
+        }
+        else notEducated.setSelected(true);
+        boolean promises = parent.isPromises();
+        if(promises == true){
+            isPromise.setSelected(true);
+        }
+        else notPromise.setSelected(true);
+     
+        boolean guilt = parent.isGuilt();
+        if(guilt == true){
+            isGuilty.setSelected(true);
+        }
+        else notGuilty.setSelected(true);
+        
+             
+    }
     private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
-
+        
         if(birthMother.getAcceptedParents().contains(parent)){
             JOptionPane.showMessageDialog(this, "You have already accepted this parent");
             throw new RuntimeException("Please enter message");
         }
         else{
-            String message = txtMessage.getText();
-            //        if(birthMother.getAcceptedParents().size()>0){
-                //            JOptionPane.showMessageDialog(this, "You have already selected and contacted a Parent");
-                //            throw new RuntimeException("Alrdy selected a parent");
-                //        }
+        String message = txtMessage.getText();
+//        if(birthMother.getAcceptedParents().size()>0){
+//            JOptionPane.showMessageDialog(this, "You have already selected and contacted a Parent");
+//            throw new RuntimeException("Alrdy selected a parent");
+//        }
 
-            if(message == ""){
-                JOptionPane.showMessageDialog(this, "Please enter message for parents");
-                throw new RuntimeException("Please enter message");
-
-            }
-
-            request = new BirthMotherToParent(birthMother, parent);
-            request.setRequestResult("Accepted by Mother");
-            request.setMessage(message);
-            /*     for(Organization o : enterprise.getOrganizationDirectory().getOrganizationList()){
-                if(o.getName().equals(Organization.Type.ParentsOrg.getValue())){
-                    for(Parents p : o.getParentDirectory().getParentsList()){
-                        if(p.getUsername().equals(parent.getUsername())){
-                            p.setIsAvailable(false);
-                        }
-
+       
+        if(message == ""){
+            JOptionPane.showMessageDialog(this, "Please enter message for parents");
+            throw new RuntimeException("Please enter message");
+            
+        }
+        
+        request = new BirthMotherToParent(birthMother, parent);
+        request.setRequestResult("Accepted by Mother");
+        request.setMessage(message);
+   /*     for(Organization o : enterprise.getOrganizationDirectory().getOrganizationList()){
+            if(o.getName().equals(Organization.Type.ParentsOrg.getValue())){
+                for(Parents p : o.getParentDirectory().getParentsList()){
+                    if(p.getUsername().equals(parent.getUsername())){
+                        p.setIsAvailable(false);
                     }
+                        
                 }
-            }*/
-            //  parent.setIsAvailable(false);
-            birthMother.getAcceptedParents().add(parent);
-
-            request.setStatus("Processing");
-            SuccessDialog d = new SuccessDialog("Successfully Accepted Parent.");
-            d.setVisible(true);
-
-            enterprise.getWorkQueue().getBirthMotherToParent().add(request);
-            userProcessContainer.remove(this);
-            CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
-            cardlayout.previous(userProcessContainer);
+            }
+        }*/
+      //  parent.setIsAvailable(false);
+        birthMother.getAcceptedParents().add(parent);
+        
+        request.setStatus("Processing");
+        SuccessDialog d = new SuccessDialog("Successfully Accepted Parent.");
+        d.setVisible(true);
+        
+        enterprise.getWorkQueue().getBirthMotherToParent().add(request);
+        userProcessContainer.remove(this);
+        CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
+        cardlayout.previous(userProcessContainer);
 
         }
     }//GEN-LAST:event_btnAcceptActionPerformed
-
-    private void notGuiltyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notGuiltyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_notGuiltyActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
@@ -421,6 +463,10 @@ public class ViewParentApplication extends javax.swing.JPanel {
         CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
         cardlayout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void notGuiltyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notGuiltyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_notGuiltyActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -445,7 +491,6 @@ public class ViewParentApplication extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton notBigChange;
     private javax.swing.JRadioButton notComfortable;
     private javax.swing.JRadioButton notEducated;

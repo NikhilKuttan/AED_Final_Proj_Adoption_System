@@ -3,7 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.BankManager;
+package userinterface.BankManager;
+
+import Business.BankAccount.Loan;
+import Business.Enterprise.Enterprise;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.BirthMotherToLoan;
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+import javax.swing.WindowConstants;
 
 /**
  *
@@ -11,11 +29,28 @@ package UserInterface.BankManager;
  */
 public class ViewLoanRequest extends javax.swing.JPanel {
 
-    /**
-     * Creates new form ViewLoanRequest
-     */
-    public ViewLoanRequest() {
+    private UserAccount userAccount;
+    private JPanel userProcessContainer;
+    private Enterprise enterprise;
+    private BirthMotherToLoan bl;
+
+    
+    public ViewLoanRequest(JPanel userProcessContainer,UserAccount userAccount, BirthMotherToLoan bl, Enterprise enterprise) {
         initComponents();
+        this.userAccount = userAccount;
+        this.bl = bl;
+        this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+   
+        
+        txtFirstName.setText(bl.getLoan().getFirstName());
+        txtEmail.setText(bl.getLoan().getEmailId());
+       
+        txtAddress.setText(bl.getLoan().getAddress());
+        txtFunds.setText(String.valueOf(bl.getLoan().getFunds()));
+        txtPassport.setText(bl.getLoan().getPassportNumber());
+        txtLastName.setText(bl.getLoan().getLastName());
+        
     }
 
     /**
@@ -27,7 +62,6 @@ public class ViewLoanRequest extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtLastName = new javax.swing.JTextField();
@@ -48,7 +82,7 @@ public class ViewLoanRequest extends javax.swing.JPanel {
         txtApprovedAmount = new javax.swing.JTextField();
         btnApprove = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(64, 151, 182));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +131,6 @@ public class ViewLoanRequest extends javax.swing.JPanel {
 
         jLabel3.setText("FIRST NAME:");
 
-        btnBrowse.setBackground(new java.awt.Color(204, 204, 0));
         btnBrowse.setText("VIEW");
         btnBrowse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +149,7 @@ public class ViewLoanRequest extends javax.swing.JPanel {
 
         jLabel6.setText("LOAN AMOUNT APPROVED:");
 
-        btnApprove.setBackground(new java.awt.Color(204, 204, 0));
+        btnApprove.setBackground(new java.awt.Color(255, 153, 51));
         btnApprove.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnApprove.setText("DONE");
         btnApprove.addActionListener(new java.awt.event.ActionListener() {
@@ -125,20 +158,20 @@ public class ViewLoanRequest extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnBack)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel17)
                             .addComponent(jLabel6)
                             .addComponent(jLabel13)
@@ -148,8 +181,8 @@ public class ViewLoanRequest extends javax.swing.JPanel {
                             .addComponent(jLabel3)
                             .addComponent(jLabel11))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtLastName, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
                                 .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
                                 .addComponent(txtFunds, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
@@ -158,77 +191,56 @@ public class ViewLoanRequest extends javax.swing.JPanel {
                                 .addComponent(txtPassport, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
                                 .addComponent(txtApprovedAmount, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))
                             .addComponent(btnBrowse)))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(123, 123, 123)
                 .addComponent(btnApprove, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(btnBack))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
                     .addComponent(txtFunds, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
                     .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtPassport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(btnBrowse))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtApprovedAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnApprove, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(49, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 482, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 507, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -254,29 +266,29 @@ public class ViewLoanRequest extends javax.swing.JPanel {
     private void btnBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrowseActionPerformed
 
         if (bl.getLoan().getDocPath() == null || bl.getLoan().getDocPath() == ""){
-            SwingUtilities.invokeLater(new Runnable(){
-                public void run()
+        SwingUtilities.invokeLater(new Runnable(){
+            public void run()
                 {
-                    JFrame editorFrame = new JFrame("Image Demo");
-                    editorFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                JFrame editorFrame = new JFrame("Image Demo");
+                editorFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        
+                BufferedImage image = null;
+                try
+                {
+                    image = ImageIO.read(new File(bl.getLoan().getDocPath()));
+                }
+                catch (Exception e)
+                {
+                  e.printStackTrace();
+                }
+                ImageIcon imageIcon = new ImageIcon(image);
+                JLabel jLabel = new JLabel();
+                jLabel.setIcon(imageIcon);
+                editorFrame.getContentPane().add(jLabel, BorderLayout.CENTER);
 
-                    BufferedImage image = null;
-                    try
-                    {
-                        image = ImageIO.read(new File(bl.getLoan().getDocPath()));
-                    }
-                    catch (Exception e)
-                    {
-                        e.printStackTrace();
-                    }
-                    ImageIcon imageIcon = new ImageIcon(image);
-                    JLabel jLabel = new JLabel();
-                    jLabel.setIcon(imageIcon);
-                    editorFrame.getContentPane().add(jLabel, BorderLayout.CENTER);
-
-                    editorFrame.pack();
-                    editorFrame.setLocationRelativeTo(null);
-                    editorFrame.setVisible(true);
+                editorFrame.pack();
+                editorFrame.setLocationRelativeTo(null);
+                editorFrame.setVisible(true);
                 }
             });
         }
@@ -294,20 +306,20 @@ public class ViewLoanRequest extends javax.swing.JPanel {
         for (Loan l : enterprise.getLoanDirectory().getLoanAccountList()){
             if(accNumber == (l.getBankAccountNumber()))
             {
-                l.setFundsApproved(Integer.valueOf(txtApprovedAmount.getText()));
-                bl.setStatus("Completed");
-                bl.getBirthMother().setLoanAmountApproved(Integer.valueOf(txtApprovedAmount.getText()));
-                bl.getBirthMother().setBankBalance(bl.getBirthMother().getBankBalance()+bl.getBirthMother().getLoanAmountApproved());
-                JOptionPane.showMessageDialog(this, "Amount of "+ txtApprovedAmount.getText() +" approved");
-
-                userProcessContainer.remove(this);
-                CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
-                cardlayout.previous(userProcessContainer);
+            l.setFundsApproved(Integer.valueOf(txtApprovedAmount.getText()));
+            bl.setStatus("Completed");
+            bl.getBirthMother().setLoanAmountApproved(Integer.valueOf(txtApprovedAmount.getText()));
+            bl.getBirthMother().setBankBalance(bl.getBirthMother().getBankBalance()+bl.getBirthMother().getLoanAmountApproved());
+            JOptionPane.showMessageDialog(this, "Amount of "+ txtApprovedAmount.getText() +" approved");
+            
+             userProcessContainer.remove(this);
+            CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
+            cardlayout.previous(userProcessContainer);
 
             }
-
+            
         }
-
+       
     }//GEN-LAST:event_btnApproveActionPerformed
 
 
@@ -324,7 +336,6 @@ public class ViewLoanRequest extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtApprovedAmount;
     private javax.swing.JTextField txtEmail;

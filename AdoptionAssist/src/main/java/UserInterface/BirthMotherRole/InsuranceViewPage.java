@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.BankManager;
+package userinterface.BirthMotherRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
@@ -35,12 +35,72 @@ import userinterface.Dialog.SuccessDialog;
 public class InsuranceViewPage extends javax.swing.JPanel {
 
     /**
-     * Creates new form InsuranceViewPage
+     * Creates new form BirthMotherProfile
      */
-    public InsuranceViewPage() {
+    
+    private BirthMother BirthMother;
+    private JPanel userProcessContainer;
+    private UserAccount userAccount;
+    private String documentUpload;
+     private String firstName;
+    private String lastName;
+    private String emailId;
+    private int policynumber;
+    private String address;
+    private InsuranceAccountDirectory insuranceDirectory;
+    private boolean flagC;
+    private String username;
+    private EcoSystem system;
+    private Network network;
+    private Enterprise enterprise;
+    
+    
+    public InsuranceViewPage(UserAccount userAccount, JPanel userProcessContainer, Enterprise enterprise, EcoSystem system) {
         initComponents();
+        this.userAccount = userAccount;
+        this.BirthMother = userAccount.getBirthmother();
+        this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+        
+        txtUsername.setText(BirthMother.getUsername());
+        txtEmail.setText(BirthMother.getEmailId());
+        txtFirstName.setText(BirthMother.getFirstName());
+        txtLastName.setText(BirthMother.getLastName());
+        
+//        
+//        for(Network n : system.getNetworkList()){
+//            if(n.getName().equals(userAccount.getNetwork())){
+//                for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
+//                    if(e.getEnterpriseType().equals(Enterprise.EnterpriseType.FinancialEnterprise)){
+//                       insuranceDirectory =  e.getInsuranceAccountDirectory();
+//                    
+//                    }
+//                
+//                }
+//            
+//            }
+//        
+//        }
+        this.system = system;
+        addInputVerifiers();
+        btnConfirm.setEnabled(true);
+        
+        
+        
     }
-
+ private void addInputVerifiers() {
+        InputVerifier stringValidation = new ValidateStrings();
+        txtFirstName.setInputVerifier(stringValidation);
+        txtUsername.setInputVerifier(stringValidation);
+        txtAddress.setInputVerifier(stringValidation);
+        InputVerifier passwordValidation = new ValidatePasswords();
+        InputVerifier emailValidation = new ValidateEmailTextField();
+        InputVerifier number = new ValidatePhoneNumber();
+        txtPolicyNumber.setInputVerifier(number);
+        txtLastName.setInputVerifier(stringValidation);
+        txtEmail.setInputVerifier(emailValidation);
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,7 +110,6 @@ public class InsuranceViewPage extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -71,7 +130,7 @@ public class InsuranceViewPage extends javax.swing.JPanel {
         btnConfirm = new javax.swing.JButton();
         agreeCheckBox = new javax.swing.JCheckBox();
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(64, 151, 182));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("INSURANCE DETAILS");
@@ -116,7 +175,7 @@ public class InsuranceViewPage extends javax.swing.JPanel {
             }
         });
 
-        btnConfirm.setBackground(new java.awt.Color(204, 204, 0));
+        btnConfirm.setBackground(new java.awt.Color(255, 153, 51));
         btnConfirm.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnConfirm.setText("CONFIRM");
         btnConfirm.addActionListener(new java.awt.event.ActionListener() {
@@ -132,19 +191,19 @@ public class InsuranceViewPage extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(btnBack)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
@@ -153,109 +212,80 @@ public class InsuranceViewPage extends javax.swing.JPanel {
                             .addComponent(jLabel17)
                             .addComponent(jLabel10))
                         .addGap(33, 33, 33)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtPolicyNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(txtDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(33, 33, 33)
                                 .addComponent(btnBrowse)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(agreeCheckBox)
                 .addGap(620, 620, 620))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
                     .addGap(119, 119, 119)
                     .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(859, Short.MAX_VALUE)))
+                    .addContainerGap(792, Short.MAX_VALUE)))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnBack)
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3)
                     .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
                     .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(txtPolicyNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtDoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnBrowse)))
                 .addGap(18, 18, 18)
                 .addComponent(agreeCheckBox)
-                .addContainerGap(228, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(227, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
                     .addGap(407, 407, 407)
                     .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(180, Short.MAX_VALUE)))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(156, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAddressActionPerformed
-
-    private void txtDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDocActionPerformed
-
     private void btnBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrowseActionPerformed
 
-        JFileChooser file = new JFileChooser();
-        file.setCurrentDirectory(new File(System.getProperty("user.home")));
+         JFileChooser file = new JFileChooser();
+         file.setCurrentDirectory(new File(System.getProperty("user.home")));
         FileNameExtensionFilter extensionfilter =  new FileNameExtensionFilter("*.Images", "jpg","png");
         file.addChoosableFileFilter(extensionfilter);
         int result = file.showSaveDialog(null);
@@ -271,12 +301,20 @@ public class InsuranceViewPage extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnBrowseActionPerformed
 
+    private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAddressActionPerformed
+
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
         CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
         cardlayout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void txtDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDocActionPerformed
 
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
         // TODO add your handling code here:
@@ -285,54 +323,57 @@ public class InsuranceViewPage extends javax.swing.JPanel {
         this.emailId = txtEmail.getText();
         this.policynumber = Integer.parseInt(txtPolicyNumber.getText());
         this.address = txtAddress.getText();
-
-        if (flagC == true){
-            Insurance nw = new Insurance();
-            for(Network network: system.getNetworkList()){
-                if(network.getName().equals(userAccount.getNetwork()))
-                {
-                    for(Enterprise e : network.getEnterpriseDirectory().getEnterpriseList()){
-                        if(e.getEnterpriseType().equals(Enterprise.EnterpriseType.FinancialEnterprise))
-                        {
+       
+        
+        
+       if (flagC == true){
+        Insurance nw = new Insurance();
+        for(Network network: system.getNetworkList()){
+            if(network.getName().equals(userAccount.getNetwork()))
+            {
+                for(Enterprise e : network.getEnterpriseDirectory().getEnterpriseList()){
+                    if(e.getEnterpriseType().equals(Enterprise.EnterpriseType.FinancialEnterprise))
+                    {
                             this.enterprise = e;
-                            nw.setHospital(userAccount.getBirthmother().getHospital());
-                            nw.setAddress(this.address);
-                            nw.setEmailId(this.emailId);
-                            nw.setLastName(lastName);
-                            nw.setFirstName(firstName);
-                            nw.setPolicyNumber(policynumber);
-                            nw.setUsername(userAccount.getUsername());
-                            nw.setDocPath(txtDoc.getText());
+                               nw.setHospital(userAccount.getBirthmother().getHospital());
+                               nw.setAddress(this.address);
+                               nw.setEmailId(this.emailId);
+                               nw.setLastName(lastName);
+                               nw.setFirstName(firstName);
+                               nw.setPolicyNumber(policynumber);
+                               nw.setUsername(userAccount.getUsername());
+                               nw.setDocPath(txtDoc.getText());
+                               
 
-                            BirthMotherToInsuranceManager bminsure = new BirthMotherToInsuranceManager( this.BirthMother, userAccount, nw, insuranceDirectory);
-                            bminsure.setStatus("Pending");
-                            bminsure.setSender(userAccount);
-                            bminsure.setRequestDate(new Date());
-                            e.getWorkQueue().getBirthMotherToInsurance().add(bminsure);
-                            e.getInsuranceAccountDirectory().addInsurance(nw);
-
-                        }
+                                BirthMotherToInsuranceManager bminsure = new BirthMotherToInsuranceManager( this.BirthMother, userAccount, nw, insuranceDirectory);
+                                bminsure.setStatus("Pending");
+                                bminsure.setSender(userAccount);
+                                bminsure.setRequestDate(new Date());
+                               e.getWorkQueue().getBirthMotherToInsurance().add(bminsure);
+                               e.getInsuranceAccountDirectory().addInsurance(nw);
+                        
                     }
                 }
             }
-            this.BirthMother.setTypeL(2);
-            this.BirthMother.setInsurance(nw);
-            SuccessDialog d = new SuccessDialog("Successfully updated Insurance Profile");
-            d.setVisible(true);
-
         }
-
+       this.BirthMother.setTypeL(2);
+        this.BirthMother.setInsurance(nw);
+        SuccessDialog d = new SuccessDialog("Successfully updated Insurance Profile");
+                d.setVisible(true);
+        
+       }
+        
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void agreeCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agreeCheckBoxActionPerformed
         // TODO add your handling code here:
         boolean checked = agreeCheckBox.isSelected();
-        if(checked == true)
-        {
+         if(checked == true)
+         {
             flagC= true;
-        }
-        else
-
+         }
+         else 
+             
         JOptionPane.showMessageDialog(null, "Please check for Declaration");
     }//GEN-LAST:event_agreeCheckBoxActionPerformed
 
@@ -350,7 +391,6 @@ public class InsuranceViewPage extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtDoc;
     private javax.swing.JTextField txtEmail;

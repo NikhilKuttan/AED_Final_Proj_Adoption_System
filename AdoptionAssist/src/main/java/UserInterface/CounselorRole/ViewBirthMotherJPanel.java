@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.CounselorRole;
+package userinterface.CounselorRole;
 
 import Business.Enterprise.Enterprise;
 import Business.People.BirthMother;
@@ -23,27 +23,32 @@ import javax.swing.JPanel;
  * @author nikhi
  */
 public class ViewBirthMotherJPanel extends javax.swing.JPanel {
-    
-     public BirthMotherDirectory birthMotherDirectory;
+    public BirthMotherDirectory birthMotherDirectory;
     public BirthMother birthMother;
     public BirthMotherToCounselor bmWorkQueue;
     private Enterprise enterprise;
     private UserAccount account;
     private BirthMotherToCounselor request;
     
-     JPanel userProcessContainer;
 
     /**
-     * Creates new form ViewBirthMotherJPanel
+     * Creates new form registerMother
      */
+    JPanel userProcessContainer;
+    
+
     public ViewBirthMotherJPanel(JPanel userProcessContainer, BirthMotherToCounselor bmc, UserAccount account, Enterprise enterprise) {
+        
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = bmc;
         this.account = account;
         this.enterprise = enterprise;
         populateComponents();
+
     }
+
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -54,7 +59,6 @@ public class ViewBirthMotherJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         userNameTxt = new javax.swing.JTextField();
@@ -69,7 +73,7 @@ public class ViewBirthMotherJPanel extends javax.swing.JPanel {
         patientID2 = new javax.swing.JLabel();
         txtFundsRequired = new javax.swing.JTextField();
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(64, 151, 182));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +86,7 @@ public class ViewBirthMotherJPanel extends javax.swing.JPanel {
 
         jLabel4.setText("Email:");
 
-        btnApprove.setBackground(new java.awt.Color(204, 204, 0));
+        btnApprove.setBackground(new java.awt.Color(255, 153, 51));
         btnApprove.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         btnApprove.setText("ACCEPT");
         btnApprove.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +95,7 @@ public class ViewBirthMotherJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnReject.setBackground(new java.awt.Color(204, 204, 0));
+        btnReject.setBackground(new java.awt.Color(255, 255, 255));
         btnReject.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         btnReject.setText("REJECT");
         btnReject.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 4, true));
@@ -125,102 +129,81 @@ public class ViewBirthMotherJPanel extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addComponent(patientID2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtFundsRequired))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
                             .addGap(44, 44, 44)
                             .addComponent(btnReject, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(btnApprove, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(layout.createSequentialGroup()
                             .addContainerGap()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(patientID)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(patientIDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(btnBack)
                                         .addGap(89, 89, 89)
                                         .addComponent(jLabel1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(userNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(layout.createSequentialGroup()
                                     .addGap(47, 47, 47)
                                     .addComponent(patientID1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(30, 30, 30)
                                     .addComponent(messageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(211, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnBack))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(userNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(patientID)
                     .addComponent(patientIDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(68, 68, 68)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(patientID1)
                     .addComponent(messageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(patientID2)
                     .addComponent(txtFundsRequired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnReject, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnApprove, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(86, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 753, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 432, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -235,48 +218,50 @@ public class ViewBirthMotherJPanel extends javax.swing.JPanel {
         request.setReceiver(account);
         request.setResolveDate(new Date());
         request.setRequestResult("Completed by Counselor" + account.getCounselor().getName());
-
+     
         String msg = messageTxt.getText();
         if(msg.equals("")){
-            JOptionPane.showMessageDialog(null, "Please input your message for the patient ");
-            throw new NullPointerException("Enter message");
+              JOptionPane.showMessageDialog(null, "Please input your message for the patient ");
+              throw new NullPointerException("Enter message");
         }
 
         request.setStatus("Completed");
         int totalfund;
         try{
-            totalfund = Integer.parseInt(txtFundsRequired.getText());
-            if(totalfund == 0){
-                JOptionPane.showMessageDialog(null, "Please input the total fund required by the patient ");
-                throw new NullPointerException("Enter funds");
-            }
+        totalfund = Integer.parseInt(txtFundsRequired.getText());
+        if(totalfund == 0){
+              JOptionPane.showMessageDialog(null, "Please input the total fund required by the patient ");
+              throw new NullPointerException("Enter funds");
+        }
         }
         catch( NumberFormatException e){
-            JOptionPane.showMessageDialog(null, "Please input the total fund required by the patient in number format");
-            throw new NullPointerException("Enter funds");
+             JOptionPane.showMessageDialog(null, "Please input the total fund required by the patient in number format");
+              throw new NullPointerException("Enter funds");
         }
-
+        
         request.setCounsellorFeeback(msg);
         request.setMessage(msg);
         request.getBirthMother().setRequiredFund(totalfund);
 
+        
         CounselorToAdmin counselorReq = new CounselorToAdmin(messageTxt.getText(), request.getBirthMother());
-
+        
         counselorReq.setStatus("Processing");
         counselorReq.setSender(account);
-
+        
         enterprise.getWorkQueue().getCounselorToAdmin().add(counselorReq);
-
+        
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         BirthMotherRequestWorkAreaJPanel birthMotherRequestWorkAreaJPanel = (BirthMotherRequestWorkAreaJPanel) component;
         birthMotherRequestWorkAreaJPanel.populateRequestTable();
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
+        layout.previous(userProcessContainer); 
 
+        
     }//GEN-LAST:event_btnApproveActionPerformed
-
+   
     private void populateComponents() {
         //hospitalJComboBox.removeAllItems();
         String msg = new String();
@@ -291,24 +276,25 @@ public class ViewBirthMotherJPanel extends javax.swing.JPanel {
         request.setReceiver(account);
         request.setResolveDate(new Date());
         request.setRequestResult("Rejected by " + account.getCounselor().getName());
-
+        
+     
         String msg = messageTxt.getText();
         if(msg.equals("")){
-            JOptionPane.showMessageDialog(null, "Please input your message for the patient ");
-            throw new NullPointerException("Enter message");
+              JOptionPane.showMessageDialog(null, "Please input your message for the patient ");
+              throw new NullPointerException("Enter message");
         }
         request.setStatus("Rejected");
         request.setCounsellorFeeback(msg);
         request.setMessage(msg);
         request.setSender(account);
-
-        userProcessContainer.remove(this);
+        
+       userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         BirthMotherRequestWorkAreaJPanel birthMotherRequestWorkAreaJPanel = (BirthMotherRequestWorkAreaJPanel) component;
         birthMotherRequestWorkAreaJPanel.populateRequestTable();
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
+        layout.previous(userProcessContainer); 
     }//GEN-LAST:event_btnRejectActionPerformed
 
     private void patientIDTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientIDTxtActionPerformed
@@ -322,7 +308,7 @@ public class ViewBirthMotherJPanel extends javax.swing.JPanel {
     private void txtFundsRequiredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFundsRequiredActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFundsRequiredActionPerformed
-
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnApprove;
@@ -331,7 +317,6 @@ public class ViewBirthMotherJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField emailTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField messageTxt;
     private javax.swing.JLabel patientID;
     private javax.swing.JLabel patientID1;

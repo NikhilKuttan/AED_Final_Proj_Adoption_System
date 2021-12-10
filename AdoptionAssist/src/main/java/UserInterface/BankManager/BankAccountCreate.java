@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.BankManager;
+package userinterface.BankManager;
 
 import Business.BankAccount.Loan;
 import static Business.ConfigureASystem.system;
@@ -25,11 +25,30 @@ import userinterface.CounselorRole.BirthMotherRequestWorkAreaJPanel;
  */
 public class BankAccountCreate extends javax.swing.JPanel {
 
-    /**
-     * Creates new form BankAccountCreate
-     */
-    public BankAccountCreate() {
+    private UserAccount userAccount;
+    private JPanel userProcessContainer;
+
+    private String firstName;
+    private String counselor;
+    private String  hospital;
+    private String emailId;
+    private HospitalAdminToBank req;
+ 
+
+    private Enterprise enterprise;
+    
+    public BankAccountCreate(UserAccount userAccount, JPanel userProcessContainer, Enterprise enterprise, HospitalAdminToBank req) {
         initComponents();
+        this.userAccount = userAccount;
+        this.req = req;
+        this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+        
+        txtFirstName.setText(req.getBirthMother().getFirstName());
+        txtEmail.setText(req.getBirthMother().getEmailId());
+        txtHospital.setText(req.getBirthMother().getHospital());
+        txtCounselor.setText(req.getBirthMother().getCounselor());
+        
     }
 
     /**
@@ -41,21 +60,35 @@ public class BankAccountCreate extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnCreate = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
-        txtHospital = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        txtCounselor = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtFirstName = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
+        btnCreate = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        txtHospital = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txtCounselor = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(153, 153, 255));
+        setBackground(new java.awt.Color(64, 151, 182));
 
-        btnCreate.setBackground(new java.awt.Color(204, 204, 0));
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("CLIENT DETAILS");
+
+        jLabel3.setText("FIRST NAME:");
+
+        jLabel5.setText("EMAIL ID:");
+
+        btnCreate.setBackground(new java.awt.Color(255, 153, 51));
         btnCreate.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnCreate.setText("CREATE");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -73,20 +106,6 @@ public class BankAccountCreate extends javax.swing.JPanel {
         });
 
         jLabel6.setText("COUNSELOR:");
-
-        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("CLIENT DETAILS");
-
-        jLabel3.setText("FIRST NAME:");
-
-        jLabel5.setText("EMAIL ID:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -153,16 +172,23 @@ public class BankAccountCreate extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
+        cardlayout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
         this.firstName = txtFirstName.getText();
-
+    
         this.emailId = txtEmail.getText();
         this.counselor = txtCounselor.getText();
         this.hospital = txtHospital.getText();
-
+           
         Loan loan= new Loan();
-
+        
         loan = new Loan(req.getBirthMother().getFirstName(), req.getBirthMother().getEmailId());
         loan.setHospital(hospital);
         loan.setCounselor(counselor);
@@ -171,31 +197,24 @@ public class BankAccountCreate extends javax.swing.JPanel {
         req.setReceiver(userAccount);
         req.setResolveDate(new Date());
         req.setStatus("Completed");
-        //   this.enterprise = e;
-        //   l.addValues(emailId, funds, address, passportNumber, docPath);
-        //  loan = l ;
-
+                     //   this.enterprise = e;
+                     //   l.addValues(emailId, funds, address, passportNumber, docPath);
+                      //  loan = l ;
+          
         JOptionPane.showMessageDialog(null, "Bank Account created created successfully! \n Account Number : "+ loan.getBankAccountNumber(),"information", JOptionPane.INFORMATION_MESSAGE);
-
+        
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         ViewBankAccountRequest ViewBankAccountRequest = (ViewBankAccountRequest) component;
         ViewBankAccountRequest.populateRequestTable();
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
+        layout.previous(userProcessContainer); 
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void txtHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHospitalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtHospitalActionPerformed
-
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
-        cardlayout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
