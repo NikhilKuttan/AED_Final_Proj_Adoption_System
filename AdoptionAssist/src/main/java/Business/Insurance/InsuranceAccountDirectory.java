@@ -5,10 +5,26 @@
  */
 package Business.Insurance;
 
+import Business.BankAccount.*;
+import Business.People.Parents;
+import java.util.ArrayList;
 /**
  *
  * @author nikhi
  */
 public class InsuranceAccountDirectory {
-    
+ private ArrayList<Insurance> insuranceList;
+
+    public InsuranceAccountDirectory() {
+        insuranceList = new ArrayList();
+    }
+
+    public ArrayList<Insurance> getInsuranceList() {
+        return insuranceList;
+    }
+ 
+    public Insurance addInsurance(Insurance ins){
+        insuranceList.add(ins);
+        return ins;
+    }
 }

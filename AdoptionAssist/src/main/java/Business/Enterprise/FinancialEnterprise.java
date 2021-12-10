@@ -5,10 +5,24 @@
  */
 package Business.Enterprise;
 
+import Business.People.EmployeeDirectory;
+import Business.Role.BankManagerRole;
+import Business.Role.InsuranceManagerRole;
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author nikhi
  */
-public class FinancialEnterprise {
+public class FinancialEnterprise extends Enterprise {
+    
+    public FinancialEnterprise(String name){
+        super(name,EnterpriseType.FinancialEnterprise);
+    }
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        return null;
+    }
     
 }
