@@ -1,9 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.InsuranceManger;
+package userinterface.InsuranceManger;
+
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author simran
+ * @author Sebsebin
  */
 public class ViewInsuranceApplicationWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -54,7 +54,7 @@ public class ViewInsuranceApplicationWorkAreaJPanel extends javax.swing.JPanel {
         }
     }
 
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,7 +71,7 @@ public class ViewInsuranceApplicationWorkAreaJPanel extends javax.swing.JPanel {
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(64, 151, 182));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -97,8 +97,14 @@ public class ViewInsuranceApplicationWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(workRequestJTable);
+        if (workRequestJTable.getColumnModel().getColumnCount() > 0) {
+            workRequestJTable.getColumnModel().getColumn(0).setResizable(false);
+            workRequestJTable.getColumnModel().getColumn(1).setResizable(false);
+            workRequestJTable.getColumnModel().getColumn(2).setResizable(false);
+            workRequestJTable.getColumnModel().getColumn(3).setResizable(false);
+        }
 
-        viewBirthMother.setBackground(new java.awt.Color(204, 204, 0));
+        viewBirthMother.setBackground(new java.awt.Color(255, 153, 51));
         viewBirthMother.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         viewBirthMother.setText("VIEW INSURANCE REQUEST");
         viewBirthMother.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +113,6 @@ public class ViewInsuranceApplicationWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        refreshTestJButton.setBackground(new java.awt.Color(204, 204, 0));
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,7 +164,7 @@ public class ViewInsuranceApplicationWorkAreaJPanel extends javax.swing.JPanel {
 
     private void viewBirthMotherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBirthMotherActionPerformed
         int selectedRow = workRequestJTable.getSelectedRow();
-
+        
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a row from the table");
             return;
@@ -170,25 +175,24 @@ public class ViewInsuranceApplicationWorkAreaJPanel extends javax.swing.JPanel {
                 request.setStatus("Processing");
                 request.setReceiver(userAccount);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-
+               
                 userProcessContainer.add("ViewInsuranceRequest", new ViewInsuranceRequest(userProcessContainer, userAccount, request, enterprise));
                 layout.next(userProcessContainer);
             }
             else{
                 JOptionPane.showMessageDialog(null, "Insurance request completed");
                 return;
-
+            
             }
         }
-
+        
     }//GEN-LAST:event_viewBirthMotherActionPerformed
 
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
 
         populateRequestTable();
-
+        
     }//GEN-LAST:event_refreshTestJButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;

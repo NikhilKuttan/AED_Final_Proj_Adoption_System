@@ -7,7 +7,7 @@ package UserInterface.SystemAdminWorkArea;
 
 /**
  *
- * @author nikhi
+ * @author simra
  */
 public class SystemAdminWorkAreaJPanel {
     

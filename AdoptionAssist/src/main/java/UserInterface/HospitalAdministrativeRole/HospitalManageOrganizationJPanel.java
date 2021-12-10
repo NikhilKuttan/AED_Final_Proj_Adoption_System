@@ -1,9 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.HospitalAdministrativeRole;
+package userinterface.HospitalAdministrativeRole;
+
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Organization.Organization.Type;
@@ -13,9 +13,10 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
- * @author simran
+ * @author Sebsebin
  */
 public class HospitalManageOrganizationJPanel extends javax.swing.JPanel {
 
@@ -55,7 +56,6 @@ public class HospitalManageOrganizationJPanel extends javax.swing.JPanel {
             model.addRow(row);
         }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -72,7 +72,7 @@ public class HospitalManageOrganizationJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(64, 151, 182));
 
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -101,8 +101,12 @@ public class HospitalManageOrganizationJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(organizationJTable);
+        if (organizationJTable.getColumnModel().getColumnCount() > 0) {
+            organizationJTable.getColumnModel().getColumn(0).setResizable(false);
+            organizationJTable.getColumnModel().getColumn(1).setResizable(false);
+        }
 
-        addJButton.setBackground(new java.awt.Color(204, 204, 0));
+        addJButton.setBackground(new java.awt.Color(255, 153, 51));
         addJButton.setText("ADD ORGANIZATION");
         addJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,8 +169,8 @@ public class HospitalManageOrganizationJPanel extends javax.swing.JPanel {
 
         Type type = (Type) organizationJComboBox.getSelectedItem();
         if(!enterprise.getOrganizationDirectory().containsType(type)){
-            enterprise.getOrganizationDirectory().createOrganization(type);
-            populateTable();
+        enterprise.getOrganizationDirectory().createOrganization(type);
+        populateTable();
         }
         else{
             JOptionPane.showMessageDialog(this, "Organization already present under this enterprise");
@@ -183,7 +187,6 @@ public class HospitalManageOrganizationJPanel extends javax.swing.JPanel {
         CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
         cardlayout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addJButton;

@@ -1,9 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.ParentsRole;
+package userinterface.ParentsRole;
+
+
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
@@ -55,7 +56,7 @@ public class ViewBirthMotherRequestsJPanel extends javax.swing.JPanel {
         }
     }
 
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -65,45 +66,15 @@ public class ViewBirthMotherRequestsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        workRequestJTable = new javax.swing.JTable();
         btnContactBirthMother = new javax.swing.JButton();
         refreshTestJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestJTable = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(204, 204, 255));
-
-        btnContactBirthMother.setBackground(new java.awt.Color(204, 204, 0));
-        btnContactBirthMother.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        btnContactBirthMother.setText("VIEW BIRTHMOTHER");
-        btnContactBirthMother.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnContactBirthMotherActionPerformed(evt);
-            }
-        });
-
-        refreshTestJButton.setBackground(new java.awt.Color(204, 204, 0));
-        refreshTestJButton.setText("Refresh");
-        refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshTestJButtonActionPerformed(evt);
-            }
-        });
-
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("Parent View");
-
-        valueLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        valueLabel.setText("<value>");
-
-        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
+        setBackground(new java.awt.Color(64, 151, 182));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -129,6 +100,40 @@ public class ViewBirthMotherRequestsJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(workRequestJTable);
+        if (workRequestJTable.getColumnModel().getColumnCount() > 0) {
+            workRequestJTable.getColumnModel().getColumn(0).setResizable(false);
+            workRequestJTable.getColumnModel().getColumn(1).setResizable(false);
+            workRequestJTable.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        btnContactBirthMother.setBackground(new java.awt.Color(255, 153, 51));
+        btnContactBirthMother.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnContactBirthMother.setText("VIEW BIRTHMOTHER");
+        btnContactBirthMother.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContactBirthMotherActionPerformed(evt);
+            }
+        });
+
+        refreshTestJButton.setText("Refresh");
+        refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshTestJButtonActionPerformed(evt);
+            }
+        });
+
+        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setText("Parent View");
+
+        valueLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        valueLabel.setText("<value>");
+
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -171,26 +176,27 @@ public class ViewBirthMotherRequestsJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnContactBirthMotherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactBirthMotherActionPerformed
-
+        
         int selectedRow = workRequestJTable.getSelectedRow();
-
+        
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a row from the table");
             return;
         }
-
+        
         BirthMotherToParent request = (BirthMotherToParent) workRequestJTable.getValueAt(selectedRow, 0);
-
+     
+        
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         userProcessContainer.add("viewBirthMotherProfile", new ViewBirthMotherProfile(userProcessContainer, userAccount, request));
         layout.next(userProcessContainer);
-
+        
     }//GEN-LAST:event_btnContactBirthMotherActionPerformed
 
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
 
         populateRequestTable();
-
+        
     }//GEN-LAST:event_refreshTestJButtonActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -199,7 +205,6 @@ public class ViewBirthMotherRequestsJPanel extends javax.swing.JPanel {
         CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
         cardlayout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

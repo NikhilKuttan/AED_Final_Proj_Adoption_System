@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.ParentsRole;
+package userinterface.ParentsRole;
+
 import Business.People.BirthMother;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.BirthMotherToParent;
@@ -16,7 +17,7 @@ import userinterface.Dialog.SuccessDialog;
 
 /**
  *
- * @author simran
+ * @author ishanibose
  */
 public class ViewBirthMotherProfile extends javax.swing.JPanel {
 
@@ -48,6 +49,7 @@ public class ViewBirthMotherProfile extends javax.swing.JPanel {
         profilePhotoComponent.setIcon(new ImageIcon(BirthMother.getImgPath())); 
         
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,47 +59,45 @@ public class ViewBirthMotherProfile extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnLogin = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btnConfirm = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        btnBack = new javax.swing.JButton();
         txtUsername = new javax.swing.JTextField();
         txtFirstName = new javax.swing.JTextField();
         txtLastName = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         txtBloodGroup = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         txtAddress = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         profilePhotoComponent = new javax.swing.JLabel();
+        btnConfirm = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        btnLogin.setBackground(new java.awt.Color(255, 153, 0));
+        btnLogin.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnLogin.setText("LOGIN");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
+
+        setBackground(new java.awt.Color(64, 151, 182));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("BIRTHMOTHER PROFILE");
+
+        jLabel2.setText("USERNAME:");
+
+        jLabel3.setText("FIRST NAME:");
 
         jLabel4.setText("LAST NAME:");
 
-        btnConfirm.setBackground(new java.awt.Color(204, 204, 0));
-        btnConfirm.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        btnConfirm.setText("CONFIRM");
-        btnConfirm.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(64, 151, 182), 4, true));
-        btnConfirm.setFocusPainted(false);
-        btnConfirm.setRequestFocusEnabled(false);
-        btnConfirm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConfirmActionPerformed(evt);
-            }
-        });
-
         jLabel5.setText("EMAIL ID:");
-
-        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
 
         txtUsername.setEnabled(false);
 
@@ -111,12 +111,7 @@ public class ViewBirthMotherProfile extends javax.swing.JPanel {
 
         jLabel12.setText("ADDRESS:");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("BIRTHMOTHER PROFILE");
-
         txtBloodGroup.setEnabled(false);
-
-        jLabel2.setText("USERNAME:");
 
         txtAddress.setEnabled(false);
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
@@ -125,11 +120,28 @@ public class ViewBirthMotherProfile extends javax.swing.JPanel {
             }
         });
 
-        jLabel3.setText("FIRST NAME:");
-
         profilePhotoComponent.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         profilePhotoComponent.setText("UPLOADED IMAGE DISPLAY");
         profilePhotoComponent.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        btnConfirm.setBackground(new java.awt.Color(255, 153, 51));
+        btnConfirm.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnConfirm.setText("CONFIRM");
+        btnConfirm.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(64, 151, 182), 4, true));
+        btnConfirm.setFocusPainted(false);
+        btnConfirm.setRequestFocusEnabled(false);
+        btnConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmActionPerformed(evt);
+            }
+        });
+
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -207,26 +219,41 @@ public class ViewBirthMotherProfile extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
+        cardlayout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAddressActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        
+    }//GEN-LAST:event_btnLoginActionPerformed
+
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
         // TODO add your handling code here:
-
+        
         if(userAccount.getParent().getBirthMother() == null){
             if(BirthMother.getFinalizedParent() == null){
-                birthMotherToParent.getParent().setIsAvailable(false);
-                BirthMother.setFinalizedParent(birthMotherToParent.getParent());
-                birthMotherToParent.getParent().setBirthMother(BirthMother);
-                BirthMother.setParentAidfund(userAccount.getParent().getFunds());
-                //    BirthMother.setBankBalance(BirthMother.getBankBalance()+userAccount.getParent().getFunds());
-
-                SuccessDialog d = new SuccessDialog("Congratulations. BirthMother selected!");
-                d.setVisible(true);
-                userProcessContainer.remove(this);
-                Component[] componentArray = userProcessContainer.getComponents();
-                Component component = componentArray[componentArray.length - 1];
-                ViewBirthMotherRequestsJPanel viewBirthMotherRequestsJPanel = (ViewBirthMotherRequestsJPanel) component;
-                viewBirthMotherRequestsJPanel.populateRequestTable();
-                CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-                layout.previous(userProcessContainer); }
+        birthMotherToParent.getParent().setIsAvailable(false);
+        BirthMother.setFinalizedParent(birthMotherToParent.getParent());
+        birthMotherToParent.getParent().setBirthMother(BirthMother);
+        BirthMother.setParentAidfund(userAccount.getParent().getFunds());
+    //    BirthMother.setBankBalance(BirthMother.getBankBalance()+userAccount.getParent().getFunds());
+        
+        SuccessDialog d = new SuccessDialog("Congratulations. BirthMother selected!");
+        d.setVisible(true);
+          userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        ViewBirthMotherRequestsJPanel viewBirthMotherRequestsJPanel = (ViewBirthMotherRequestsJPanel) component;
+        viewBirthMotherRequestsJPanel.populateRequestTable();
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.previous(userProcessContainer); }
             else{
                 JOptionPane.showMessageDialog(this, "BirthMother already to someone else! Please checkout out other requests.");
                 userProcessContainer.remove(this);
@@ -240,23 +267,14 @@ public class ViewBirthMotherProfile extends javax.swing.JPanel {
             CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
             cardlayout.previous(userProcessContainer);
         }
+
     }//GEN-LAST:event_btnConfirmActionPerformed
-
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
-        cardlayout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
-
-    private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAddressActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnConfirm;
+    private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;

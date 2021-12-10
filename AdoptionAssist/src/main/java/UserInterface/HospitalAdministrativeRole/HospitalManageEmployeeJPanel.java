@@ -1,9 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.HospitalAdministrativeRole;
+package userinterface.HospitalAdministrativeRole;
+
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.People.Counsellor;
@@ -16,9 +16,10 @@ import javax.swing.InputVerifier;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
- * @author simran
+ * @author Sebsebin
  */
 public class HospitalManageEmployeeJPanel extends javax.swing.JPanel {
 
@@ -72,7 +73,6 @@ public class HospitalManageEmployeeJPanel extends javax.swing.JPanel {
             passwordJTextField.setInputVerifier(passwordValidation);
             userNameJTextField.setInputVerifier(stringValidation);
         }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -82,9 +82,9 @@ public class HospitalManageEmployeeJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        passwordJTextField = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        organizationJTable = new javax.swing.JTable();
         addJButton = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
         organizationEmpJComboBox = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -93,49 +93,11 @@ public class HospitalManageEmployeeJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         roleJComboBox = new javax.swing.JComboBox();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        organizationJTable = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
+        passwordJTextField = new javax.swing.JTextField();
+        btnBack = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 204, 255));
-
-        addJButton.setBackground(new java.awt.Color(204, 204, 0));
-        addJButton.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        addJButton.setText("CREATE EMPLOYEE");
-        addJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addJButtonActionPerformed(evt);
-            }
-        });
-
-        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-
-        organizationEmpJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        organizationEmpJComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                organizationEmpJComboBoxActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Organization");
-
-        jLabel2.setText("Name");
-
-        jLabel4.setText("Role");
-
-        jLabel3.setText("User Name");
-
-        roleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        roleJComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                roleJComboBoxActionPerformed(evt);
-            }
-        });
+        setBackground(new java.awt.Color(64, 151, 182));
 
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -164,8 +126,50 @@ public class HospitalManageEmployeeJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(organizationJTable);
+        if (organizationJTable.getColumnModel().getColumnCount() > 0) {
+            organizationJTable.getColumnModel().getColumn(0).setResizable(false);
+            organizationJTable.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        addJButton.setBackground(new java.awt.Color(255, 153, 51));
+        addJButton.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        addJButton.setText("CREATE EMPLOYEE");
+        addJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addJButtonActionPerformed(evt);
+            }
+        });
+
+        organizationEmpJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        organizationEmpJComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                organizationEmpJComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Organization");
+
+        jLabel2.setText("Name");
+
+        jLabel4.setText("Role");
+
+        jLabel3.setText("User Name");
+
+        roleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        roleJComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                roleJComboBoxActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Password");
+
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -249,26 +253,26 @@ public class HospitalManageEmployeeJPanel extends javax.swing.JPanel {
         String password = passwordJTextField.getText();
         Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
         Role role = (Role) roleJComboBox.getSelectedItem();
-
-        try{
-            if (name.equals("")){
-
-                throw new RuntimeException("Please enter the Name");
-            }
-            if (userName.equals("")){
-
-                throw new RuntimeException("Please enter the Name");
-            }
-            if (password.equals("")){
-
-                throw new RuntimeException("Please enter the Name");
-            }
-        }catch(Exception e){
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Please enter valid data", "warning", JOptionPane.WARNING_MESSAGE);
-            return;
-
+         
+       try{ 
+           if (name.equals("")){
+           
+            throw new RuntimeException("Please enter the Name");
         }
+           if (userName.equals("")){
+           
+            throw new RuntimeException("Please enter the Name");
+        }
+           if (password.equals("")){
+           
+            throw new RuntimeException("Please enter the Name");
+        }
+       }catch(Exception e){
+            e.printStackTrace();
+          JOptionPane.showMessageDialog(this, "Please enter valid data", "warning", JOptionPane.WARNING_MESSAGE);
+          return;     
+            
+        } 
         if(organization.getUserAccountDirectory().checkIfUsernameIsUnique(userName)){
             Counsellor employee = organization.getEmployeeDirectory().createandaddCounselor(name);
             organization.getUserAccountDirectory().createCounselorUserAccount(userName, password, employee, role, account.getNetwork());
@@ -277,19 +281,12 @@ public class HospitalManageEmployeeJPanel extends javax.swing.JPanel {
         else{
             JOptionPane.showMessageDialog(this, "Username already exists. Please select another username!");
         }
-
+        
         populateTable(organization);
         userNameJTextField.setText("");
         passwordJTextField.setText("");
         nameJTextField.setText("");
     }//GEN-LAST:event_addJButtonActionPerformed
-
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
-        cardlayout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
 
     private void organizationEmpJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationEmpJComboBoxActionPerformed
         Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
@@ -300,9 +297,15 @@ public class HospitalManageEmployeeJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_organizationEmpJComboBoxActionPerformed
 
     private void roleJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roleJComboBoxActionPerformed
-
+        
     }//GEN-LAST:event_roleJComboBoxActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
+        cardlayout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addJButton;

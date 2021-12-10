@@ -1,9 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.ParentsRole;
+package userinterface.ParentsRole;
+
 import static Business.ConfigureASystem.system;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
@@ -14,10 +14,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import userinterface.Dashboard.ParentDashboard;
 
-
 /**
  *
- * @author simran
+ * @author Sebsebin
  */
 public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -41,11 +40,7 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
        addDashBoard();
       //  ParentDashboard lp = new ParentDashboard(parents);                                                                                                                                                                                                                                                                                                                                                dashboardPanel.add(lp);
     }
-    /**
-     * Creates new form ParentsWorkAreaJPanel
-     */
-    
-
+       
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,15 +50,37 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dashboardPanel = new javax.swing.JPanel();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
         checkRequestsPending = new javax.swing.JButton();
         btnViewFamily = new javax.swing.JButton();
+        dashboardPanel = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(64, 151, 182));
 
-        dashboardPanel.setBackground(new java.awt.Color(204, 204, 255));
+        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setText("ENTERPRISE:");
+
+        valueLabel.setFont(new java.awt.Font("Lucida Grande", 3, 18)); // NOI18N
+        valueLabel.setText("<value>");
+
+        checkRequestsPending.setBackground(new java.awt.Color(255, 153, 51));
+        checkRequestsPending.setText("Check Birth Mother Request");
+        checkRequestsPending.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkRequestsPendingActionPerformed(evt);
+            }
+        });
+
+        btnViewFamily.setBackground(new java.awt.Color(255, 153, 51));
+        btnViewFamily.setText("View/Update Family Profile");
+        btnViewFamily.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewFamilyActionPerformed(evt);
+            }
+        });
+
+        dashboardPanel.setBackground(new java.awt.Color(64, 151, 182));
         dashboardPanel.setPreferredSize(new java.awt.Dimension(900, 424));
 
         javax.swing.GroupLayout dashboardPanelLayout = new javax.swing.GroupLayout(dashboardPanel);
@@ -76,28 +93,6 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
             dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("ENTERPRISE:");
-
-        valueLabel.setFont(new java.awt.Font("Lucida Grande", 3, 18)); // NOI18N
-        valueLabel.setText("<value>");
-
-        checkRequestsPending.setBackground(new java.awt.Color(204, 204, 0));
-        checkRequestsPending.setText("Check Birth Mother Request");
-        checkRequestsPending.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkRequestsPendingActionPerformed(evt);
-            }
-        });
-
-        btnViewFamily.setBackground(new java.awt.Color(204, 204, 0));
-        btnViewFamily.setText("View/Update Family Profile");
-        btnViewFamily.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewFamilyActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -131,11 +126,12 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
                         .addComponent(checkRequestsPending, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnViewFamily, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(354, Short.MAX_VALUE))
-                    .addComponent(dashboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)))
+                        .addContainerGap(353, Short.MAX_VALUE))
+                    .addComponent(dashboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
-     
+    
+    
     public void addDashBoard(){
         ParentDashboard lp = new ParentDashboard(parents);
         dashboardPanel.add(lp);
@@ -144,9 +140,10 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
     private void checkRequestsPendingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkRequestsPendingActionPerformed
         if(userAccount.getParent().getBloodGroup() == null){
             JOptionPane.showMessageDialog(this, "Please complete your profile to view requests!");
-            return;
+           return;
         }
-
+        
+        
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         userProcessContainer.add("ViewBirthMotherRequestsJPanel", new ViewBirthMotherRequestsJPanel(userProcessContainer, userAccount, organization, enterprise,system));
         layout.next(userProcessContainer);
@@ -157,7 +154,6 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add("FamilyProfile", new FamilyProfile(userAccount,organization,userProcessContainer));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnViewFamilyActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnViewFamily;

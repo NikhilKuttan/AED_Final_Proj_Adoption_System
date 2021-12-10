@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.InsuranceManger;
+package userinterface.InsuranceManger;
+
 import userinterface.BankManager.*;
 import Business.BankAccount.Loan;
 import Business.Enterprise.Enterprise;
@@ -26,6 +27,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 import userinterface.Dialog.SuccessDialog;
+
 /**
  *
  * @author simran
@@ -56,6 +58,7 @@ public class ViewInsuranceRequest extends javax.swing.JPanel {
         profilePhotoComponent.setIcon(new ImageIcon(insuranceRequest.getInsurance().getDocPath())); 
         
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -65,42 +68,43 @@ public class ViewInsuranceRequest extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtFirstName = new javax.swing.JTextField();
+        btnBack = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txtLastName = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         txtPolicy = new javax.swing.JTextField();
-        txtApprovedAmount = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
-        btnApprove = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        profilePhotoComponent = new javax.swing.JLabel();
         txtFunds = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         txtAddress = new javax.swing.JTextField();
-        btnBack = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtLastName = new javax.swing.JTextField();
+        txtFirstName = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txtApprovedAmount = new javax.swing.JTextField();
+        btnApprove = new javax.swing.JButton();
+        profilePhotoComponent = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(64, 151, 182));
 
-        txtFirstName.setEnabled(false);
-        txtFirstName.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFirstNameActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("INSURANCE REQUEST DETAILS");
+
+        txtLastName.setEnabled(false);
+
         jLabel13.setText("POLICY NO.:");
 
-        jLabel4.setText("LAST NAME:");
-
         jLabel5.setText("EMAIL ID:");
-
-        jLabel6.setText("INSURANCE AMOUNT APPROVED:");
 
         txtPolicy.setEnabled(false);
         txtPolicy.addActionListener(new java.awt.event.ActionListener() {
@@ -111,20 +115,7 @@ public class ViewInsuranceRequest extends javax.swing.JPanel {
 
         txtEmail.setEnabled(false);
 
-        btnApprove.setBackground(new java.awt.Color(204, 204, 0));
-        btnApprove.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        btnApprove.setText("APPROVE");
-        btnApprove.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnApproveActionPerformed(evt);
-            }
-        });
-
         jLabel11.setText("FUNDS REQUESTED:");
-
-        profilePhotoComponent.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        profilePhotoComponent.setText("UPLOADED IMAGE DISPLAY");
-        profilePhotoComponent.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         txtFunds.setEnabled(false);
         txtFunds.addActionListener(new java.awt.event.ActionListener() {
@@ -142,21 +133,33 @@ public class ViewInsuranceRequest extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-
         jLabel17.setText("VIEW DOCUMENT:");
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("INSURANCE REQUEST DETAILS");
 
         jLabel3.setText("FIRST NAME:");
 
-        txtLastName.setEnabled(false);
+        txtFirstName.setEnabled(false);
+        txtFirstName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFirstNameActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("LAST NAME:");
+
+        jLabel6.setText("INSURANCE AMOUNT APPROVED:");
+
+        btnApprove.setBackground(new java.awt.Color(255, 153, 51));
+        btnApprove.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        btnApprove.setText("APPROVE");
+        btnApprove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnApproveActionPerformed(evt);
+            }
+        });
+
+        profilePhotoComponent.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        profilePhotoComponent.setText("UPLOADED IMAGE DISPLAY");
+        profilePhotoComponent.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -247,28 +250,16 @@ public class ViewInsuranceRequest extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirstNameActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFirstNameActionPerformed
+        userProcessContainer.remove(this);
+        CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
+        cardlayout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
 
     private void txtPolicyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPolicyActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPolicyActionPerformed
-
-    private void btnApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApproveActionPerformed
-        String firstname = insuranceRequest.getInsurance().getFirstName();
-        for (Insurance l : enterprise.getInsuranceAccountDirectory().getInsuranceList()){
-            if(firstname.equals(l.getFirstName()))
-            {l.setFundsApproved(Integer.valueOf(txtApprovedAmount.getText()));
-                birthmother.setInsuranceAmount(Integer.valueOf(txtApprovedAmount.getText()));
-                insuranceRequest.setStatus("Completed");
-                SuccessDialog d = new SuccessDialog("Amount "+ l.getFundsApproved()+ " approved ");
-                d.setVisible(true);
-            }
-
-        }
-
-    }//GEN-LAST:event_btnApproveActionPerformed
 
     private void txtFundsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFundsActionPerformed
         // TODO add your handling code here:
@@ -278,12 +269,24 @@ public class ViewInsuranceRequest extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAddressActionPerformed
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+    private void txtFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirstNameActionPerformed
         // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        CardLayout cardlayout = (CardLayout) userProcessContainer.getLayout();
-        cardlayout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
+    }//GEN-LAST:event_txtFirstNameActionPerformed
+
+    private void btnApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApproveActionPerformed
+        String firstname = insuranceRequest.getInsurance().getFirstName();
+        for (Insurance l : enterprise.getInsuranceAccountDirectory().getInsuranceList()){
+            if(firstname.equals(l.getFirstName()))
+            {l.setFundsApproved(Integer.valueOf(txtApprovedAmount.getText()));
+             birthmother.setInsuranceAmount(Integer.valueOf(txtApprovedAmount.getText()));
+             insuranceRequest.setStatus("Completed");
+             SuccessDialog d = new SuccessDialog("Amount "+ l.getFundsApproved()+ " approved ");
+                d.setVisible(true);
+            }
+            
+        }
+       
+    }//GEN-LAST:event_btnApproveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,9 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.HospitalAdministrativeRole;
+package userinterface.HospitalAdministrativeRole;
+
 import Business.EmailGeneration.EmailFormat;
 import Business.Enterprise.Enterprise;
 import Business.Organization.CounselorOrganization;
@@ -65,6 +65,7 @@ public class ParentsRequestWorkAreaJPanel extends javax.swing.JPanel {
         }
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -74,39 +75,22 @@ public class ParentsRequestWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnBack = new javax.swing.JButton();
-        btnView = new javax.swing.JButton();
-        valueLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
-        valueLabel2 = new javax.swing.JLabel();
-        txtMessage = new javax.swing.JTextField();
         btnCreate = new javax.swing.JButton();
-        valueLabel3 = new javax.swing.JLabel();
         refreshTestJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
         txtPassword = new javax.swing.JTextField();
+        btnBack = new javax.swing.JButton();
+        btnView = new javax.swing.JButton();
+        valueLabel1 = new javax.swing.JLabel();
+        valueLabel2 = new javax.swing.JLabel();
+        txtMessage = new javax.swing.JTextField();
+        valueLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
-
-        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-
-        btnView.setBackground(new java.awt.Color(204, 204, 0));
-        btnView.setText("VIEW");
-        btnView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewActionPerformed(evt);
-            }
-        });
-
-        valueLabel1.setText("Username:");
+        setBackground(new java.awt.Color(64, 151, 182));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -135,16 +119,14 @@ public class ParentsRequestWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(workRequestJTable);
+        if (workRequestJTable.getColumnModel().getColumnCount() > 0) {
+            workRequestJTable.getColumnModel().getColumn(0).setResizable(false);
+            workRequestJTable.getColumnModel().getColumn(1).setResizable(false);
+            workRequestJTable.getColumnModel().getColumn(2).setResizable(false);
+            workRequestJTable.getColumnModel().getColumn(3).setResizable(false);
+        }
 
-        valueLabel2.setText("Password");
-
-        txtMessage.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMessageActionPerformed(evt);
-            }
-        });
-
-        btnCreate.setBackground(new java.awt.Color(204, 204, 0));
+        btnCreate.setBackground(new java.awt.Color(255, 153, 51));
         btnCreate.setText("CREATE");
         btnCreate.setEnabled(false);
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -153,9 +135,6 @@ public class ParentsRequestWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        valueLabel3.setText("Message");
-
-        refreshTestJButton.setBackground(new java.awt.Color(204, 204, 0));
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,6 +147,33 @@ public class ParentsRequestWorkAreaJPanel extends javax.swing.JPanel {
 
         valueLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         valueLabel.setText("<value>");
+
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        btnView.setBackground(new java.awt.Color(255, 153, 51));
+        btnView.setText("VIEW");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
+
+        valueLabel1.setText("Username:");
+
+        valueLabel2.setText("Password");
+
+        txtMessage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMessageActionPerformed(evt);
+            }
+        });
+
+        valueLabel3.setText("Message");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -184,8 +190,11 @@ public class ParentsRequestWorkAreaJPanel extends javax.swing.JPanel {
                         .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(refreshTestJButton))
-                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -194,7 +203,8 @@ public class ParentsRequestWorkAreaJPanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(valueLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -238,6 +248,65 @@ public class ParentsRequestWorkAreaJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        
+        
+        
+        int selectedRow = workRequestJTable.getSelectedRow();
+        
+//        if (selectedRow < 0){
+//            JOptionPane.showMessageDialog(null, "Please select a row from the table");
+//            return;
+//        }
+        
+        CounselorToAdmin request = (CounselorToAdmin)workRequestJTable.getValueAt(selectedRow, 0);
+        if(txtMessage.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Please enter comments for the operation!");
+            return;
+        }
+        if(!request.getStatus().equals("Completed")){
+        request.setReceiver(account);
+        request.setMessage(txtMessage.getText());
+        request.setStatus("Completed");
+        request.setResolveDate(new Date());
+        request.setRequestResult("User Account created");
+      
+        parent = request.getParent();
+        Role role = new ParentsRole();
+        
+        for (Organization org : enterprise.getOrganizationDirectory().getOrganizationList()){
+            if(org.getName().equals("Parents Organization")){
+                org.getParentDirectory().addParents(parent);
+                org.getUserAccountDirectory().createUserAccountParents(request.getParent().getUsername(),request.getParent().getPassword() , parent , role, account.getNetwork());
+            }
+        } 
+       
+        String message =  " <h1>Request Approved</h1> <body>  Your Request is successful approved <br> Your userid :"
+                + request.getParent().getUsername() + "</br> <br> Pssword:  "+ request.getParent().getPassword() + "</br>"+"<br>Your Patient ID is " + request.getParent().getParentId()
+                + "</br> <br> Kindly update your profile by logging into our Application ! </br> </body> <h2> Thank you! </h2>";
+
+        EmailFormat em = new EmailFormat(request.getParent().getEmail(), message , "Request Approved" );
+        em.sendEmail();
+        
+        SuccessDialog d = new SuccessDialog("Family account created successfully.");
+        d.setVisible(true);
+        
+        populateRequestTable();
+        }
+        else {
+            JOptionPane.showMessageDialog(this, "User Account already created");
+        }
+        txtUserName.setText("");
+        txtPassword.setText("");
+        txtMessage.setText("");
+    }//GEN-LAST:event_btnCreateActionPerformed
+    
+    private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
+
+        populateRequestTable();
+        
+    }//GEN-LAST:event_refreshTestJButtonActionPerformed
+
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
@@ -252,76 +321,18 @@ public class ParentsRequestWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a row from the table");
             return;
         }
-
+        
         CounselorToAdmin request = (CounselorToAdmin)workRequestJTable.getValueAt(selectedRow, 0);
-
+        
         txtUserName.setText(request.getParent().getUsername());
         txtPassword.setText(request.getParent().getPassword());
-
+        
         btnCreate.setEnabled(true);
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void txtMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMessageActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMessageActionPerformed
-
-    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-
-        int selectedRow = workRequestJTable.getSelectedRow();
-
-        //        if (selectedRow < 0){
-            //            JOptionPane.showMessageDialog(null, "Please select a row from the table");
-            //            return;
-            //        }
-
-        CounselorToAdmin request = (CounselorToAdmin)workRequestJTable.getValueAt(selectedRow, 0);
-        if(txtMessage.getText().equals("")){
-            JOptionPane.showMessageDialog(this, "Please enter comments for the operation!");
-            return;
-        }
-        if(!request.getStatus().equals("Completed")){
-            request.setReceiver(account);
-            request.setMessage(txtMessage.getText());
-            request.setStatus("Completed");
-            request.setResolveDate(new Date());
-            request.setRequestResult("User Account created");
-
-            parent = request.getParent();
-            Role role = new ParentsRole();
-
-            for (Organization org : enterprise.getOrganizationDirectory().getOrganizationList()){
-                if(org.getName().equals("Parents Organization")){
-                    org.getParentDirectory().addParents(parent);
-                    org.getUserAccountDirectory().createUserAccountParents(request.getParent().getUsername(),request.getParent().getPassword() , parent , role, account.getNetwork());
-                }
-            }
-
-            String message =  " <h1>Request Approved</h1> <body>  Your Request is successful approved <br> Your userid :"
-            + request.getParent().getUsername() + "</br> <br> Pssword:  "+ request.getParent().getPassword() + "</br>"+"<br>Your Patient ID is " + request.getParent().getParentId()
-            + "</br> <br> Kindly update your profile by logging into our Application ! </br> </body> <h2> Thank you! </h2>";
-
-            EmailFormat em = new EmailFormat(request.getParent().getEmail(), message , "Request Approved" );
-            em.sendEmail();
-
-            SuccessDialog d = new SuccessDialog("Family account created successfully.");
-            d.setVisible(true);
-
-            populateRequestTable();
-        }
-        else {
-            JOptionPane.showMessageDialog(this, "User Account already created");
-        }
-        txtUserName.setText("");
-        txtPassword.setText("");
-        txtMessage.setText("");
-    }//GEN-LAST:event_btnCreateActionPerformed
-
-    private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
-
-        populateRequestTable();
-
-    }//GEN-LAST:event_refreshTestJButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

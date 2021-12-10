@@ -1,9 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.HospitalAdministrativeRole;
+package userinterface.HospitalAdministrativeRole;
+
 import Business.BankAccount.Loan;
 import Business.EmailGeneration.EmailFormat;
 import Business.Enterprise.Enterprise;
@@ -26,9 +26,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import userinterface.Dialog.SuccessDialog;
+
 /**
  *
- * @author simran
+ * @author Sebsebin
  */
 public class BirthMotherAcceptWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -91,7 +92,7 @@ public class BirthMotherAcceptWorkAreaJPanel extends javax.swing.JPanel {
         }
     }
 
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -101,6 +102,9 @@ public class BirthMotherAcceptWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        workRequestJTable = new javax.swing.JTable();
+        btnCreate = new javax.swing.JButton();
         refreshTestJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
@@ -109,48 +113,13 @@ public class BirthMotherAcceptWorkAreaJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
         valueLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestJTable = new javax.swing.JTable();
         valueLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btnCreate = new javax.swing.JButton();
         bankComboBox = new javax.swing.JComboBox();
         messageTxt = new javax.swing.JTextField();
         valueLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
-
-        refreshTestJButton.setBackground(new java.awt.Color(204, 204, 0));
-        refreshTestJButton.setText("Refresh");
-        refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshTestJButtonActionPerformed(evt);
-            }
-        });
-
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("ENTERPRISE:");
-
-        valueLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        valueLabel.setText("<value>");
-
-        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-
-        btnView.setBackground(new java.awt.Color(204, 204, 0));
-        btnView.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        btnView.setText("VIEW");
-        btnView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewActionPerformed(evt);
-            }
-        });
-
-        valueLabel1.setText("Username:");
+        setBackground(new java.awt.Color(64, 151, 182));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -179,12 +148,15 @@ public class BirthMotherAcceptWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(workRequestJTable);
+        if (workRequestJTable.getColumnModel().getColumnCount() > 0) {
+            workRequestJTable.getColumnModel().getColumn(0).setResizable(false);
+            workRequestJTable.getColumnModel().getColumn(1).setResizable(false);
+            workRequestJTable.getColumnModel().getColumn(2).setResizable(false);
+            workRequestJTable.getColumnModel().getColumn(3).setResizable(false);
+            workRequestJTable.getColumnModel().getColumn(4).setResizable(false);
+        }
 
-        valueLabel2.setText("Password");
-
-        jLabel1.setText("Bank Enterprise:");
-
-        btnCreate.setBackground(new java.awt.Color(204, 204, 0));
+        btnCreate.setBackground(new java.awt.Color(255, 153, 51));
         btnCreate.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnCreate.setText("CREATE");
         btnCreate.setEnabled(false);
@@ -193,6 +165,41 @@ public class BirthMotherAcceptWorkAreaJPanel extends javax.swing.JPanel {
                 btnCreateActionPerformed(evt);
             }
         });
+
+        refreshTestJButton.setText("Refresh");
+        refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshTestJButtonActionPerformed(evt);
+            }
+        });
+
+        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setText("ENTERPRISE:");
+
+        valueLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        valueLabel.setText("<value>");
+
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        btnView.setBackground(new java.awt.Color(255, 153, 51));
+        btnView.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnView.setText("VIEW");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
+
+        valueLabel1.setText("Username:");
+
+        valueLabel2.setText("Password");
+
+        jLabel1.setText("Bank Enterprise:");
 
         bankComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -281,10 +288,78 @@ public class BirthMotherAcceptWorkAreaJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        
+        int selectedRow = workRequestJTable.getSelectedRow();
+        
+        FinancialEnterprise f = (FinancialEnterprise)bankComboBox.getSelectedItem();
+        if (f.equals("")){
+            JOptionPane.showMessageDialog(null, "Please select a finance enterprise to move further else add a financial enterprise");
+            return;
+        }
+        if (txtUserName.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please select a row from the table or enter the Username");
+            return;
+        }
+        if(messageTxt.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter message for Admin review");
+            return;
+        }
+        
+        CounselorToAdmin request = (CounselorToAdmin)workRequestJTable.getValueAt(selectedRow, 0);
+        if(request.getStatus().equals("Completed")){
+            JOptionPane.showMessageDialog(null, "User already exists!");
+        }
+        else{
+
+        for (Organization org : enterprise.getOrganizationDirectory().getOrganizationList()){
+            if(org.getName().equals("BirthMother Organization")){
+                if (org.getUserAccountDirectory().checkIfUsernameIsUnique(txtUserName.getText())){
+                    request.setStatus("Completed");
+                    request.setRequestResult("User Account Created");
+                    request.setReceiver(account);
+                    birthMother = request.getBirthMother();
+                    Role role = new BirthMotherRole();
+                    org.getBirthMotherDirectory().addBirthMother(birthMother);
+                    org.getUserAccountDirectory().createUserAccountMother(birthMother.getFirstName(), txtUserName.getText(),txtPassword.getText() , birthMother, role, account.getNetwork() );
+                        
+                    HospitalAdminToBank h = new HospitalAdminToBank(messageTxt.getText(), birthMother);
+                    f.getWorkQueue().getHospitalAdminToBank().add(h);
+
+                    
+                    SuccessDialog d = new SuccessDialog("Birth Mother account created successfully.");
+                    d.setVisible(true);
+
+                     String message =  " <h1>Request Approved</h1> <body>  Your Request is successful approved <br> Your userid :"
+                            + request.getBirthMother().getUsername() + "</br> <br> Pssword:  "+ request.getBirthMother().getPassword() + "</br>"+"<br>Your Patient ID is " + request.getBirthMother().getId()
+                            + "</br> <br> Kindly update your profile by logging into our Application ! </br> </body> <h2> Thank you! </h2>";
+
+                    EmailFormat em = new EmailFormat(request.getBirthMother().getEmailId(), message , "Request Approved" );
+                    em.sendEmail();
+                    
+                    populateRequestTable();
+                    break;
+                                     
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "Username already exists. Please select another username!");
+                    }
+                
+        } 
+        }
+     
+        txtUserName.setText("");
+        txtPassword.setText("");
+        messageTxt.setText("");
+        }   
+
+       
+    }//GEN-LAST:event_btnCreateActionPerformed
+    
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
 
         populateRequestTable();
-
+        
     }//GEN-LAST:event_refreshTestJButtonActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -301,80 +376,14 @@ public class BirthMotherAcceptWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a row from the table");
             return;
         }
-
+        
         CounselorToAdmin request = (CounselorToAdmin)workRequestJTable.getValueAt(selectedRow, 0);
-
+        
         txtUserName.setText(request.getBirthMother().getUsername());
         txtPassword.setText(request.getBirthMother().getPassword());
 
         btnCreate.setEnabled(true);
     }//GEN-LAST:event_btnViewActionPerformed
-
-    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-
-        int selectedRow = workRequestJTable.getSelectedRow();
-
-        FinancialEnterprise f = (FinancialEnterprise)bankComboBox.getSelectedItem();
-        if (f.equals("")){
-            JOptionPane.showMessageDialog(null, "Please select a finance enterprise to move further else add a financial enterprise");
-            return;
-        }
-        if (txtUserName.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Please select a row from the table or enter the Username");
-            return;
-        }
-        if(messageTxt.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Please enter message for Admin review");
-            return;
-        }
-
-        CounselorToAdmin request = (CounselorToAdmin)workRequestJTable.getValueAt(selectedRow, 0);
-        if(request.getStatus().equals("Completed")){
-            JOptionPane.showMessageDialog(null, "User already exists!");
-        }
-        else{
-
-            for (Organization org : enterprise.getOrganizationDirectory().getOrganizationList()){
-                if(org.getName().equals("BirthMother Organization")){
-                    if (org.getUserAccountDirectory().checkIfUsernameIsUnique(txtUserName.getText())){
-                        request.setStatus("Completed");
-                        request.setRequestResult("User Account Created");
-                        request.setReceiver(account);
-                        birthMother = request.getBirthMother();
-                        Role role = new BirthMotherRole();
-                        org.getBirthMotherDirectory().addBirthMother(birthMother);
-                        org.getUserAccountDirectory().createUserAccountMother(birthMother.getFirstName(), txtUserName.getText(),txtPassword.getText() , birthMother, role, account.getNetwork() );
-
-                        HospitalAdminToBank h = new HospitalAdminToBank(messageTxt.getText(), birthMother);
-                        f.getWorkQueue().getHospitalAdminToBank().add(h);
-
-                        SuccessDialog d = new SuccessDialog("Birth Mother account created successfully.");
-                        d.setVisible(true);
-
-                        String message =  " <h1>Request Approved</h1> <body>  Your Request is successful approved <br> Your userid :"
-                        + request.getBirthMother().getUsername() + "</br> <br> Pssword:  "+ request.getBirthMother().getPassword() + "</br>"+"<br>Your Patient ID is " + request.getBirthMother().getId()
-                        + "</br> <br> Kindly update your profile by logging into our Application ! </br> </body> <h2> Thank you! </h2>";
-
-                        EmailFormat em = new EmailFormat(request.getBirthMother().getEmailId(), message , "Request Approved" );
-                        em.sendEmail();
-
-                        populateRequestTable();
-                        break;
-
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(this, "Username already exists. Please select another username!");
-                    }
-
-                }
-            }
-
-            txtUserName.setText("");
-            txtPassword.setText("");
-            messageTxt.setText("");
-        }
-
-    }//GEN-LAST:event_btnCreateActionPerformed
 
     private void bankComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bankComboBoxActionPerformed
         // TODO add your handling code here:
@@ -383,7 +392,6 @@ public class BirthMotherAcceptWorkAreaJPanel extends javax.swing.JPanel {
     private void messageTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messageTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_messageTxtActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox bankComboBox;

@@ -7,7 +7,7 @@ package UserInterface.Dashboard;
 
 /**
  *
- * @author nikhi
+ * @author simran
  */
 public class BirthMotherDashboard {
     
