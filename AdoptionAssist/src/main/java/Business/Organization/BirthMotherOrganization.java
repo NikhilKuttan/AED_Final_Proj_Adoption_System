@@ -5,10 +5,24 @@
  */
 package Business.Organization;
 
+import Business.Role.CounselorRole;
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author nikhi
  */
-public class BirthMotherOrganization {
+public class BirthMotherOrganization  extends Organization{
+
+    public BirthMotherOrganization() {
+        super(Organization.Type.BirthMotherOrg.getValue());
+    }
     
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        return roles;
+    }
+     
 }
