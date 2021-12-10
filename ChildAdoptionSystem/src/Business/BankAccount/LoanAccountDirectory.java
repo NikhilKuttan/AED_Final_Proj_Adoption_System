@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ishanibose
+ * @author simran
  */
 public class LoanAccountDirectory {
         private ArrayList<Loan> loanList;
