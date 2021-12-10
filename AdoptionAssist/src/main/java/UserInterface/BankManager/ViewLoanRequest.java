@@ -97,6 +97,7 @@ public class ViewLoanRequest extends javax.swing.JPanel {
 
         jLabel3.setText("FIRST NAME:");
 
+        btnBrowse.setBackground(new java.awt.Color(204, 204, 0));
         btnBrowse.setText("VIEW");
         btnBrowse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
