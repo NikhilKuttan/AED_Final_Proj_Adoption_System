@@ -5,10 +5,29 @@
  */
 package Business.Organization;
 
+import Business.Role.BankManagerRole;
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author nikhi
  */
-public class BankManagerOrganization {
+public class BankManagerOrganization extends Organization{
+
+    public BankManagerOrganization() {
+        super(Organization.Type.BankManager.getValue());
+    }
+
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new BankManagerRole());
+        return roles;
+    }
+     
+   
+    
     
 }
+

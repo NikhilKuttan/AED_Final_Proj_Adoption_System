@@ -5,10 +5,25 @@
  */
 package Business.Organization;
 
+import Business.Role.HospitalAdminRole;
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author nikhi
  */
-public class HospitalAdminOrganization {
+public class HospitalAdminOrganization extends Organization{
+
+    public HospitalAdminOrganization() {
+        super(Type.HospitalAdmin.getValue());
+    }
     
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new HospitalAdminRole());
+        return roles;
+    }
+     
 }
