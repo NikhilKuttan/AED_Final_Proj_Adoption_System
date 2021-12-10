@@ -29,7 +29,7 @@ import userinterface.Dialog.SuccessDialog;
 
 /**
  *
- * @author Sebsebin
+ * @author simran
  */
 public class BirthMotherAcceptWorkAreaJPanel extends javax.swing.JPanel {
 

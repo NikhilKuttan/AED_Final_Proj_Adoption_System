@@ -32,7 +32,7 @@ import userinterface.Dialog.SuccessDialog;
 
 /**
  *
- * @author ishanibose
+ * @author simran
  */
 public class FamilyProfile extends javax.swing.JPanel {
 

@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Sebsebin
+ * @author simran
  */
 public class HospitalManageOrganizationJPanel extends javax.swing.JPanel {
 

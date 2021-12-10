@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Sebsebin
+ * @author simran
  */
 public class ViewInsuranceApplicationWorkAreaJPanel extends javax.swing.JPanel {
 

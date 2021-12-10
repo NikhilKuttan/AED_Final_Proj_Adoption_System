@@ -16,7 +16,7 @@ import userinterface.Dashboard.ParentDashboard;
 
 /**
  *
- * @author Sebsebin
+ * @author simran
  */
 public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
 
