@@ -19,7 +19,7 @@ import userinterface.Dialog.ParentHelp;
 
 /**
  *
- * @author ishanibose
+ * @author patil
  */
 public class ParentDashboard extends javax.swing.JPanel {
 

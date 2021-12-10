@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Sebsebin
+ * @author patil
  */
 public class FinanceManageOrganizationJPanel extends javax.swing.JPanel {
 

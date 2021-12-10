@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author  Sebsebin
+ * @author  patil
  */
 public class FinanceAdminWorkAreaJPanel extends javax.swing.JPanel {
     

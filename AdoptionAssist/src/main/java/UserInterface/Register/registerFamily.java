@@ -26,7 +26,7 @@ import userinterface.Dialog.SuccessDialog;
 
 /**
  *
- * @author ishanibose
+ * @author patil
  */
 public class registerFamily extends javax.swing.JPanel {
 

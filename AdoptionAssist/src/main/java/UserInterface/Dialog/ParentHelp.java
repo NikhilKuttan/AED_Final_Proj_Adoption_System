@@ -9,7 +9,7 @@ import java.awt.Color;
 
 /**
  *
- * @author ishanibose
+ * @author patil
  */
 public class ParentHelp extends javax.swing.JFrame {
 

@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Administrator
+ * @author patil
  */
 public class FinanceManageUserAccountJPanel extends javax.swing.JPanel {
 

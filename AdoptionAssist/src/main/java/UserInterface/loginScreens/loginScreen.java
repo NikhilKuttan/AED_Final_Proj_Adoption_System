@@ -16,7 +16,7 @@ import Business.EcoSystem;
 import Business.Organization.Organization.Type;
 /**
  *
- * @author ishanibose
+ * @author patil
  */
 public class loginScreen extends javax.swing.JPanel {
 
