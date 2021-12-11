@@ -12,7 +12,7 @@ import java.util.Random;
 
 /**
  *
- * @author Sebsebin
+ * @author patil
  */
 public class BirthMother {
    
