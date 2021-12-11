@@ -88,7 +88,7 @@ public class ViewBankAccount extends javax.swing.JPanel {
         txtHospital = new javax.swing.JTextField();
         txtViewDoc = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +106,7 @@ public class ViewBankAccount extends javax.swing.JPanel {
 
         jLabel17.setText("UPLOADED DOCUMENT:");
 
-        btnBrowse.setBackground(new java.awt.Color(255, 153, 51));
+        btnBrowse.setBackground(new java.awt.Color(204, 204, 0));
         btnBrowse.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnBrowse.setText("VIEW");
         btnBrowse.addActionListener(new java.awt.event.ActionListener() {

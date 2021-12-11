@@ -84,7 +84,9 @@ public class ViewParentApplication extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         profilePhotoComponent = new javax.swing.JLabel();
 
-        btnAccept.setBackground(new java.awt.Color(255, 153, 51));
+        setBackground(new java.awt.Color(204, 204, 255));
+
+        btnAccept.setBackground(new java.awt.Color(204, 204, 0));
         btnAccept.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         btnAccept.setText("ACCEPT");
         btnAccept.addActionListener(new java.awt.event.ActionListener() {

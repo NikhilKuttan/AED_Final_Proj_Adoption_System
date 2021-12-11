@@ -72,9 +72,9 @@ public class ParentsRequestWorkAreaJPanel extends javax.swing.JPanel {
         workRequestJTable = new javax.swing.JTable();
         btnBack = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
-        btnViewApplication.setBackground(new java.awt.Color(255, 153, 51));
+        btnViewApplication.setBackground(new java.awt.Color(204, 204, 0));
         btnViewApplication.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnViewApplication.setText("VIEW APPLICATION");
         btnViewApplication.addActionListener(new java.awt.event.ActionListener() {

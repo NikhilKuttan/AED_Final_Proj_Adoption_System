@@ -130,7 +130,7 @@ public class InsuranceViewPage extends javax.swing.JPanel {
         btnConfirm = new javax.swing.JButton();
         agreeCheckBox = new javax.swing.JCheckBox();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("INSURANCE DETAILS");
@@ -175,7 +175,7 @@ public class InsuranceViewPage extends javax.swing.JPanel {
             }
         });
 
-        btnConfirm.setBackground(new java.awt.Color(255, 153, 51));
+        btnConfirm.setBackground(new java.awt.Color(204, 204, 0));
         btnConfirm.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnConfirm.setText("CONFIRM");
         btnConfirm.addActionListener(new java.awt.event.ActionListener() {

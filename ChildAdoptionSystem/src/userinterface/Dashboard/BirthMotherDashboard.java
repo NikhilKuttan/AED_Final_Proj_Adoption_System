@@ -130,7 +130,6 @@ public class BirthMotherDashboard extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(64, 151, 182));
         setPreferredSize(new java.awt.Dimension(960, 400));
-        setSize(new java.awt.Dimension(900, 675));
 
         userProcessContainer.setBackground(new java.awt.Color(64, 151, 182));
 
