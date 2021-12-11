@@ -10,7 +10,7 @@ import Business.People.BirthMother;
 
 /**
  *
- * @author Sebsebin
+ * @author patil
  */
 public class Insurance {
     

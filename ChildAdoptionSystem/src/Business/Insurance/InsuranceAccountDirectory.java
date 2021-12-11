@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ishanibose
+ * @author patil
  */
 public class InsuranceAccountDirectory {
         private ArrayList<Insurance> insuranceList;
