@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author ishanibose
+ * @author patil
  */
 public class loginOptions extends javax.swing.JPanel {
 
