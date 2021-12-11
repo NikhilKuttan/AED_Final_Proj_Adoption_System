@@ -119,7 +119,7 @@ public class BirthMotherAcceptWorkAreaJPanel extends javax.swing.JPanel {
         messageTxt = new javax.swing.JTextField();
         valueLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -156,7 +156,7 @@ public class BirthMotherAcceptWorkAreaJPanel extends javax.swing.JPanel {
             workRequestJTable.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        btnCreate.setBackground(new java.awt.Color(255, 153, 51));
+        btnCreate.setBackground(new java.awt.Color(204, 204, 0));
         btnCreate.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnCreate.setText("CREATE");
         btnCreate.setEnabled(false);
@@ -186,7 +186,7 @@ public class BirthMotherAcceptWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnView.setBackground(new java.awt.Color(255, 153, 51));
+        btnView.setBackground(new java.awt.Color(204, 204, 0));
         btnView.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnView.setText("VIEW");
         btnView.addActionListener(new java.awt.event.ActionListener() {

@@ -88,7 +88,7 @@ public class ViewInsuranceRequest extends javax.swing.JPanel {
         btnApprove = new javax.swing.JButton();
         profilePhotoComponent = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +148,7 @@ public class ViewInsuranceRequest extends javax.swing.JPanel {
 
         jLabel6.setText("INSURANCE AMOUNT APPROVED:");
 
-        btnApprove.setBackground(new java.awt.Color(255, 153, 51));
+        btnApprove.setBackground(new java.awt.Color(204, 204, 0));
         btnApprove.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnApprove.setText("APPROVE");
         btnApprove.addActionListener(new java.awt.event.ActionListener() {

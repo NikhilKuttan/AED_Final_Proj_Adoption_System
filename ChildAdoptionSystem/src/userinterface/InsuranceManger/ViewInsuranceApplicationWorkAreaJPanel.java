@@ -71,7 +71,7 @@ public class ViewInsuranceApplicationWorkAreaJPanel extends javax.swing.JPanel {
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -104,7 +104,7 @@ public class ViewInsuranceApplicationWorkAreaJPanel extends javax.swing.JPanel {
             workRequestJTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        viewBirthMother.setBackground(new java.awt.Color(255, 153, 51));
+        viewBirthMother.setBackground(new java.awt.Color(204, 204, 0));
         viewBirthMother.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         viewBirthMother.setText("VIEW INSURANCE REQUEST");
         viewBirthMother.addActionListener(new java.awt.event.ActionListener() {
