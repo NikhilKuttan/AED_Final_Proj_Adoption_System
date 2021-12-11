@@ -51,7 +51,7 @@ public class loginOptions extends javax.swing.JPanel {
         btnFinance = new javax.swing.JButton();
         btnFinance1 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         btnAdmin.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
         btnAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin-with-cogwheels-5.png"))); // NOI18N

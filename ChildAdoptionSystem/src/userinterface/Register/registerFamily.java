@@ -112,7 +112,7 @@ public class registerFamily extends javax.swing.JPanel {
         hospitalJComboBox = new javax.swing.JComboBox();
         jLabel13 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +135,7 @@ public class registerFamily extends javax.swing.JPanel {
 
         jLabel3.setText("Confirm Password*:");
 
-        btnConfirm.setBackground(new java.awt.Color(255, 153, 51));
+        btnConfirm.setBackground(new java.awt.Color(204, 204, 0));
         btnConfirm.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnConfirm.setText("CONFIRM");
         btnConfirm.addActionListener(new java.awt.event.ActionListener() {

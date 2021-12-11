@@ -81,7 +81,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         countryJTextField = new javax.swing.JTextField();
         btnBack4 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -116,7 +116,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
         jLabel1.setText("Name");
 
-        submitJButton.setBackground(new java.awt.Color(255, 153, 51));
+        submitJButton.setBackground(new java.awt.Color(204, 204, 0));
         submitJButton.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         submitJButton.setText("CREATE");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {

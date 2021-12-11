@@ -95,8 +95,10 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(205, 393));
 
+        jTree.setBackground(new java.awt.Color(204, 204, 255));
         jTree.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
             public void valueChanged(javax.swing.event.TreeSelectionEvent evt) {
                 jTreeValueChanged(evt);
@@ -121,13 +123,13 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jSplitPane.setLeftComponent(jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(64, 151, 182));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setText("Selected Node:");
 
         lblSelectedNode.setText("<View_selected_node>");
 
-        btnManageNetwork.setBackground(new java.awt.Color(255, 153, 51));
+        btnManageNetwork.setBackground(new java.awt.Color(204, 204, 0));
         btnManageNetwork.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnManageNetwork.setText("MANAGE NETWORK");
         btnManageNetwork.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +138,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageEnterprise.setBackground(new java.awt.Color(255, 153, 51));
+        btnManageEnterprise.setBackground(new java.awt.Color(204, 204, 0));
         btnManageEnterprise.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnManageEnterprise.setText("MANAGE ENTERPRISE");
         btnManageEnterprise.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +147,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageAdmin.setBackground(new java.awt.Color(255, 153, 51));
+        btnManageAdmin.setBackground(new java.awt.Color(204, 204, 0));
         btnManageAdmin.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnManageAdmin.setText("MANAGE ENTERPRISE ADMIN");
         btnManageAdmin.addActionListener(new java.awt.event.ActionListener() {

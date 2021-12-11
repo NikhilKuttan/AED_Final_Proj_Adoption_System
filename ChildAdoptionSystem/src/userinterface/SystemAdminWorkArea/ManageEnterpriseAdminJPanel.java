@@ -106,7 +106,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         passwordJPasswordField = new javax.swing.JPasswordField();
         btnBack4 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -149,7 +149,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
 
-        submitJButton.setBackground(new java.awt.Color(255, 153, 51));
+        submitJButton.setBackground(new java.awt.Color(204, 204, 0));
         submitJButton.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         submitJButton.setText("SUBMIT");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
