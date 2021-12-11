@@ -7,7 +7,7 @@ package Business.People;
 
 /**
  *
- * @author srijonibiswas
+ * @author patil
  */
 public class SysAdmin extends Employee{
     

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author srijonibiswas
+ * @author patil
  */
 public class BankManager extends Employee{
 
