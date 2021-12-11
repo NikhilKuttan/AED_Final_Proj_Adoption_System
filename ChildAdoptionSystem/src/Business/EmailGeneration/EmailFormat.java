@@ -26,9 +26,9 @@ public class EmailFormat {
 
     public EmailFormat(String to, String message, String sub) {
         this.to = to;
-        this.from = "adoptassistapplicationsystem@gmail.com";
+        this.from = "taskplannermernproject@gmail.com";
         this.textBody = message;
-        this.password = "adoptassist@123";
+        this.password = "taskplannermernproject@123";
         this.subject = sub;
         
     }
