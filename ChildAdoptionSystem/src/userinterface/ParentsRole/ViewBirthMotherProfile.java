@@ -17,7 +17,7 @@ import userinterface.Dialog.SuccessDialog;
 
 /**
  *
- * @author ishanibose
+ * @author patil
  */
 public class ViewBirthMotherProfile extends javax.swing.JPanel {
 

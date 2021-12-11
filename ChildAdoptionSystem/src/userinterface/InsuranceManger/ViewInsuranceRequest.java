@@ -30,7 +30,7 @@ import userinterface.Dialog.SuccessDialog;
 
 /**
  *
- * @author ishanibose
+ * @author patil
  */
 public class ViewInsuranceRequest extends javax.swing.JPanel {
 
