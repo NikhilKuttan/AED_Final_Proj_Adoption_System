@@ -32,7 +32,7 @@ import userinterface.Dialog.SuccessDialog;
 
 /**
  *
- * @author ishanibose
+ * @author patil
  */
 public class registerMother extends javax.swing.JPanel {
     public BirthMotherDirectory birthMotherDirectory;

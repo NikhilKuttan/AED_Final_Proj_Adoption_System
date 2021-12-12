@@ -16,7 +16,7 @@ import java.awt.CardLayout;
 
 /**
  *
- * @author ishanibose
+ * @author patil
  */
 public class registerOptions extends javax.swing.JPanel {
 
