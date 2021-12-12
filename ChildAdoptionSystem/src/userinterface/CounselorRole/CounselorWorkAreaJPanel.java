@@ -48,6 +48,7 @@ public class CounselorWorkAreaJPanel extends javax.swing.JPanel {
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
         reviewParentsJButton = new javax.swing.JButton();
+        btnNewOrphanage = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(64, 151, 182));
 
@@ -74,6 +75,13 @@ public class CounselorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnNewOrphanage.setText("New Orphanage Applications");
+        btnNewOrphanage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewOrphanageActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -90,6 +98,11 @@ public class CounselorWorkAreaJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(135, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(239, 239, 239)
+                    .addComponent(btnNewOrphanage, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(240, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,6 +116,11 @@ public class CounselorWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(reviewBirthMotherJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(reviewParentsJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(281, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(185, 185, 185)
+                    .addComponent(btnNewOrphanage, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(186, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -120,7 +138,16 @@ public class CounselorWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_reviewParentsJButtonActionPerformed
 
+    private void btnNewOrphanageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewOrphanageActionPerformed
+        // TODO add your handling code here:
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        userProcessContainer.add("OrphanageRequestWorkAreaPanel", new OrphanageRequestWorkAreaPanel(userProcessContainer));
+        layout.next(userProcessContainer);
+
+    }//GEN-LAST:event_btnNewOrphanageActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnNewOrphanage;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JButton reviewBirthMotherJButton;
     private javax.swing.JButton reviewParentsJButton;

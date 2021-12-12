@@ -7,17 +7,9 @@ package userinterface;
 
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
+import Business.People.Orphanage;
+import Business.People.OrphanageDirectory;
 import java.awt.CardLayout;
-import java.awt.Dimension;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JPanel;
-import userinterface.Dashboard.BirthMotherDashboard;
 import userinterface.Register.registerOptions;
 import userinterface.loginScreens.loginOptions;
 
@@ -32,7 +24,8 @@ public class MainJFrameFinal extends javax.swing.JFrame {
      */
     private EcoSystem system;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
-  
+  public static OrphanageDirectory orphanageDirectory;
+    
     public MainJFrameFinal() {
         initComponents();
         system = dB4OUtil.retrieveSystem();
@@ -143,6 +136,19 @@ public class MainJFrameFinal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+   public static OrphanageDirectory getOrphanageDirectory() {
+    if (orphanageDirectory == null) {
+      orphanageDirectory = new OrphanageDirectory();
+        Orphanage o1 = new Orphanage();
+        o1.setUsername("First Orphanage - Default Pending");
+        Orphanage o2 = new Orphanage();
+        o2.setUsername("Second Orphanage - Already Approved");
+        o2.setStatus(Orphanage.Status.APPROVED);
+      //  orphanageDirectory.addOrphanage(o1);
+       // orphanageDirectory.addOrphanage(o2);
+    }
+    return orphanageDirectory;
+  } 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         loginOptions ls = new loginOptions(userProcessContainer,system);
         userProcessContainer.add("loginOptions", ls);

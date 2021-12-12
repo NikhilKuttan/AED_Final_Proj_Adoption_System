@@ -45,7 +45,7 @@ public class thirdPanelDashboard extends javax.swing.JPanel {
     }
     private void readCSV(){
         try {
-            commentReader = new DataReader("/Users/ishanibose/Desktop/FinalTemp/againstallodds/AdoptionAssist/src/Document/PregnancyProgress.csv");
+            commentReader = new DataReader("C:\\Northeastern\\Assignments\\AED_Final_Proj_Adoption_System\\ChildAdoptionSystem\\src\\Document\\PregnancyProgress.csv");
             try {
                 readData();
             } catch (IOException ex) {

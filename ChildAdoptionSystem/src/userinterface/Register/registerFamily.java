@@ -381,7 +381,14 @@ public class registerFamily extends javax.swing.JPanel {
 
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
         // TODO add your handling code here:
-        this.username = txtUsername.getText();
+      try{
+      
+      String username = txtUsername.getText();
+      if(username.equals("")){
+      JOptionPane.showMessageDialog(null, "Please enter the Username");
+            throw new RuntimeException("Please enter the Username");
+      }
+      //  this.username = txtUsername.getText();
         this.email = txtEmail.getText();
         this.password = txtPassword.getText();
         if(isPrepared.isSelected()){
@@ -465,27 +472,61 @@ public class registerFamily extends javax.swing.JPanel {
             }
         }
  
-  /*      if(!(organization.getUserAccountDirectory().checkIfUsernameIsUnique(username))){
-            JOptionPane.showMessageDialog(null, "User Name already exists!, Please Enter valid user name","warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-       */ 
         Parents parent = new Parents(username, email, password,worstCaseScenerio,
                          finChild, bigChanges, comSituation, currChildrenOnBoard, eduRealities, promises, guilt );
         hospital.getParentDirectory().addParents(parent);
         parentToCounselor = new ParentToCounselor("Please review the parent profile", parent);
         hospital.getWorkQueue().getParentToCounselor().add(parentToCounselor);
        
-        String message =  " <h1>Welcome To Adoption Assist</h1> <body>  <br>Your Registration is successful! </br> <br>Your Profile ID is " + parent.getParentId()
+        String message =  " <h1>Welcome To Child Adoption Center</h1> <body>  <br>Your Registration is successful! </br> <br>Your Profile ID is " + parent.getParentId()
                 + "and your Userid: "+parent.getUsername()+"</br> <br> Kindly wait for your Counselor to review your details!</br> </body> <h2> Thank you! </h2>";
                
-        EmailFormat em = new EmailFormat(this.email,message, "Registration Successful at AdoptAssist" );
+        EmailFormat em = new EmailFormat(this.email,message, "Registration Successful at Child Adoption Center" );
         em.sendEmail();
         
         SuccessDialog d = new SuccessDialog("Your Registration was successful! Please Logout!");
         d.setVisible(true);
+      }
+      catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Please enter valid data", "warning", JOptionPane.WARNING_MESSAGE);
+          return;     
+      }
         
+        txtUsername.setText("");
+        txtEmail.setText("");
+        txtPassword.setText("");
+        txtConfPassword.setText("");
+        buttonGroup1.clearSelection();
+        buttonGroup2.clearSelection();
+        buttonGroup3.clearSelection();
+        buttonGroup4.clearSelection();
         
+isPrepared.setSelected(false);
+notPrepared.setSelected(false);
+
+isFinance.setSelected(false);
+notSelectFinance.setSelected(false);
+
+isBigChange.setSelected(false);
+notBigChange.setSelected(false);
+
+isComfortable.setSelected(false);
+notComfortable.setSelected(false);
+
+isChildrenOnBoard.setSelected(false);
+notOnBoardChildren.setSelected(false);
+
+isEducated.setSelected(false);
+notEducated.setSelected(false);
+
+isPromise.setSelected(false);
+notPromise.setSelected(false);
+
+isGuilty.setSelected(false);
+notGuilty.setSelected(false);
+       
+    
+
         
     }//GEN-LAST:event_btnConfirmActionPerformed
 

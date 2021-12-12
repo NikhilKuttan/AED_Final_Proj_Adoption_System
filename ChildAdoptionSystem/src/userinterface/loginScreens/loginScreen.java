@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import Business.EcoSystem;
 import Business.Organization.Organization.Type;
+import userinterface.MainJFrameFinal;
 /**
  *
  * @author patil
@@ -163,6 +164,7 @@ public class loginScreen extends javax.swing.JPanel {
                                     if(userAccount!=null){
                                         inEnterprise=enterprise;
                                         inOrganization=organization;
+                                       
                                         break;
                                     }
                                 }

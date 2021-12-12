@@ -53,6 +53,10 @@ public class OrganizationDirectory {
             organization = new ParentsOrganization();
             organizationList.add(organization);
         }
+        else if(type.getValue().equals(Type.OrphanageAdmin.getValue())){
+        organization = new OrphanAdminOrganization();
+            organizationList.add(organization);
+        }
         return organization;
     }
     public boolean containsType(Type type){

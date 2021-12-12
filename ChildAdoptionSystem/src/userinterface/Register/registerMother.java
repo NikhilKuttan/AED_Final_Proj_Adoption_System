@@ -270,8 +270,6 @@ public class registerMother extends javax.swing.JPanel {
       
         //Initiating work request for BMC
         BirthMotherToCounselor bmc = new BirthMotherToCounselor(birthMother);
-     
-       
        
         try {
         
@@ -293,16 +291,12 @@ public class registerMother extends javax.swing.JPanel {
         
         wq.addBirthMotherToCounselor(bmc);
         
-//        JOptionPane.showMessageDialog(null, "Your Registration is successful \nYou have been alloted Counselor : " + c.getName() 
-//                + "\nYour Patient ID is " + birthMother.getId() +"\nKindly Logout and Wait for our Counselor to contact you for appointment details! "
-//                        + "\nThank you!");
-        String message =  " <h1>Welcome To Adoption Assist</h1> <body>  Your Registration is successful <br>You have been alloted Counselor :"
+
+        String message =  " <h1>Welcome To Child Adoption center</h1> <body>  Your Registration is successful <br>You have been alloted Counselor :"
                 + c.getName() + " at "+ c.getAvailableTime() + "</br>"+"<br>Your Patient ID is " + birthMother.getId()
                 + "</br> <br> Kindly contact wait for your Counselor to contact you for your appointment details!</br> </body> <h2> Thank you! </h2>";
-       // JOptionPane.showMessageDialog(null, "Your Registration is successful \nYou have been alloted Counselor : " + c.getName() 
-              //  + "\nYour Patient ID is " + birthMother.getId() +"\nKindly L ogout and Wait for our Counselor to contact you for appointment details! "
-                //        + "\nThank you!");
-        EmailFormat em = new EmailFormat(emailId, message, " Registration Successful at AdoptAssist" );
+       
+        EmailFormat em = new EmailFormat(emailId, message, " Registration Successful at Adoption center" );
         em.sendEmail();
         SuccessDialog d = new SuccessDialog("Your Registration was successful! Please Logout!");
         d.setVisible(true);
@@ -320,14 +314,11 @@ public class registerMother extends javax.swing.JPanel {
 
         }
         catch(Exception e){
-            e.printStackTrace();
+          //  e.printStackTrace();
           JOptionPane.showMessageDialog(this, "Please enter valid data", "warning", JOptionPane.WARNING_MESSAGE);
           return;     
             
-        }
-        
-        //Adding work request to current work queue
-        
+        }        
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void hospitalJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitalJComboBoxActionPerformed

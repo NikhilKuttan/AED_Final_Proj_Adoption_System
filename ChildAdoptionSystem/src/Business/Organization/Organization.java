@@ -9,6 +9,7 @@ import Business.Insurance.Insurance;
 import Business.Insurance.InsuranceAccountDirectory;
 import Business.People.BirthMotherDirectory;
 import Business.People.EmployeeDirectory;
+import Business.People.OrphanageDirectory;
 import Business.People.ParentsDirectory;
 import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
@@ -30,6 +31,9 @@ public abstract class Organization {
     private UserAccountDirectory userAccountDirectory;
     private LoanAccountDirectory loanDirectory;
     private InsuranceAccountDirectory insuranceAccountDirectory;
+    private OrphanageDirectory orphanageDirectory;
+
+   
     private int organizationID;
     private static int counter=0;
     
@@ -40,8 +44,8 @@ public abstract class Organization {
         InsuranceManager("InsuranceManager Organization"),
         FinanceAdmin("FinanceAdmin Organization"),
         BirthMotherOrg("BirthMother Organization"),
-        ParentsOrg("Parents Organization");
-                
+        ParentsOrg("Parents Organization"),
+        OrphanageAdmin("OrphanageAdmin Organization");
         
         
         private String value;
@@ -63,7 +67,7 @@ public abstract class Organization {
         userAccountDirectory = new UserAccountDirectory();
         loanDirectory = new LoanAccountDirectory();
         insuranceAccountDirectory = new InsuranceAccountDirectory();
-        
+        orphanageDirectory = new OrphanageDirectory();
         organizationID = counter;
         ++counter;
     }
@@ -130,6 +134,13 @@ public abstract class Organization {
         this.workQueue = workQueue;
     }
 
+     public OrphanageDirectory getOrphanageDirectory() {
+        return orphanageDirectory;
+    }
+
+    public void setOrphanageDirectory(OrphanageDirectory orphanageDirectory) {
+        this.orphanageDirectory = orphanageDirectory;
+    }
     @Override
     public String toString() {
         return name;
