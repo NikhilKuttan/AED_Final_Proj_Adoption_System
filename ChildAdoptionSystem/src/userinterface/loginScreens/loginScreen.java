@@ -53,7 +53,7 @@ public class loginScreen extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         txtPassword = new javax.swing.JPasswordField();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel1.setText("Username:");
@@ -61,7 +61,7 @@ public class loginScreen extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel2.setText("Password:");
 
-        btnLogin.setBackground(new java.awt.Color(255, 153, 0));
+        btnLogin.setBackground(new java.awt.Color(204, 204, 0));
         btnLogin.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnLogin.setText("LOGIN");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {

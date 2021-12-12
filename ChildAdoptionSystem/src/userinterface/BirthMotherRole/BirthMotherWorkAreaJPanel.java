@@ -63,7 +63,7 @@ public class BirthMotherWorkAreaJPanel extends javax.swing.JPanel {
         updateProfile = new javax.swing.JButton();
         dashboardPanel = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("ENTERPRISE:");
@@ -71,7 +71,7 @@ public class BirthMotherWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel.setFont(new java.awt.Font("Lucida Grande", 3, 18)); // NOI18N
         valueLabel.setText("<value>");
 
-        viewParentsJButton.setBackground(new java.awt.Color(255, 153, 51));
+        viewParentsJButton.setBackground(new java.awt.Color(204, 204, 0));
         viewParentsJButton.setText("View Parent Directory");
         viewParentsJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +79,7 @@ public class BirthMotherWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        viewBankDetails.setBackground(new java.awt.Color(255, 153, 51));
+        viewBankDetails.setBackground(new java.awt.Color(204, 204, 0));
         viewBankDetails.setText("View Bank Details");
         viewBankDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,7 +87,7 @@ public class BirthMotherWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnCreateLoan.setBackground(new java.awt.Color(255, 153, 51));
+        btnCreateLoan.setBackground(new java.awt.Color(204, 204, 0));
         btnCreateLoan.setText("Create Loan Request");
         btnCreateLoan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,7 +95,7 @@ public class BirthMotherWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnCreateInsurance.setBackground(new java.awt.Color(255, 153, 51));
+        btnCreateInsurance.setBackground(new java.awt.Color(204, 204, 0));
         btnCreateInsurance.setText("Insurance ");
         btnCreateInsurance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,7 +117,7 @@ public class BirthMotherWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        updateProfile.setBackground(new java.awt.Color(255, 153, 51));
+        updateProfile.setBackground(new java.awt.Color(204, 204, 0));
         updateProfile.setText("View/Update Profile");
         updateProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

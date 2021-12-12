@@ -74,7 +74,7 @@ public class ViewBirthMotherRequestsJPanel extends javax.swing.JPanel {
         valueLabel = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -106,7 +106,7 @@ public class ViewBirthMotherRequestsJPanel extends javax.swing.JPanel {
             workRequestJTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        btnContactBirthMother.setBackground(new java.awt.Color(255, 153, 51));
+        btnContactBirthMother.setBackground(new java.awt.Color(204, 204, 0));
         btnContactBirthMother.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnContactBirthMother.setText("VIEW BIRTHMOTHER");
         btnContactBirthMother.addActionListener(new java.awt.event.ActionListener() {

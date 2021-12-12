@@ -54,7 +54,7 @@ public class registerOptions extends javax.swing.JPanel {
         btnRegFamily = new javax.swing.JButton();
         btnOrphanageReg = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         btnRegMother.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
         btnRegMother.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/maternity.png"))); // NOI18N

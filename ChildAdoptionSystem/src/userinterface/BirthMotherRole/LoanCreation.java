@@ -83,7 +83,7 @@ public class LoanCreation extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         txtPassport = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -119,6 +119,7 @@ public class LoanCreation extends javax.swing.JPanel {
 
         jLabel17.setText("UPLOAD DOCUMENT:");
 
+        btnBrowse.setBackground(new java.awt.Color(204, 204, 0));
         btnBrowse.setText("Browse");
         btnBrowse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +127,7 @@ public class LoanCreation extends javax.swing.JPanel {
             }
         });
 
-        btnCreate.setBackground(new java.awt.Color(255, 153, 51));
+        btnCreate.setBackground(new java.awt.Color(204, 204, 0));
         btnCreate.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnCreate.setText("CREATE");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -295,12 +296,27 @@ public class LoanCreation extends javax.swing.JPanel {
             return;
         
         }
+        //nikhik 12112021
         
-        if(txtDocument.getText().equals("")){
-              JOptionPane.showMessageDialog(null, "Please select document");
-            return;
+         try {
+                    if(docPath.equals("")|| docPath == null){
+           
+          JOptionPane.showMessageDialog(this, "Please upload a Document", "warning", JOptionPane.WARNING_MESSAGE);
+          return;     
+                
+           }
+            }
+            catch(Exception e){
+                    JOptionPane.showMessageDialog(this, "Please upload a Document", "warning", JOptionPane.WARNING_MESSAGE);
+          return;   
+            }
         
-        }
+        
+//        if(txtDocument.getText().equals("")){
+//              JOptionPane.showMessageDialog(null, "Please select document");
+//            return;
+//        
+//        }
                 
         Loan loan = new Loan();
         for(Network network: system.getNetworkList()){

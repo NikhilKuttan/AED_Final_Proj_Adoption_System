@@ -26,7 +26,7 @@ import userinterface.Dialog.BirthMotherHelp;
 
 /**
  *
- * @author simran
+ * @author nikhi
  */
 public class BirthMotherDashboard extends javax.swing.JPanel {
 

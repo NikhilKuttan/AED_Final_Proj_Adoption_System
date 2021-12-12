@@ -51,9 +51,9 @@ public class BankManagerWorkAreaJPanel extends javax.swing.JPanel {
         viewBankAccountDetails = new javax.swing.JButton();
         newAccountReqBtn = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
-        viewLoanApplicationJButton.setBackground(new java.awt.Color(255, 153, 51));
+        viewLoanApplicationJButton.setBackground(new java.awt.Color(204, 204, 0));
         viewLoanApplicationJButton.setText("New Loan Applications");
         viewLoanApplicationJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +67,7 @@ public class BankManagerWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         valueLabel.setText("<value>");
 
-        viewBankAccountDetails.setBackground(new java.awt.Color(255, 153, 51));
+        viewBankAccountDetails.setBackground(new java.awt.Color(204, 204, 0));
         viewBankAccountDetails.setText("View Bank Account Details");
         viewBankAccountDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,7 +75,7 @@ public class BankManagerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        newAccountReqBtn.setBackground(new java.awt.Color(255, 153, 51));
+        newAccountReqBtn.setBackground(new java.awt.Color(204, 204, 0));
         newAccountReqBtn.setText("New Account Requests");
         newAccountReqBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -50,9 +50,9 @@ public class CounselorWorkAreaJPanel extends javax.swing.JPanel {
         reviewParentsJButton = new javax.swing.JButton();
         btnNewOrphanage = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
-        reviewBirthMotherJButton.setBackground(new java.awt.Color(255, 153, 51));
+        reviewBirthMotherJButton.setBackground(new java.awt.Color(204, 204, 0));
         reviewBirthMotherJButton.setText("New Birth Mother Applications");
         reviewBirthMotherJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +67,7 @@ public class CounselorWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel.setFont(new java.awt.Font("Lucida Grande", 3, 18)); // NOI18N
         valueLabel.setText("<value>");
 
-        reviewParentsJButton.setBackground(new java.awt.Color(255, 153, 51));
+        reviewParentsJButton.setBackground(new java.awt.Color(204, 204, 0));
         reviewParentsJButton.setText("New Parent Applications");
         reviewParentsJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

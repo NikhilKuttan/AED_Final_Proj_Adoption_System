@@ -75,7 +75,7 @@ public class ViewLoanApplicationWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -108,7 +108,7 @@ public class ViewLoanApplicationWorkAreaJPanel extends javax.swing.JPanel {
             workRequestJTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        viewBirthMother.setBackground(new java.awt.Color(255, 153, 51));
+        viewBirthMother.setBackground(new java.awt.Color(204, 204, 0));
         viewBirthMother.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         viewBirthMother.setText("VIEW LOAN REQUEST");
         viewBirthMother.addActionListener(new java.awt.event.ActionListener() {
@@ -117,6 +117,7 @@ public class ViewLoanApplicationWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        refreshTestJButton.setBackground(new java.awt.Color(204, 204, 0));
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

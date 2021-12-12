@@ -72,7 +72,7 @@ public class BankAccountCreate extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         txtCounselor = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +88,7 @@ public class BankAccountCreate extends javax.swing.JPanel {
 
         jLabel5.setText("EMAIL ID:");
 
-        btnCreate.setBackground(new java.awt.Color(255, 153, 51));
+        btnCreate.setBackground(new java.awt.Color(204, 204, 0));
         btnCreate.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnCreate.setText("CREATE");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {

@@ -121,13 +121,13 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jSplitPane.setLeftComponent(jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(64, 151, 182));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setText("Selected Node:");
 
         lblSelectedNode.setText("<View_selected_node>");
 
-        btnManageNetwork.setBackground(new java.awt.Color(255, 153, 51));
+        btnManageNetwork.setBackground(new java.awt.Color(204, 204, 0));
         btnManageNetwork.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnManageNetwork.setText("MANAGE NETWORK");
         btnManageNetwork.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +145,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageAdmin.setBackground(new java.awt.Color(255, 153, 51));
+        btnManageAdmin.setBackground(new java.awt.Color(204, 204, 0));
         btnManageAdmin.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnManageAdmin.setText("MANAGE ENTERPRISE ADMIN");
         btnManageAdmin.addActionListener(new java.awt.event.ActionListener() {

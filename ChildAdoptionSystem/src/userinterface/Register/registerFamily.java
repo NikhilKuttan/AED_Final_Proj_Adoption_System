@@ -112,7 +112,7 @@ public class registerFamily extends javax.swing.JPanel {
         hospitalJComboBox = new javax.swing.JComboBox();
         jLabel13 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +135,7 @@ public class registerFamily extends javax.swing.JPanel {
 
         jLabel3.setText("Confirm Password*:");
 
-        btnConfirm.setBackground(new java.awt.Color(255, 153, 51));
+        btnConfirm.setBackground(new java.awt.Color(204, 204, 0));
         btnConfirm.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnConfirm.setText("CONFIRM");
         btnConfirm.addActionListener(new java.awt.event.ActionListener() {
@@ -144,13 +144,18 @@ public class registerFamily extends javax.swing.JPanel {
             }
         });
 
-        jLabel5.setText("You are prepared for the “worst case scenario.”");
+        jLabel5.setText("Are you ready to handle any type of scenario?");
 
         isPrepared.setText("Yes");
 
         notPrepared.setText("No");
+        notPrepared.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                notPreparedActionPerformed(evt);
+            }
+        });
 
-        jLabel6.setText("You are financially prepared for the child.");
+        jLabel6.setText("Are you financially ready for the child?");
 
         isFinance.setText("Yes");
 
@@ -158,11 +163,11 @@ public class registerFamily extends javax.swing.JPanel {
 
         isBigChange.setText("Yes");
 
-        jLabel7.setText("You are able or willing to make BIG changes.");
+        jLabel7.setText("Are you ready for big changes?");
 
         notBigChange.setText("No");
 
-        jLabel8.setText("Your partner is comfortable with the situation.");
+        jLabel8.setText("Is your spouse onboard with the situation?");
 
         notComfortable.setText("No");
 
@@ -170,23 +175,23 @@ public class registerFamily extends javax.swing.JPanel {
 
         isChildrenOnBoard.setText("Yes");
 
-        jLabel9.setText("Your current children are on board with the situation.");
+        jLabel9.setText("Are your current children onboard with the situation? ");
 
         notOnBoardChildren.setText("No");
 
-        jLabel10.setText("You are educated about the realities of the type of adoption you are pursuing.");
+        jLabel10.setText("Do you have knowledge about the adoption process?");
 
         isEducated.setText("Yes");
 
         notEducated.setText("No");
 
-        jLabel11.setText("You plan to make promises or commitments you actually can or will keep");
+        jLabel11.setText("Will you be committed to your promises?");
 
         isPromise.setText("Yes");
 
         notPromise.setText("No");
 
-        jLabel12.setText("You want to say “yes” not out of guilt.");
+        jLabel12.setText("Are you adopting out of guilt?");
 
         notGuilty.setText("No");
 
@@ -391,35 +396,73 @@ public class registerFamily extends javax.swing.JPanel {
       //  this.username = txtUsername.getText();
         this.email = txtEmail.getText();
         this.password = txtPassword.getText();
+        
+        // nikhil 12112021
+        if (isPrepared.isSelected() && notPrepared.isSelected()){
+            JOptionPane.showMessageDialog(null, "Please select only one of the  worstcase scenario options");
+            throw new RuntimeException("Please select only one of the Availaible options"); 
+            
+        }
+        else 
+        
         if(isPrepared.isSelected()){
             this.worstCaseScenerio = true;
         }
         else
            this.worstCaseScenerio = false; 
         
+        if (isFinance.isSelected() && notSelectFinance.isSelected()){
+            JOptionPane.showMessageDialog(null, "Please select only one of the  financial options ");
+            throw new RuntimeException("Please select only one of the  financial options"); 
+            
+        }
+        else 
         if(isFinance.isSelected()){
             this.finChild = true;
         }
         else
            this.finChild = false;
         
+      if (isBigChange.isSelected() && notBigChange.isSelected()){
+            JOptionPane.showMessageDialog(null, "Please select only one of the  Big Change options ");
+            throw new RuntimeException("Please select only one of the  financial options"); 
+            
+        }
+      else  
         if(isBigChange.isSelected()){
             this.bigChanges = true;
         }
         else
            this.bigChanges = false;
         
+       if (isComfortable.isSelected() && notComfortable.isSelected()){
+            JOptionPane.showMessageDialog(null, "Please select only one of the  Comfortable options ");
+            throw new RuntimeException("Please select only one of the  Comfortable options");  
+       }
+        else
         if(isComfortable.isSelected()){
             this.comSituation = true;
         }
         else
            this.comSituation = false;
         
+        if (isChildrenOnBoard.isSelected() && notOnBoardChildren.isSelected()){
+            JOptionPane.showMessageDialog(null, "Please select only one of the  Board options ");
+            throw new RuntimeException("Please select only one of the  Board options");  
+       }
+        else
+       
         if(isChildrenOnBoard.isSelected()){
             this.currChildrenOnBoard = true;
         }
         else
            this.currChildrenOnBoard = false;
+        
+        if (isEducated.isSelected() && notEducated.isSelected()){
+            JOptionPane.showMessageDialog(null, "Please select only one of the  Eduucation  options ");
+            throw new RuntimeException("Please select only one of the  Eduucation options");  
+       }
+        else
         
         if(isEducated.isSelected()){
             this.eduRealities = true;
@@ -427,12 +470,23 @@ public class registerFamily extends javax.swing.JPanel {
         else
            this.eduRealities = false;
         
+        if (isPromise.isSelected() && notPromise.isSelected()){
+            JOptionPane.showMessageDialog(null, "Please select only one of the  Promise  options ");
+            throw new RuntimeException("Please select only one of the  Promise options");  
+       }
+        else
+        
         if(isPromise.isSelected()){
             this.promises = true;
         }
         else
            this.promises = false;
-        
+        if (notGuilty.isSelected() && isGuilty.isSelected()){
+            JOptionPane.showMessageDialog(null, "Please select only one of the  Guilty  options ");
+            throw new RuntimeException("Please select only one of the  Guilty options");  
+       }
+        else
+         
         if(isGuilty.isSelected()){
             this.guilt = true;
         }
@@ -533,6 +587,10 @@ notGuilty.setSelected(false);
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsernameActionPerformed
+
+    private void notPreparedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notPreparedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_notPreparedActionPerformed
 private void populateComboBox() {
         //hospitalJComboBox.removeAllItems();
         hospitalJComboBox.removeAllItems();
