@@ -86,7 +86,7 @@ public class ViewBirthMotherProfile extends javax.swing.JPanel {
             }
         });
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("BIRTHMOTHER PROFILE");
@@ -124,7 +124,7 @@ public class ViewBirthMotherProfile extends javax.swing.JPanel {
         profilePhotoComponent.setText("UPLOADED IMAGE DISPLAY");
         profilePhotoComponent.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        btnConfirm.setBackground(new java.awt.Color(255, 153, 51));
+        btnConfirm.setBackground(new java.awt.Color(204, 204, 0));
         btnConfirm.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnConfirm.setText("CONFIRM");
         btnConfirm.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(64, 151, 182), 4, true));

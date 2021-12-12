@@ -80,7 +80,7 @@ public class BirthMotherRequestWorkAreaJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         valueLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
         setPreferredSize(new java.awt.Dimension(703, 423));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -118,7 +118,7 @@ public class BirthMotherRequestWorkAreaJPanel extends javax.swing.JPanel {
             workRequestJTable.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        viewBirthMother.setBackground(new java.awt.Color(255, 153, 51));
+        viewBirthMother.setBackground(new java.awt.Color(204, 204, 0));
         viewBirthMother.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         viewBirthMother.setText("VIEW BIRTH MOTHER");
         viewBirthMother.addActionListener(new java.awt.event.ActionListener() {
@@ -127,6 +127,7 @@ public class BirthMotherRequestWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        refreshTestJButton.setBackground(new java.awt.Color(204, 204, 0));
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

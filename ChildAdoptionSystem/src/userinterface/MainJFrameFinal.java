@@ -59,10 +59,9 @@ public class MainJFrameFinal extends javax.swing.JFrame {
         btnLogin = new javax.swing.JButton();
         btnRegister = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1250, 1600));
 
         splitPanel.setBackground(new java.awt.Color(187, 238, 238));
         splitPanel.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
@@ -70,13 +69,12 @@ public class MainJFrameFinal extends javax.swing.JFrame {
         userProcessContainer.setLayout(new java.awt.CardLayout());
         splitPanel.setRightComponent(userProcessContainer);
 
-        topJPanel.setBackground(new java.awt.Color(255, 255, 255));
+        topJPanel.setBackground(new java.awt.Color(204, 204, 255));
 
-        btnLogin.setBackground(new java.awt.Color(64, 151, 182));
+        btnLogin.setBackground(new java.awt.Color(204, 204, 0));
         btnLogin.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("LOGIN");
-        btnLogin.setBorder(null);
+        btnLogin.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnLogin.setFocusPainted(false);
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,20 +82,21 @@ public class MainJFrameFinal extends javax.swing.JFrame {
             }
         });
 
-        btnRegister.setBackground(new java.awt.Color(204, 204, 204));
+        btnRegister.setBackground(new java.awt.Color(204, 204, 0));
         btnRegister.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        btnRegister.setForeground(new java.awt.Color(64, 151, 182));
         btnRegister.setText("REGISTER");
-        btnRegister.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(64, 151, 182), 6, true));
+        btnRegister.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterActionPerformed(evt);
             }
         });
 
-        btnLogout.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
+        btnLogout.setBackground(new java.awt.Color(204, 204, 0));
+        btnLogout.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout.png"))); // NOI18N
         btnLogout.setText("LOGOUT");
+        btnLogout.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnLogout.setMaximumSize(new java.awt.Dimension(131, 42));
         btnLogout.setMinimumSize(new java.awt.Dimension(131, 42));
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
@@ -106,34 +105,38 @@ public class MainJFrameFinal extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Adoption2 (1).png"))); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 3, 30)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("CHILD ADOPTION SYSTEM");
 
         javax.swing.GroupLayout topJPanelLayout = new javax.swing.GroupLayout(topJPanel);
         topJPanel.setLayout(topJPanelLayout);
         topJPanelLayout.setHorizontalGroup(
             topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topJPanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1083, Short.MAX_VALUE)
-                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                .addGroup(topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(topJPanelLayout.createSequentialGroup()
+                        .addGap(274, 274, 274)
+                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
+                        .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
+                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 1372, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         topJPanelLayout.setVerticalGroup(
             topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topJPanelLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addContainerGap(202, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegister)
+                    .addComponent(btnLogin))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         splitPanel.setTopComponent(topJPanel);
@@ -224,7 +227,7 @@ public class MainJFrameFinal extends javax.swing.JFrame {
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnRegister;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JSplitPane splitPanel;
     private javax.swing.JPanel topJPanel;
     private javax.swing.JPanel userProcessContainer;

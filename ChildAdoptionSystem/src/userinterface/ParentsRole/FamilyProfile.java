@@ -117,7 +117,7 @@ public class FamilyProfile extends javax.swing.JPanel {
             }
         });
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("ACCOUNT SETTINGS");
@@ -148,6 +148,7 @@ public class FamilyProfile extends javax.swing.JPanel {
             }
         });
 
+        btnBrowse.setBackground(new java.awt.Color(204, 204, 0));
         btnBrowse.setText("Browse");
         btnBrowse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,7 +162,7 @@ public class FamilyProfile extends javax.swing.JPanel {
         profilePhotoComponent.setText("UPLOADED IMAGE DISPLAY");
         profilePhotoComponent.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        btnSave.setBackground(new java.awt.Color(255, 153, 51));
+        btnSave.setBackground(new java.awt.Color(204, 204, 0));
         btnSave.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnSave.setText("SAVE");
         btnSave.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(64, 151, 182), 4, true));
@@ -386,12 +387,27 @@ public class FamilyProfile extends javax.swing.JPanel {
           return;     
             
            }
-            if(profilePhotoComponent.getText().equals("")){
-           
-          JOptionPane.showMessageDialog(this, "Please select a Profile Picture", "warning", JOptionPane.WARNING_MESSAGE);
-          return;     
+                ///nikhil 121021
             
+                    try {
+                    if(path.equals("")|| path == null){
+           
+          JOptionPane.showMessageDialog(this, "Please upload a Profile Picture", "warning", JOptionPane.WARNING_MESSAGE);
+          return;     
+                
            }
+            }
+            catch(Exception e){
+                    JOptionPane.showMessageDialog(this, "Please upload a Profile Picture", "warning", JOptionPane.WARNING_MESSAGE);
+          return;   
+            }
+            
+           // if(profilePhotoComponent.getText().equals("")){
+           
+        //  JOptionPane.showMessageDialog(this, "Please select a Profile Picture", "warning", JOptionPane.WARNING_MESSAGE);
+         // return;     
+            
+         //  }
            
            
         for (Parents parent : org.getParentDirectory().getParentsList()){

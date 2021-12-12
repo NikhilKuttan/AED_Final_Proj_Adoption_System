@@ -23,7 +23,7 @@ import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
- * @author simran
+ * @author nikhi
  */
 public class thirdPanelDashboard extends javax.swing.JPanel {
 
