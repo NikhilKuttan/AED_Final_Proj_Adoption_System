@@ -123,8 +123,9 @@ public class FinanceManageUserAccountJPanel extends javax.swing.JPanel {
         roleJComboBox = new javax.swing.JComboBox();
         btnBack = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
+        createUserJButton.setBackground(new java.awt.Color(204, 204, 0));
         createUserJButton.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         createUserJButton.setText("CREATE");
         createUserJButton.addActionListener(new java.awt.event.ActionListener() {

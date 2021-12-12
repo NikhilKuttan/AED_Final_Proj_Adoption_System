@@ -5,9 +5,16 @@
  */
 package userinterface;
 
+import java.awt.Color;
+import java.awt.Font;
+import static java.awt.Font.BOLD;
+import static java.awt.Font.ITALIC;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -16,6 +23,10 @@ import javax.swing.JPanel;
  */
 public class LandingPanel extends javax.swing.JPanel {
 
+      int x=0;
+        int y=100;
+        int a=400;
+        int b=200;
     /**
      * Creates new form LandingPanel
      */
@@ -23,42 +34,67 @@ public class LandingPanel extends javax.swing.JPanel {
         initComponents();
     }
     
+    
+     public void paint(Graphics gp)
+    
+ 
+ {
+        
+        super.paint(gp);
+        Graphics2D g2d= (Graphics2D) gp;
+        g2d.setColor(Color.black);
+        g2d.setFont(new Font("BOLD", ITALIC, 50));
+             
+        g2d.drawString("Every Child Deserves A Home & Love", x, y);
+      //  g2d.drawString("CodeGuid.Com", a, b);
+       //g2d.drawString("THANKS ", x, 300);
+                try {
+            Thread.sleep(200);
+            x+=20;
+            a-=20;
+            
+            if(x>getWidth())
+        {
+        
+            x=0;
+        }
+            if(a<0)
+        {
+        
+            a=400;
+        }
+        repaint();
+                      
+        } catch (InterruptedException ex) {
+            JOptionPane.showMessageDialog(this, ex);
+        }
+    
+        
+        
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/shelter.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Adoption_pics\\adoption4.png")); // NOI18N
+        jLabel1.setText("jLabel1");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/care.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Adoption_pics\\adoption8.png")); // NOI18N
+        jLabel2.setText("jLabel2");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Love.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Adoption_pics\\adoption10.jpg")); // NOI18N
+        jLabel4.setText("jLabel4");
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 3, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Love");
-
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 3, 48)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Home");
-
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 3, 48)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Care");
-
-        jLabel7.setFont(new java.awt.Font("Baskerville", 1, 64)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("WELCOME TO ADOPTION ASSIST!");
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Adoption_pics\\adoption11.jpg")); // NOI18N
+        jLabel3.setText("jLabel3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -67,44 +103,28 @@ public class LandingPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(192, 192, 192)
-                        .addComponent(jLabel6)
-                        .addGap(195, 195, 195)
-                        .addComponent(jLabel1)
-                        .addGap(230, 230, 230)
-                        .addComponent(jLabel5))
+                        .addGap(71, 71, 71)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(141, 141, 141)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(143, 143, 143)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2)))))
-                .addContainerGap(1018, Short.MAX_VALUE))
+                        .addGap(354, 354, 354)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1508, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5))
-                .addGap(36, 36, 36)
-                .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(657, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -114,9 +134,6 @@ public class LandingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 
     

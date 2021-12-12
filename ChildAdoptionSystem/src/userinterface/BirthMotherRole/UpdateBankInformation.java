@@ -86,7 +86,7 @@ public class UpdateBankInformation extends javax.swing.JPanel {
         jLabel16 = new javax.swing.JLabel();
         txtBankBalance = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/left-arrow-in-circular-button-black-symbol-2.png"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +127,7 @@ public class UpdateBankInformation extends javax.swing.JPanel {
             }
         });
 
-        btnUpdate.setBackground(new java.awt.Color(255, 153, 51));
+        btnUpdate.setBackground(new java.awt.Color(204, 204, 0));
         btnUpdate.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         btnUpdate.setText("CONFIRM");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {

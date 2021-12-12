@@ -47,14 +47,14 @@ public class HospitalAdminWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel = new javax.swing.JLabel();
         btnBirthMotherApplications = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("HOSPITAL ADMINISTRATIVE WORK AREA");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        btnParentApplications.setBackground(new java.awt.Color(255, 153, 51));
+        btnParentApplications.setBackground(new java.awt.Color(204, 204, 0));
         btnParentApplications.setText("View Parent Applications");
         btnParentApplications.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,7 +63,7 @@ public class HospitalAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnParentApplications, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 250, 50));
 
-        manageEmployeeJButton.setBackground(new java.awt.Color(255, 153, 51));
+        manageEmployeeJButton.setBackground(new java.awt.Color(204, 204, 0));
         manageEmployeeJButton.setText("Manage Employee");
         manageEmployeeJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +72,7 @@ public class HospitalAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 250, 50));
 
-        manageOrganizationJButton.setBackground(new java.awt.Color(255, 153, 51));
+        manageOrganizationJButton.setBackground(new java.awt.Color(204, 204, 0));
         manageOrganizationJButton.setText("Manage Organization");
         manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +89,7 @@ public class HospitalAdminWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel.setText("<value>");
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 380, -1));
 
-        btnBirthMotherApplications.setBackground(new java.awt.Color(255, 153, 51));
+        btnBirthMotherApplications.setBackground(new java.awt.Color(204, 204, 0));
         btnBirthMotherApplications.setText("View BirthMother Applications");
         btnBirthMotherApplications.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

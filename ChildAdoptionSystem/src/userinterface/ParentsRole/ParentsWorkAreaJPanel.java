@@ -56,7 +56,7 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
         btnViewFamily = new javax.swing.JButton();
         dashboardPanel = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(64, 151, 182));
+        setBackground(new java.awt.Color(204, 204, 255));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("ENTERPRISE:");
@@ -64,7 +64,7 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel.setFont(new java.awt.Font("Lucida Grande", 3, 18)); // NOI18N
         valueLabel.setText("<value>");
 
-        checkRequestsPending.setBackground(new java.awt.Color(255, 153, 51));
+        checkRequestsPending.setBackground(new java.awt.Color(204, 204, 0));
         checkRequestsPending.setText("Check Birth Mother Request");
         checkRequestsPending.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +72,7 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnViewFamily.setBackground(new java.awt.Color(255, 153, 51));
+        btnViewFamily.setBackground(new java.awt.Color(204, 204, 0));
         btnViewFamily.setText("View/Update Family Profile");
         btnViewFamily.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,7 +127,7 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnViewFamily, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(353, Short.MAX_VALUE))
-                    .addComponent(dashboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)))
+                    .addComponent(dashboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
     
