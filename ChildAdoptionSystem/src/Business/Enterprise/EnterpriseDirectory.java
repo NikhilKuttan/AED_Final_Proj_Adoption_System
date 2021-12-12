@@ -44,6 +44,12 @@ public class EnterpriseDirectory {
             enterpriseList.add(enterprise);
             return enterprise;
         }
+         if(type==Enterprise.EnterpriseType.OrphanageEnterprise){
+            enterprise=new OrphangeEnterprise(name);
+            enterprise.setEnterpriseType(type);
+            enterpriseList.add(enterprise);
+            return enterprise;
+        }
         return null;
     }
     public boolean containsName(String type){

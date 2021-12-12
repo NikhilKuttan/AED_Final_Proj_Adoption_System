@@ -26,9 +26,9 @@ public class EmailFormat {
 
     public EmailFormat(String to, String message, String sub) {
         this.to = to;
-        this.from = "adoptassistapplicationsystem@gmail.com";
+        this.from = "taskplannermernproject@gmail.com";
         this.textBody = message;
-        this.password = "adoptassist@123";
+        this.password = "taskplannermernproject@";
         this.subject = sub;
         
     }
@@ -36,8 +36,10 @@ public class EmailFormat {
     public void sendEmail(){
       Properties properties = new Properties();
       properties.setProperty("mail.smtp.host", host);  
-      properties.put("mail.smtp.auth", "true");  
+      properties.put("mail.smtp.auth", "true");
+      properties.put("mail.smtp.ssl.trust", "*");
         properties.put("mail.smtp.starttls.enable", "true");
+        properties.setProperty("mail.smtp.ssl.protocols", "TLSv1.2");
         properties.put("mail.smtp.port", "587"); 
       Session session = Session.getDefaultInstance(properties, new javax.mail.Authenticator() {  
       protected PasswordAuthentication getPasswordAuthentication() {  

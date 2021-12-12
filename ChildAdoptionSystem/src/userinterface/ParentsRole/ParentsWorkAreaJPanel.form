@@ -25,9 +25,10 @@
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnViewFamily" alignment="0" min="-2" pref="256" max="-2" attributes="0"/>
-                          <Component id="checkRequestsPending" alignment="0" min="-2" pref="256" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnViewFamily" alignment="0" pref="256" max="32767" attributes="0"/>
+                          <Component id="checkRequestsPending" alignment="0" pref="256" max="32767" attributes="0"/>
+                          <Component id="btnViewOrphanages" min="-2" pref="252" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="dashboardPanel" min="-2" max="-2" attributes="0"/>
@@ -52,12 +53,18 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Component id="dashboardPanel" pref="474" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="checkRequestsPending" min="-2" pref="57" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnViewFamily" min="-2" pref="57" max="-2" attributes="0"/>
                       <EmptySpace pref="353" max="32767" attributes="0"/>
+                      <EmptySpace pref="353" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnViewOrphanages" min="-2" pref="58" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
+                  <Component id="dashboardPanel" pref="474" max="32767" attributes="0"/>
                   <Component id="dashboardPanel" pref="476" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -121,10 +128,18 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="474" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
     </Container>
+    <Component class="javax.swing.JButton" name="btnViewOrphanages">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="View Orphanages"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewOrphanagesActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>
