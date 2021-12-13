@@ -25,7 +25,7 @@ public class ValidateStrings extends InputVerifier{
         if (text.length() > 0) {
             if (text.toLowerCase().startsWith(" ") || text.length() == 0 || text.matches(pattern) != true) {
                 input.setBackground(Color.red);
-                JOptionPane.showMessageDialog(input, "Please enter valid string. Special characters are not allowed", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(input, "Please enter valid string characters. Special characters are not valid", "Error", JOptionPane.ERROR_MESSAGE);
                 return false;
             } else {
                 input.setBackground(Color.white);

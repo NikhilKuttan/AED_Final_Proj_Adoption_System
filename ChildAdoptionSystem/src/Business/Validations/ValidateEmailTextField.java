@@ -31,7 +31,7 @@ public class ValidateEmailTextField extends InputVerifier{
         if (mail.length() > 0) {
             if (!matcher.matches()) {
                 input.setBackground(Color.red);
-                JOptionPane.showMessageDialog(input, "Please enter valid email address. ", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(input, "Please enter valid Email ID. ", "Error", JOptionPane.ERROR_MESSAGE);
                 return false;
             }
             else 

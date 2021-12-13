@@ -47,24 +47,24 @@ public class EmailFormat {
       }  
       } );
       try {
-         // Create a default MimeMessage object.
+         // default MimeMessage object.
         Message message = new MimeMessage(session);
 
-         // Set From: header field of the header.
+        
          message.setFrom(new InternetAddress(from));
 
-         // Set To: header field of the header.
+        
          message.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
-         // Set Subject: header field
+       
          message.setSubject(subject);
 
-         // Now set the actual message
+       
          message.setContent(textBody, "text/html");
 
-         // Send message
+        
          Transport.send(message);
-         System.out.println("Sent message successfully....");
+         System.out.println("Message Sent Successfully....");
       } catch (MessagingException mex) {
          mex.printStackTrace();
       }   

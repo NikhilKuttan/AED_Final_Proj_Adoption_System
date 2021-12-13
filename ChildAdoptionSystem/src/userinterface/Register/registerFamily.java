@@ -393,7 +393,7 @@ public class registerFamily extends javax.swing.JPanel {
       JOptionPane.showMessageDialog(null, "Please enter the Username");
             throw new RuntimeException("Please enter the Username");
       }
-      //  this.username = txtUsername.getText();
+     
         this.email = txtEmail.getText();
         this.password = txtPassword.getText();
         
