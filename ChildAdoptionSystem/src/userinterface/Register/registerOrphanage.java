@@ -6,23 +6,16 @@
 package userinterface.Register;
 
 import Business.EcoSystem;
-import Business.EmailGeneration.EmailFormat;
-import Business.Network.Network;
 import Business.People.Orphanage;
 import Business.People.OrphanageDirectory;
 import Business.WorkQueue.OrphanageToCounselor;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import Business.Enterprise.Enterprise;
-import Business.Enterprise.HospitalEnterprise;
-import Business.Enterprise.OrphangeEnterprise;
-import Business.Organization.Organization;
-import Business.People.Counsellor;
-import Business.WorkQueue.WorkQueue;
-import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import Business.Validations.ValidateEmailTextField;
+import Business.Validations.ValidatePasswords;
+import Business.Validations.ValidateStrings;
+import javax.swing.InputVerifier;
 import userinterface.Dialog.SuccessDialog;
 import userinterface.MainJFrameFinal;
 
@@ -52,6 +45,19 @@ public class registerOrphanage extends javax.swing.JPanel {
         this.orphanage = new Orphanage(); 
        // addInputVerifiers();
        
+    }
+    
+      private void addInputVerifiers() {
+        InputVerifier stringValidation = new ValidateStrings();
+        nameTxt.setInputVerifier(stringValidation);
+        userNameTxt.setInputVerifier(stringValidation);
+        locationTxt.setInputVerifier(stringValidation);
+        InputVerifier passwordValidation = new ValidatePasswords();
+        InputVerifier emailValidation = new ValidateEmailTextField();
+        
+        passwordTxt.setInputVerifier(passwordValidation);
+        confirmPassTxt.setInputVerifier(passwordValidation);
+        
     }
 
   
