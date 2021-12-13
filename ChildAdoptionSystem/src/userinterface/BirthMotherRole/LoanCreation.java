@@ -79,7 +79,6 @@ public class LoanCreation extends javax.swing.JPanel {
         jLabel17 = new javax.swing.JLabel();
         btnBrowse = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
-        txtDocument = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         txtPassport = new javax.swing.JTextField();
 
@@ -136,8 +135,6 @@ public class LoanCreation extends javax.swing.JPanel {
             }
         });
 
-        txtDocument.setText("jLabel2");
-
         jLabel13.setText("PASSPORT NO.:");
 
         txtPassport.addActionListener(new java.awt.event.ActionListener() {
@@ -169,7 +166,6 @@ public class LoanCreation extends javax.swing.JPanel {
                                     .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(txtDocument)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(jLabel13)
@@ -234,9 +230,7 @@ public class LoanCreation extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(btnBrowse))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtDocument)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(45, 45, 45)
                 .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(35, Short.MAX_VALUE))
         );
@@ -269,7 +263,7 @@ public class LoanCreation extends javax.swing.JPanel {
             File selectedFile = file.getSelectedFile();
             String path = selectedFile.getAbsolutePath();
             this.docPath = path;
-            txtDocument.setText(path);
+         //   txtDocument.setText(path);
         }
         else if(result == JFileChooser.CANCEL_OPTION){
             System.out.println("No File Select");
@@ -371,7 +365,6 @@ public class LoanCreation extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField txtAddress;
-    private javax.swing.JLabel txtDocument;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtFirstName;
     private javax.swing.JTextField txtFunds;

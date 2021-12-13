@@ -17,7 +17,7 @@ public class Insurance {
     private String firstName;
     private String lastName;
     private String emailId;
-    private int policyNumber;
+    private String policyNumber;
     private String address;
     private String counselor;
     private String hospital;
@@ -29,7 +29,7 @@ public class Insurance {
     private String docPath;
 
 
-    public Insurance(String firstName, String lastName, String emailId, int policynumber, String address, String docPath) {
+    public Insurance(String firstName, String lastName, String emailId, String policynumber, String address, String docPath) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailId = emailId;
@@ -68,13 +68,17 @@ public class Insurance {
         this.emailId = emailId;
     }
 
-    public int getPolicyNumber() {
+    public String getPolicyNumber() {
         return policyNumber;
     }
 
-    public void setPolicyNumber(int policyNumber) {
-        this.policyNumber = policyNumber;
-    }
+     public void setPolicyNumber(String policyNumber) {
+       this.policyNumber = policyNumber;
+   }
+    
+//    public void setPolicyNumber(int policyNumber) {
+//        this.policyNumber = policyNumber;
+//    }
 
     public String getAddress() {
         return address;

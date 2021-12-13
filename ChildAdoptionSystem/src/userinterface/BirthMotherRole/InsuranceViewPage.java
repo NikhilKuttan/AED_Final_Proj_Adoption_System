@@ -45,7 +45,7 @@ public class InsuranceViewPage extends javax.swing.JPanel {
      private String firstName;
     private String lastName;
     private String emailId;
-    private int policynumber;
+    private String policynumber;
     private String address;
     private InsuranceAccountDirectory insuranceDirectory;
     private boolean flagC;
@@ -322,7 +322,8 @@ public class InsuranceViewPage extends javax.swing.JPanel {
         this.firstName = txtFirstName.getText();
         this.lastName = txtLastName.getText();
         this.emailId = txtEmail.getText();
-        this.policynumber = Integer.parseInt(txtPolicyNumber.getText());
+        //this.policynumber = Integer.parseInt(txtPolicyNumber.getText());
+        this.policynumber = txtPolicyNumber.getText();
         this.address = txtAddress.getText();
        
         
