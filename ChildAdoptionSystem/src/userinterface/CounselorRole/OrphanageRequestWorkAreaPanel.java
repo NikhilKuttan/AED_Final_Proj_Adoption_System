@@ -46,8 +46,11 @@ public class OrphanageRequestWorkAreaPanel extends javax.swing.JPanel {
         refreshTestJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+<<<<<<< HEAD
 
         setBackground(new java.awt.Color(204, 204, 255));
+=======
+>>>>>>> f39c31f84c29ce770b215f2d2825e0c6d8d83aeb
 
         valueLabel.setFont(new java.awt.Font("Lucida Grande", 3, 18)); // NOI18N
         valueLabel.setText("Orphanage");

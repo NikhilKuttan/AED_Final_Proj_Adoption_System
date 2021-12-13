@@ -5,7 +5,6 @@
  */
 package Business.Enterprise;
 
-import Business.Organization.OrganizationDirectory;
 import java.util.ArrayList;
 
 /**
@@ -28,7 +27,7 @@ public class EnterpriseDirectory {
         enterpriseList=new ArrayList<Enterprise>();
     }
     
-    //Create enterprise
+   //Creating and initializing Enterprise
     public Enterprise createAndAddEnterprise(String name,Enterprise.EnterpriseType type){
         Enterprise enterprise = null;
         if(type==Enterprise.EnterpriseType.Hospital){

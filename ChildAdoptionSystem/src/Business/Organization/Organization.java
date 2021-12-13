@@ -5,7 +5,6 @@
 package Business.Organization;
 
 import Business.BankAccount.LoanAccountDirectory;
-import Business.Insurance.Insurance;
 import Business.Insurance.InsuranceAccountDirectory;
 import Business.People.BirthMotherDirectory;
 import Business.People.EmployeeDirectory;

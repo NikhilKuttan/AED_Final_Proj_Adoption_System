@@ -14,7 +14,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import Business.EcoSystem;
 import Business.Organization.Organization.Type;
-import userinterface.MainJFrameFinal;
 /**
  *
  * @author patil

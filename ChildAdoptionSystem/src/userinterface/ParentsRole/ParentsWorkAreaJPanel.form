@@ -29,6 +29,7 @@
                           <Component id="btnViewFamily" alignment="0" pref="256" max="32767" attributes="0"/>
                           <Component id="checkRequestsPending" alignment="0" pref="256" max="32767" attributes="0"/>
                           <Component id="btnViewOrphanages" min="-2" pref="252" max="-2" attributes="0"/>
+                          <Component id="btnOrphanage" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="dashboardPanel" min="-2" max="-2" attributes="0"/>
@@ -58,7 +59,13 @@
                       <Component id="checkRequestsPending" min="-2" pref="57" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Component id="btnViewFamily" min="-2" pref="57" max="-2" attributes="0"/>
+<<<<<<< HEAD
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+=======
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnOrphanage" min="-2" pref="57" max="-2" attributes="0"/>
+                      <EmptySpace pref="658" max="32767" attributes="0"/>
+>>>>>>> f39c31f84c29ce770b215f2d2825e0c6d8d83aeb
                       <Component id="btnViewOrphanages" min="-2" pref="58" max="-2" attributes="0"/>
                       <EmptySpace pref="719" max="32767" attributes="0"/>
                   </Group>
@@ -138,6 +145,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewOrphanagesActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnOrphanage">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Schedule visit to Orphanage"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOrphanageActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
