@@ -6,12 +6,8 @@
 package userinterface.loginScreens;
 
 import Business.EcoSystem;
-import Business.Organization.Organization;
 import Business.Organization.Organization.Type;
-import Business.Role.Role;
 import java.awt.CardLayout;
-import java.awt.Component;
-import java.util.ArrayList;
 import javax.swing.JPanel;
 
 /**

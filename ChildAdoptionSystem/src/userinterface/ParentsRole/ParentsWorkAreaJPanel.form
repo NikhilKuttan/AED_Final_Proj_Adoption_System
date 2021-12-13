@@ -29,6 +29,7 @@
                           <Component id="btnViewFamily" alignment="0" pref="256" max="32767" attributes="0"/>
                           <Component id="checkRequestsPending" alignment="0" pref="256" max="32767" attributes="0"/>
                           <Component id="btnViewOrphanages" min="-2" pref="252" max="-2" attributes="0"/>
+                          <Component id="btnOrphanage" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="dashboardPanel" min="-2" max="-2" attributes="0"/>
@@ -138,6 +139,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewOrphanagesActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnOrphanage">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Schedule visit to Orphanage"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOrphanageActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

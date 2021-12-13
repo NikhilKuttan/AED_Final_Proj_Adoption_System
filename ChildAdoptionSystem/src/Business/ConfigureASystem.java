@@ -46,22 +46,30 @@ public class ConfigureASystem {
         UserAccount account = hospital.getUserAccountDirectory().createUserAccount("hadmin", "hadmin", employee, new HospitalAdminRole(), network.getName());
         
         Organization organization = hospital.getOrganizationDirectory().createOrganization(Organization.Type.Counselor);
-       // organization.getEmployeeDirectory().createCounsellor();
+     
+        
         Counsellor employee1 = organization.getEmployeeDirectory().createandaddCounselor("Counselor");
         account = organization.getUserAccountDirectory().createCounselorUserAccount("Counselor", "Counselor", employee1, new CounselorRole(),network.getName() );
         
-        employee = financial.getEmployeeDirectory().createandaddEmployee("Boston Public Finance Admin");    
+        employee = financial.getEmployeeDirectory().createandaddEmployee("Boston Public Finance Admin"); 
+        
         account = financial.getUserAccountDirectory().createUserAccount("fadmin", "fadmin", employee, new FinanceAdminRole(),network.getName());
      
         
         organization = financial.getOrganizationDirectory().createOrganization(Organization.Type.BankManager);
+        
         BankManager employee2 = organization.getEmployeeDirectory().createandaddBankManager("Bank Manager");
+        
+        
         account = organization.getUserAccountDirectory().createBankManagerUserAccount("bmanager", "bmanager", employee2, new BankManagerRole(),network.getName());
         
     
         Organization organization1 = financial.getOrganizationDirectory().createOrganization(Organization.Type.InsuranceManager);
+        
+        
         InsuranceManager employee3 = organization1.getEmployeeDirectory().createandadInsuranceManager("Insurance Manager");
         account = organization1.getUserAccountDirectory().createInsuranceManagerUserAccount("imanager", "imanager", employee3, new InsuranceManagerRole(), network.getName());
+        
         account.setNetwork(network.getName());
         
         hospital.getOrganizationDirectory().createOrganization(Organization.Type.BirthMotherOrg);

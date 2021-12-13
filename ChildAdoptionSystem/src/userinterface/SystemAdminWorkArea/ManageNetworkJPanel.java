@@ -6,8 +6,6 @@ package userinterface.SystemAdminWorkArea;
 
 import Business.EcoSystem;
 import Business.Network.Network;
-import Business.Validations.ValidateEmailTextField;
-import Business.Validations.ValidatePasswords;
 import Business.Validations.ValidateStrings;
 import java.awt.CardLayout;
 import java.awt.Component;
