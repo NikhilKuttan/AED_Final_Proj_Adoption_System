@@ -56,6 +56,7 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
         btnViewFamily = new javax.swing.JButton();
         dashboardPanel = new javax.swing.JPanel();
         btnViewOrphanages = new javax.swing.JButton();
+        btnOrphanage = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -102,6 +103,13 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnOrphanage.setText("Schedule visit to Orphanage");
+        btnOrphanage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrphanageActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -113,7 +121,8 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnViewFamily, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
                             .addComponent(checkRequestsPending, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
-                            .addComponent(btnViewOrphanages, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnViewOrphanages, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnOrphanage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(dashboardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -136,7 +145,9 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
                         .addComponent(checkRequestsPending, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnViewFamily, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 706, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnOrphanage, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 658, Short.MAX_VALUE)
                         .addComponent(btnViewOrphanages, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
@@ -173,7 +184,15 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnViewOrphanagesActionPerformed
 
+    private void btnOrphanageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrphanageActionPerformed
+        // TODO add your handling code here:
+         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        userProcessContainer.add("ViewOrphanageSchedule", new ViewOrphanageSchedule());
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnOrphanageActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnOrphanage;
     private javax.swing.JButton btnViewFamily;
     private javax.swing.JButton btnViewOrphanages;
     private javax.swing.JButton checkRequestsPending;

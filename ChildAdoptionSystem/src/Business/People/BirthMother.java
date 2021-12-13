@@ -20,11 +20,15 @@ public class BirthMother {
     private int id;
     private static int count = new Random().nextInt(100);
     private String emailId;
-    private String password;
-    private String Hospital;
-    private String imgPath;
+      private String imgPath;
     private String firstName;
     private String lastName;
+    
+    
+    private String password;
+    
+    private String Hospital;
+  
     private String bloodGroup;
     private int typeL = 0;
     
@@ -36,14 +40,16 @@ public class BirthMother {
     private Parents finalizedParent;
    
     
+ 
+    private int bankBalance;
+    private int parentAidfund;
+    private int netfunding; 
+
+    
     private int loanRequestAmount;
     private int loanAmountApproved;
-    private int requiredFund;   //Total Cost of Pregnancy
-    private int insuranceAmount; //Amount of insurance approved
-    private int bankBalance; // Amount for personal bank balance
-    private int parentAidfund; // Amount transferred from parents
-    private int netfunding; // Net Funding required
-
+    private int requiredFund;
+    private int insuranceAmount;
     private int ownFunds;
 
     private String contactMother;
