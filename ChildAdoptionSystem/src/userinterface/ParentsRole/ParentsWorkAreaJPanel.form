@@ -29,7 +29,6 @@
                           <Component id="btnViewFamily" alignment="0" pref="256" max="32767" attributes="0"/>
                           <Component id="checkRequestsPending" alignment="0" pref="256" max="32767" attributes="0"/>
                           <Component id="btnViewOrphanages" min="-2" pref="252" max="-2" attributes="0"/>
-                          <Component id="btnOrphanage" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="dashboardPanel" min="-2" max="-2" attributes="0"/>
@@ -54,15 +53,19 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="dashboardPanel" pref="921" max="32767" attributes="0"/>
+                  <Component id="dashboardPanel" pref="474" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="checkRequestsPending" min="-2" pref="57" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnViewFamily" min="-2" pref="57" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <EmptySpace pref="353" max="32767" attributes="0"/>
+                      <EmptySpace pref="353" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnViewOrphanages" min="-2" pref="58" max="-2" attributes="0"/>
-                      <EmptySpace pref="719" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
+                  <Component id="dashboardPanel" pref="474" max="32767" attributes="0"/>
+                  <Component id="dashboardPanel" pref="476" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -132,21 +135,10 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnViewOrphanages">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="cc" red="cc" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="View Orphanages"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewOrphanagesActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnOrphanage">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Schedule visit to Orphanage"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOrphanageActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
