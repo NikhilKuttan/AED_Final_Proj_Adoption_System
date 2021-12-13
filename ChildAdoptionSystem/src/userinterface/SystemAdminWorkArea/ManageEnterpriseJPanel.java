@@ -132,7 +132,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         enterpriseTypeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        submitJButton.setBackground(new java.awt.Color(204, 204, 255));
+        submitJButton.setBackground(new java.awt.Color(204, 204, 0));
         submitJButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         submitJButton.setText("SUBMIT");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {

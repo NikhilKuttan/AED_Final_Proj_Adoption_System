@@ -67,7 +67,6 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
 
         checkRequestsPending.setBackground(new java.awt.Color(204, 204, 0));
         checkRequestsPending.setText("Check Birth Mother Request");
-        checkRequestsPending.setText("Check Birth Mother Request");
         checkRequestsPending.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkRequestsPendingActionPerformed(evt);
@@ -93,11 +92,10 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
         );
         dashboardPanelLayout.setVerticalGroup(
             dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
             .addGap(0, 474, Short.MAX_VALUE)
         );
 
-
+        btnViewOrphanages.setBackground(new java.awt.Color(204, 204, 0));
         btnViewOrphanages.setText("View Orphanages");
         btnViewOrphanages.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,9 +111,6 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnViewFamily, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(checkRequestsPending, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnViewFamily, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
                             .addComponent(checkRequestsPending, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
@@ -137,20 +132,14 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dashboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
+                    .addComponent(dashboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 921, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(checkRequestsPending, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(15, 15, 15)
                         .addComponent(btnViewFamily, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(353, Short.MAX_VALUE))
-                    .addComponent(dashboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)))
-                        .addContainerGap(353, Short.MAX_VALUE))
-                    .addComponent(dashboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)))
-                        .addGap(18, 18, 18)
+                        .addGap(15, 15, 15)
                         .addComponent(btnViewOrphanages, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-                        .addContainerGap(353, Short.MAX_VALUE))
-                    .addComponent(dashboardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE)))
+                        .addContainerGap(719, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
     

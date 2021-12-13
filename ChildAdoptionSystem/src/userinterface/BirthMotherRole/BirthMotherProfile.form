@@ -266,11 +266,7 @@
         </Property>
         <Property name="text" type="java.lang.String" value="SAVE"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder roundedCorners="true" thickness="4">
-              <Color PropertyName="color" blue="b6" green="97" red="40" type="rgb"/>
-            </LineBorder>
-          </Border>
+          <Border info="null"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="requestFocusEnabled" type="boolean" value="false"/>
