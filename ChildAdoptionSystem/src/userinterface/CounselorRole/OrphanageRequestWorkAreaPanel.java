@@ -46,10 +46,9 @@ public class OrphanageRequestWorkAreaPanel extends javax.swing.JPanel {
         refreshTestJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
-
+        setBackground(new java.awt.Color(204, 204, 255));
         valueLabel.setFont(new java.awt.Font("Lucida Grande", 3, 18)); // NOI18N
         valueLabel.setText("Orphanage");
-
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -79,7 +78,7 @@ public class OrphanageRequestWorkAreaPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        btnViewOrphanageApp.setBackground(new java.awt.Color(255, 153, 51));
+        btnViewOrphanageApp.setBackground(new java.awt.Color(204, 204, 0));
         btnViewOrphanageApp.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnViewOrphanageApp.setText("Approve Applications");
         btnViewOrphanageApp.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +87,7 @@ public class OrphanageRequestWorkAreaPanel extends javax.swing.JPanel {
             }
         });
 
+        refreshTestJButton.setBackground(new java.awt.Color(204, 204, 0));
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

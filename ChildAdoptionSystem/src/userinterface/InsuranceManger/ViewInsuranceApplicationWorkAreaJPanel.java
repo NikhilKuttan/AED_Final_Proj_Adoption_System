@@ -104,7 +104,7 @@ public class ViewInsuranceApplicationWorkAreaJPanel extends javax.swing.JPanel {
             workRequestJTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        viewBirthMother.setBackground(new java.awt.Color(204, 204, 255));
+        viewBirthMother.setBackground(new java.awt.Color(204, 204, 0));
         viewBirthMother.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         viewBirthMother.setText("VIEW INSURANCE REQUEST");
         viewBirthMother.addActionListener(new java.awt.event.ActionListener() {

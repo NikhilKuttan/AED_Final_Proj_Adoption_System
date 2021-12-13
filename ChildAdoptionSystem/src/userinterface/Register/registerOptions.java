@@ -56,7 +56,7 @@ public class registerOptions extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(204, 204, 255));
 
-        btnRegMother.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
+        btnRegMother.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnRegMother.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/maternity.png"))); // NOI18N
         btnRegMother.setText("MOTHER");
         btnRegMother.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +65,7 @@ public class registerOptions extends javax.swing.JPanel {
             }
         });
 
-        btnRegFamily.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
+        btnRegFamily.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnRegFamily.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/family.png"))); // NOI18N
         btnRegFamily.setText("FAMILY");
         btnRegFamily.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +74,9 @@ public class registerOptions extends javax.swing.JPanel {
             }
         });
 
-        btnOrphanageReg.setText("Orphan");
+        btnOrphanageReg.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnOrphanageReg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/baby-3.png"))); // NOI18N
+        btnOrphanageReg.setText("ORPHAN");
         btnOrphanageReg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrphanageRegActionPerformed(evt);
@@ -85,26 +87,31 @@ public class registerOptions extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(161, 161, 161)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnOrphanageReg, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnRegFamily, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRegMother, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)))
-                .addContainerGap(419, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(34, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnOrphanageReg, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegFamily, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegMother, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(571, 571, 571))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnOrphanageReg, btnRegFamily, btnRegMother});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(112, 112, 112)
+                .addGap(178, 178, 178)
                 .addComponent(btnRegMother)
-                .addGap(37, 37, 37)
+                .addGap(29, 29, 29)
                 .addComponent(btnRegFamily)
-                .addGap(56, 56, 56)
+                .addGap(29, 29, 29)
                 .addComponent(btnOrphanageReg, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnOrphanageReg, btnRegFamily, btnRegMother});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegMotherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegMotherActionPerformed
