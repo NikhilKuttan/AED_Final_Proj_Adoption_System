@@ -72,8 +72,8 @@ public class thirdPanelDashboard extends javax.swing.JPanel {
         
         weekValues.put(week, detail);
                 
-        System.out.print(week);
-        System.out.print(detail);
+       // System.out.print(week);
+       // System.out.print(detail);
     }
     
     private void populateDropdown(){

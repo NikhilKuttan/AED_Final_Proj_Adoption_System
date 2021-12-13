@@ -322,7 +322,6 @@ public class InsuranceViewPage extends javax.swing.JPanel {
         this.firstName = txtFirstName.getText();
         this.lastName = txtLastName.getText();
         this.emailId = txtEmail.getText();
-        //this.policynumber = Integer.parseInt(txtPolicyNumber.getText());
         this.policynumber = txtPolicyNumber.getText();
         this.address = txtAddress.getText();
        
