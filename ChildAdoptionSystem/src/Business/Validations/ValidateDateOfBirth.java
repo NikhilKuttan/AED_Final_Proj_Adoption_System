@@ -29,7 +29,7 @@ public class ValidateDateOfBirth extends InputVerifier{
         if (dob.length() > 0) {
             if (matcher.matches() != true) {
                 input.setBackground(Color.red);
-                JOptionPane.showMessageDialog(input, "Please Enter Valid date Of Birth (MM/DD/YYYY)", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(input, "Please Enter Valid Date Of Birth (MM/DD/YYYY)", "Error", JOptionPane.ERROR_MESSAGE);
                 return false;
             } 
             else {
