@@ -157,7 +157,7 @@ public class FamilyProfile extends javax.swing.JPanel {
         btnSave.setBackground(new java.awt.Color(204, 204, 0));
         btnSave.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnSave.setText("SAVE");
-        btnSave.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(64, 151, 182), 4, true));
+        btnSave.setBorder(null);
         btnSave.setFocusPainted(false);
         btnSave.setRequestFocusEnabled(false);
         btnSave.addActionListener(new java.awt.event.ActionListener() {

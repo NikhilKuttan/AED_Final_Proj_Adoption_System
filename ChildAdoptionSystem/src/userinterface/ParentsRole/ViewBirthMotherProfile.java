@@ -127,7 +127,7 @@ public class ViewBirthMotherProfile extends javax.swing.JPanel {
         btnConfirm.setBackground(new java.awt.Color(204, 204, 0));
         btnConfirm.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnConfirm.setText("CONFIRM");
-        btnConfirm.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(64, 151, 182), 4, true));
+        btnConfirm.setBorder(null);
         btnConfirm.setFocusPainted(false);
         btnConfirm.setRequestFocusEnabled(false);
         btnConfirm.addActionListener(new java.awt.event.ActionListener() {

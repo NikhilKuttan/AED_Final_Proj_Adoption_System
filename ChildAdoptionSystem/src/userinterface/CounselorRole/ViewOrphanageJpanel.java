@@ -47,9 +47,11 @@ public class ViewOrphanageJpanel extends javax.swing.JPanel {
         userNameTxt = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel4.setText("Email:");
 
-        btnApprove.setBackground(new java.awt.Color(255, 153, 51));
+        btnApprove.setBackground(new java.awt.Color(204, 204, 0));
         btnApprove.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         btnApprove.setText("ACCEPT");
         btnApprove.addActionListener(new java.awt.event.ActionListener() {
@@ -58,10 +60,10 @@ public class ViewOrphanageJpanel extends javax.swing.JPanel {
             }
         });
 
-        btnReject.setBackground(new java.awt.Color(255, 255, 255));
+        btnReject.setBackground(new java.awt.Color(204, 204, 0));
         btnReject.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         btnReject.setText("REJECT");
-        btnReject.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 4, true));
+        btnReject.setBorder(null);
         btnReject.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRejectActionPerformed(evt);

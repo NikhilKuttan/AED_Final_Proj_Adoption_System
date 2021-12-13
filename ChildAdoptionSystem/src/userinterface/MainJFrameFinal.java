@@ -217,14 +217,24 @@ public class MainJFrameFinal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainJFrameFinal().setVisible(true);
-               
-                
-                
-            }
+        
+        
+         java.awt.EventQueue.invokeLater(() -> {
+            
+            MainJFrameFinal myFrame = new MainJFrameFinal();
+        myFrame.setVisible(true);
+        myFrame.setExtendedState(myFrame.getExtendedState() | MainJFrameFinal.MAXIMIZED_BOTH);
         });
+         
+         //nikhil 12122021
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new MainJFrameFinal().setVisible(true);
+//               
+//                
+//                
+//            }
+//        });
 
 
     }
