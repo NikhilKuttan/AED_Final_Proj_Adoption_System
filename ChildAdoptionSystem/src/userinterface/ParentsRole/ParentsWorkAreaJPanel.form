@@ -60,12 +60,16 @@
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Component id="btnViewFamily" min="-2" pref="57" max="-2" attributes="0"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
 =======
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnOrphanage" min="-2" pref="57" max="-2" attributes="0"/>
                       <EmptySpace pref="658" max="32767" attributes="0"/>
 >>>>>>> f39c31f84c29ce770b215f2d2825e0c6d8d83aeb
+=======
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+>>>>>>> f1213bb2a66bbebc2462555564aca26771f35ced
                       <Component id="btnViewOrphanages" min="-2" pref="58" max="-2" attributes="0"/>
                       <EmptySpace pref="719" max="32767" attributes="0"/>
                   </Group>

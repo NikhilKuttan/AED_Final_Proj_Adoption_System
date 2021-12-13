@@ -95,11 +95,7 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
             dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 474, Short.MAX_VALUE)
         );
-
-<<<<<<< HEAD
         btnViewOrphanages.setBackground(new java.awt.Color(204, 204, 0));
-=======
->>>>>>> f39c31f84c29ce770b215f2d2825e0c6d8d83aeb
         btnViewOrphanages.setText("View Orphanages");
         btnViewOrphanages.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,17 +145,12 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
                         .addComponent(checkRequestsPending, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(15, 15, 15)
                         .addComponent(btnViewFamily, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
                         .addGap(15, 15, 15)
                         .addComponent(btnViewOrphanages, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(719, Short.MAX_VALUE))))
-=======
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnOrphanage, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 658, Short.MAX_VALUE)
+                        .addGap(15, 15, 15)
                         .addComponent(btnViewOrphanages, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
->>>>>>> f39c31f84c29ce770b215f2d2825e0c6d8d83aeb
+                        .addContainerGap(719, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
     
