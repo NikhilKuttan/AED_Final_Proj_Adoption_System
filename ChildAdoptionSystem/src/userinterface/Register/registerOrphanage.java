@@ -24,11 +24,7 @@ import userinterface.MainJFrameFinal;
  * @author patil
  */
 public class registerOrphanage extends javax.swing.JPanel {
-//  public BirthMotherDirectory birthMotherDirectory;
-//    public BirthMother birthMother;
-//    public BirthMotherToCounselor bmWorkQueue;
-//    
-    
+      
     public OrphanageDirectory orphanageDirectory;
     public Orphanage orphanage;
     public OrphanageToCounselor ocWorkQueue;
@@ -51,7 +47,7 @@ public class registerOrphanage extends javax.swing.JPanel {
         InputVerifier stringValidation = new ValidateStrings();
         nameTxt.setInputVerifier(stringValidation);
         userNameTxt.setInputVerifier(stringValidation);
-        locationTxt.setInputVerifier(stringValidation);
+       // locationTxt.setInputVerifier(stringValidation);
         InputVerifier passwordValidation = new ValidatePasswords();
         InputVerifier emailValidation = new ValidateEmailTextField();
         
