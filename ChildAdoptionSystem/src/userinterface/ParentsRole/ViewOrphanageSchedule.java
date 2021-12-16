@@ -48,6 +48,8 @@ public class ViewOrphanageSchedule extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         valueLabel.setFont(new java.awt.Font("Lucida Grande", 3, 18)); // NOI18N
         valueLabel.setText("Orphanage");
 
@@ -107,6 +109,8 @@ public class ViewOrphanageSchedule extends javax.swing.JPanel {
             }
         });
 
+        jDateChooser1.setBackground(new java.awt.Color(204, 204, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -145,11 +149,11 @@ public class ViewOrphanageSchedule extends javax.swing.JPanel {
                     .addComponent(btnBack, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(8, 8, 8)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(48, 48, 48)
                 .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(44, 44, 44)
                 .addComponent(btnViewOrphanageApp, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(213, 213, 213))
+                .addGap(157, 157, 157))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -161,7 +165,7 @@ public class ViewOrphanageSchedule extends javax.swing.JPanel {
             return;
         }
 
-                    SuccessDialog d = new SuccessDialog("Successfully scheduled visit for "+ jDateChooser1.getDate().getMonth() + "  " + jDateChooser1.getDate().getDay() + "," + jDateChooser1.getDate().getYear() + ". Please Logout");
+                    SuccessDialog d = new SuccessDialog("Successfully scheduled visit for "+ jDateChooser1.getDate().toString()+". Please Logout");
                     d.setVisible(true);
                     jDateChooser1.setDate(null);
     }//GEN-LAST:event_btnViewOrphanageAppActionPerformed

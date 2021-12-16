@@ -96,6 +96,7 @@ public class ParentsWorkAreaJPanel extends javax.swing.JPanel {
             .addGap(0, 921, Short.MAX_VALUE)
         );
 
+        btnScheduleVisitOrphanage.setBackground(new java.awt.Color(204, 204, 0));
         btnScheduleVisitOrphanage.setText("Schedule visit with Orphanage");
         btnScheduleVisitOrphanage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
